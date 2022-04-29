@@ -1,0 +1,17 @@
+{% extends 'base.html' %}}
+
+{% block content %}
+    <h1>----------- This is book flight page --------------</h1>
+    
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form}}
+
+        <input type="submit" value="Book ticket">
+
+        {{form.errors}}
+    </form>
+    
+    
+    <h1>----------- This is book flight page --------------</h1>
+{% endblock content %}
