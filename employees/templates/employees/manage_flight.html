@@ -1,0 +1,67 @@
+{% extends 'base.html' %}}
+
+{% block head %}
+<title>Manage Flight {{flight}}</title>
+{% endblock %}
+
+{% block content %}
+<h1>----------- This is Add Ticket Page --------------</h1>
+
+<div>
+    <h2>Flight Name: {{flight}}</h2>
+    <div>src airport: {{flight.src_airport}}</div>
+    <div>dst airport: {{flight.dst_airport}}</div>
+    <div>time: {{flight.flight_time}}</div>
+    <div>duration: {{flight.duration}}</div>
+    <a href={% url 'edit_flight' flight.id %}>Edit</a>
+</div>
+
+<br>
+
+<div>
+    <table>
+        <tr>
+            <th>Số thứ tự</th>
+            <th>Sân bay trung gian</th>
+            <th>Thời gian dừng</th>
+            <th>Ghi chú</th>
+        </tr>
+        {% for a in intermediate_airports %}
+        <tr>
+            <th>{{a.sequence}}</th>
+            <th>{{a.airport.name}}</th>
+            <th>{{a.stop_time}}</th>
+            <th>{{a.notes}}</th>
+            <th><a href={% url 'edit_intermediate_airport' a.id %}>Edit</a></th>
+            <th><a href={% url 'delete_intermediate_airport' a.id %}>Delete</a></th>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href={% url 'add_intermediate_airport' flight.id %}>Add  Intermadiate Airport</a>
+</div>
+
+<br>
+
+<div>
+    <table>
+        <tr>
+            <th>Hang Ve</th>
+            <th>So luong</th>
+        </tr>
+        {% for t in tickets %}
+        <tr>
+            <th>{{t.ticket_class}}</th>
+            <th>{{t.quantity}}</th>
+            <th><a href={% url 'edit_ticket' t.id %}>Edit</a></th>
+            <th><a href={% url 'delete_ticket' t.id %}>Delete</a></th>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href={% url 'add_ticket' flight.id %}>Add ticket Class</a>
+</div>
+
+<br>
+
+<a href={% url 'delete_flight' flight.id %}>Delete Flight</a>
+<h1>----------- This is Add Ticket Page --------------</h1>
+{% endblock content %}

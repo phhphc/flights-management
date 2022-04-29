@@ -1,17 +1,22 @@
 {% extends 'base.html' %}}
 
+{% block head %}
+<title>Book Flight</title>
+{% endblock %}
+
+
 {% block content %}
-    <h1>----------- This is book flight page --------------</h1>
-    
-    <form action="" method="post">
-        {% csrf_token %}
-        {{form}}
+<h1>----------- This is book flight page --------------</h1>
 
-        <input type="submit" value="Book ticket">
+<form action="" method="post">
+    {% csrf_token %}
+    {{form}}
 
-        {{form.errors}}
-    </form>
-    
-    
-    <h1>----------- This is book flight page --------------</h1>
+    <input type="submit" value="Book ticket">
+
+    {{form.errors}}
+</form>
+
+
+<h1>----------- This is book flight page --------------</h1>
 {% endblock content %}

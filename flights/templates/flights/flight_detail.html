@@ -1,42 +1,45 @@
 {% extends 'base.html' %}}
 
+{% block head %}
+<title>Flight {{flight}}</title>
+{% endblock %}
+
 {% block content %}
-    <h1>----------- This is Flight detail --------------</h1>
-    
-    <div>
-        <h2>Flight Name: {{flight}}</h2>
-        <div>src airport: {{flight.src_airport}}</div>
-        <div>dst airport: {{flight.dst_airport}}</div>
-        <div>time: {{flight.flight_time}}</div>
-        <div>duration: {{flight.duration}}</div>
-    </div>
+<h1>----------- This is Flight detail --------------</h1>
 
-    <div>
-        <h2>ticket cost</h2>
+<div>
+    <h2>Flight Name: {{flight}}</h2>
+    <div>src airport: {{flight.src_airport}}</div>
+    <div>dst airport: {{flight.dst_airport}}</div>
+    <div>time: {{flight.flight_time}}</div>
+    <div>duration: {{flight.duration}}</div>
+</div>
 
-        <table>
-            <tr>
-                <th>Hang Ve</th>
-                <th>Gia Ve</th>
-                <th>So luong</th>
-                <th>Số ghế trống</th>
-                <th>Số ghế đặt</th>
-            </tr>
-            
-            {% for c in  ticket_costs %}
-            <tr>
-                <th>{{c.ticket_class}}</th>
-                <th>{{c.cost}}</th>
-                <th>{{0}}</th>
-                <th>{{0}}</th>
-                <th>{{0}}</th>
-                <th><a href={% url 'book_flight' %}>Đặt vé</a></th>
-    
-            </tr>
-            {% endfor %}
-            
-        </table>
-    </div>
+<div>
+    <h2>ticket cost</h2>
 
-    <h1>----------- This is Flight detail --------------</h1>
+    <table>
+        <tr>
+            <th>Hang Ve</th>
+            <th>Gia Ve</th>
+            <th>So luong</th>
+            <th>Số ghế trống</th>
+            <th>Số ghế đặt</th>
+        </tr>
+
+        {% for c in ticket_details %}
+        <tr>
+            <th>{{c.ticket_class}}</th>
+            <th>{{c.cost}}</th>
+            <th>{{c.quantity}}</th>
+            <th>{{c.available_seats}}</th>
+            <th>{{c.booked_count}}</th>
+            <th><a href={% url 'book_flight' %}>Đặt vé</a></th>
+        </tr>
+        {% endfor %}
+
+    </table>
+</div>
+
+<h1>----------- This is Flight detail --------------</h1>
 {% endblock content %}

@@ -10,10 +10,11 @@ def home_page(request):
     for i in range(len(flights)):
         total_seats = sum(
             [tk.quantity for tk in NumberOfTicket.objects.filter(flight__pk=flights[i].pk)])
-        sold_seats = 0
+        
+        tickets: list[Ticket] = Ticket.objects.filter(flight__pk=flights[i].pk)
 
-        flights[i].available_seats = total_seats - sold_seats
-        flights[i].booked_seats = 0
+        flights[i].available_seats = total_seats - tickets.count()
+        flights[i].booked_seats = tickets.filter(status=0).count()
 
     return render(request, 'flights/home.html', {
         'flights': flights
@@ -22,16 +23,24 @@ def home_page(request):
 
 def flight_detail(request, flight_id):
     flight: Flight = Flight.objects.get(pk=flight_id)
-    ticket_costs: list[TicketCost] = TicketCost.objects.filter(
-        dst_airport__pk=flight.dst_airport.pk, src_airport__pk=flight.src_airport.pk)
-    ticket_numbers: list[NumberOfTicket] = NumberOfTicket.objects.filter(
-        flight__pk=flight.pk)
-    
+
+    ticket_details = NumberOfTicket.objects.filter(flight__pk=flight_id)
+    for i in range(len(ticket_details)):
+        ticket_details[i].cost = TicketCost.objects.get(
+            dst_airport__pk=flight.dst_airport.pk,
+            src_airport__pk=flight.src_airport.pk,
+            ticket_class=ticket_details[i].ticket_class).cost
+        
+        ticket_details[i].booked_count = Ticket.objects.filter(
+            flight__pk=flight.pk,
+            ticket_class=ticket_details[i].ticket_class).count()
+        
+        ticket_details[i].available_seats = ticket_details[i].quantity - \
+            ticket_details[i].booked_count
 
     return render(request, 'flights/flight_detail.html', {
         'flight': flight,
-        'ticket_costs': ticket_costs,
-        'ticket_numbers': ticket_numbers
+        'ticket_details': ticket_details,
     })
 
 

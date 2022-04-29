@@ -1,3 +1,4 @@
+from enum import unique
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -37,6 +38,9 @@ class Flight(models.Model):
     flight_time = models.DateTimeField()
     duration = models.DurationField()
     
+    class Meta:
+        ordering = ['flight_time']    
+    
     def __str__(self):
         return 'CB%05d'%self.id
 
@@ -53,8 +57,12 @@ class NumberOfTicket(models.Model):
 class IntermediateAirport(models.Model):
     flight = models.ForeignKey(Flight, on_delete=models.CASCADE)
     airport = models.ForeignKey(Airport, on_delete=models.RESTRICT)
+    sequence = models.IntegerField()
     stop_time = models.DurationField()
     notes = models.TextField(max_length=100)
+    
+    class Meta:
+        unique_together = (('flight', 'airport'),)
 
 class Ticket(models.Model):
     STATUS_LIST = models.IntegerChoices('Status', 'BOOK PAID')
