@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from models.models import Flight, NumberOfTicket, TicketCost
+from django.contrib.auth.decorators import login_required
 
 
 from .forms import *
@@ -44,14 +45,21 @@ def flight_detail(request, flight_id):
     })
 
 
+@login_required(login_url='/accounts/login')
 def book_flight(request):
-    form = BookTicketForm(request.POST or None)
+    customer = request.user.customuser
+    form = BookTicketForm(request.POST or None, initial={
+        'flight': request.GET.get('flight'),
+        'ticket_class': request.GET.get('ticket_class'),
+        'customer_name': customer.name,
+        'customer_phone': customer.phone,
+        'customer_id_card': customer.id_card,
+        })
 
     if request.method == 'POST':
         if form.is_valid():
             obj = form.save(commit=False)
-            if request.user.is_authenticated:
-                obj.user = request.user
+            obj.user = request.user
             obj.save()
             return render(request, 'flights/book_success.html')
 

@@ -75,9 +75,9 @@ class Ticket(models.Model):
     STATUS_LIST = models.IntegerChoices('Status', 'BOOK PAID')
     
     flight = models.ForeignKey(Flight, on_delete=models.CASCADE)
+    ticket_class = models.ForeignKey(TicketClass, on_delete=models.RESTRICT)
     customer_name = models.CharField(max_length=100)
     customer_id_card = models.CharField(max_length=20)
     customer_phone = models.CharField(max_length=20)
-    ticket_class = models.ForeignKey(TicketClass, on_delete=models.RESTRICT)
     status = models.IntegerField(choices=STATUS_LIST.choices, default=0)
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)

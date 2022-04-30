@@ -34,7 +34,7 @@
             <th>{{c.quantity}}</th>
             <th>{{c.available_seats}}</th>
             <th>{{c.booked_count}}</th>
-            <th><a href={% url 'book_flight' %}>Đặt vé</a></th>
+            <th><a href={% url 'book_flight' %}?flight={{flight.id}}&ticket_class={{c.ticket_class.id}} >Đặt vé</a></th>
         </tr>
         {% endfor %}
 
