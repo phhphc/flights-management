@@ -1,0 +1,25 @@
+{% extends 'base.html' %}}
+
+{% block head %}
+<title>Profile</title>
+{% endblock %}
+
+{% block content %}
+<h1>----------- This is Profile Page --------------</h1>
+
+<div>
+    {% for m in messages %}
+    <p id="messages">{{m}}</p>
+    {% endfor %}
+</div>
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form }}
+
+    {{ user_form }}
+    <input type="submit" value="Update">
+</form>
+
+<h1>----------- This is Profile Page --------------</h1>
+{% endblock content %}

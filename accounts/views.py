@@ -1,9 +1,25 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.decorators import login_required
 
 
 from .forms import *
+
+@login_required(login_url='/accounts/login')
+def profile_page(request):
+    print(request.user.customuser)
+    form = CustomUserForm(request.POST or None,
+                          instance=request.user.customuser)
+
+    if (request.method == 'POST'):
+        if (form.is_valid()):
+            form.save()
+            messages.success(request, "Profile was updated!")
+
+    return render(request, 'accounts/profile.html', {
+        'form': form,
+    })
 
 
 def login_page(request):
@@ -16,7 +32,7 @@ def login_page(request):
 
         if user is not None:
             login(request, user)
-            return redirect('/')
+            return redirect(request.GET.get('next') or '/')
         else:
             messages.info(request, "Username or Password is incorrect")
 
@@ -24,17 +40,15 @@ def login_page(request):
 
 
 def register_page(request):
+    form = RegisterForm(request.POST or None)
 
     if (request.method == 'POST'):
-        form = RegisterForm(request.POST)
         if (form.is_valid()):
-            user = form.save()
+            form.save()
             username = form.cleaned_data.get('username')
 
             messages.success(request, "Account was created for " + username)
-            return redirect('/account/login')
-    else:
-        form = RegisterForm()
+            return redirect('/accounts/login')
 
     return render(request, 'accounts/register.html', {
         'form': form
@@ -44,4 +58,4 @@ def register_page(request):
 def logout_page(request):
     logout(request)
     messages.success(request, "Logged out successfully!")
-    return redirect('/account/login')
+    return redirect('/accounts/login')

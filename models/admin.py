@@ -1,8 +1,10 @@
 from django.contrib import admin
+from sympy import Si
 
 from .models import *
 
 
+admin.site.register(CustomUser)
 admin.site.register(Airport)
 admin.site.register(TicketClass)
 admin.site.register(TicketCost)

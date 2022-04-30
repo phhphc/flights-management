@@ -1,6 +1,13 @@
-from enum import unique
 from django.db import models
 from django.contrib.auth.models import User
+
+
+class CustomUser(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100, blank=True)
+    phone = models.CharField(max_length=20, blank=True)
+    email = models.EmailField(max_length=254, blank=True)
+    id_card = models.CharField(max_length=20, blank=True)
 
 
 class Airport(models.Model):
@@ -69,7 +76,7 @@ class Ticket(models.Model):
     
     flight = models.ForeignKey(Flight, on_delete=models.CASCADE)
     customer_name = models.CharField(max_length=100)
-    customer_id_number = models.CharField(max_length=20)
+    customer_id_card = models.CharField(max_length=20)
     customer_phone = models.CharField(max_length=20)
     ticket_class = models.ForeignKey(TicketClass, on_delete=models.RESTRICT)
     status = models.IntegerField(choices=STATUS_LIST.choices, default=0)
