@@ -2,15 +2,21 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
+from models.models import Ticket
 
 
 from .forms import *
 
+
 @login_required(login_url='/accounts/login')
 def profile_page(request):
-    print(request.user.customuser)
+
     form = CustomUserForm(request.POST or None,
                           instance=request.user.customuser)
+
+    tickets: list[Ticket] = Ticket.objects.filter(user=request.user.id)
+    for i in range(len(tickets)):
+        tickets[i].status = tickets[i].STATUS_LIST(tickets[i].status).label
 
     if (request.method == 'POST'):
         if (form.is_valid()):
@@ -19,6 +25,7 @@ def profile_page(request):
 
     return render(request, 'accounts/profile.html', {
         'form': form,
+        'tickets': tickets,
     })
 
 
