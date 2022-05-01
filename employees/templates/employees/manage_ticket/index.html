@@ -1,0 +1,40 @@
+{% extends 'base.html' %}}
+
+{% block head %}
+<title>Manage Ticket Dashboard </title>
+{% endblock %}
+
+{% block content %}
+<h1>----------- This is Manage Ticket Dashboard --------------</h1>
+
+<div>
+    <table>
+        <tr>
+            <th>MCB</th>
+            <th>Sân Bay Đi</th>
+            <th>Sân Bay Đến</th>
+            <th>Khởi Hành</th>
+            <th>Thời Gian Bay</th>
+        </tr>
+
+        {% for f in flights %}
+        <tr>
+            <th>{{f}}</th>
+            <th>{{f.src_airport}}</th>
+            <th>{{f.dst_airport}}</th>
+            <th>{{f.flight_time}}</th>
+            <th>{{f.duration}}</th>
+            <th><a href="{% url 'manage_flight' f.id %}">Manage</a></th>
+        </tr>
+        {% endfor %}
+
+    </table>
+</div>
+
+
+<div>
+    <a href="{% url 'add_flight' %}">Add Flight</a>
+</div>
+
+<h1>----------- This is Manage Ticket Dashboard --------------</h1>
+{% endblock content %}

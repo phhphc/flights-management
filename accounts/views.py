@@ -8,7 +8,7 @@ from models.models import Ticket
 from .forms import *
 
 
-@login_required(login_url='/accounts/login')
+@login_required(login_url='login')
 def profile_page(request):
 
     form = CustomUserForm(request.POST or None,
@@ -39,7 +39,7 @@ def login_page(request):
 
         if user is not None:
             login(request, user)
-            return redirect(request.GET.get('next') or '/')
+            return redirect(request.GET.get('next') or 'home')
         else:
             messages.info(request, "Username or Password is incorrect")
 
@@ -55,7 +55,7 @@ def register_page(request):
             username = form.cleaned_data.get('username')
 
             messages.success(request, "Account was created for " + username)
-            return redirect('/accounts/login')
+            return redirect('login')
 
     return render(request, 'accounts/register.html', {
         'form': form
@@ -65,4 +65,4 @@ def register_page(request):
 def logout_page(request):
     logout(request)
     messages.success(request, "Logged out successfully!")
-    return redirect('/accounts/login')
+    return redirect('login')

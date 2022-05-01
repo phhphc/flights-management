@@ -47,7 +47,7 @@ def flight_detail(request, flight_id):
     })
 
 
-@login_required(login_url='/accounts/login')
+@login_required(login_url='login')
 def book_flight(request):
     customer = request.user.customuser
     form = BookTicketForm(request.POST or None, initial={
