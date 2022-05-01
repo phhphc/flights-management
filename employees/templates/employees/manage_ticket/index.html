@@ -10,21 +10,28 @@
 <div>
     <table>
         <tr>
-            <th>MCB</th>
-            <th>Sân Bay Đi</th>
-            <th>Sân Bay Đến</th>
-            <th>Khởi Hành</th>
-            <th>Thời Gian Bay</th>
+            <th>Mã Vé</th>
+            <th>Mã Chuyến bay</th>
+            <th>Loại vé</th>
+            <th>Tên hành khách</th>
+            <th>Số Điện Thoại</th>
+            <th>CMND/CCCD</th>
+            <th>Trạng Thái</th>
         </tr>
 
-        {% for f in flights %}
+        {% for t in tickets %}
         <tr>
-            <th>{{f}}</th>
-            <th>{{f.src_airport}}</th>
-            <th>{{f.dst_airport}}</th>
-            <th>{{f.flight_time}}</th>
-            <th>{{f.duration}}</th>
-            <th><a href="{% url 'manage_flight' f.id %}">Manage</a></th>
+            <th>{{t.id }}</th>
+            <th>{{t.flight }}</th>
+            <th>{{t.ticket_class }}</th>
+            <th>{{t.customer_name }}</th>
+            <th>{{t.customer_phone }}</th>
+            <th>{{t.customer_id_card }}</th>
+            <th>{{t.str_status }}</th>
+            <th><a href="{% url 'edit_ticket_employee' t.id %}">Edit</a></th>
+            <th><a href="{% url 'delete_ticket_employee' t.id %}">Delete</a></th>
+            <th><a href="{% url 'pay_ticket_employee' t.id %}">Pay</a></th>
+            <th><a href="{% url 'export_ticket_employee' t.id %}">Print</a></th>
         </tr>
         {% endfor %}
 
@@ -33,7 +40,7 @@
 
 
 <div>
-    <a href="{% url 'add_flight' %}">Add Flight</a>
+    <a href="{% url 'add_ticket' %}">Add Ticket</a>
 </div>
 
 <h1>----------- This is Manage Ticket Dashboard --------------</h1>

@@ -72,7 +72,7 @@ class IntermediateAirport(models.Model):
         unique_together = (('flight', 'airport'),)
 
 class Ticket(models.Model):
-    STATUS_LIST = models.IntegerChoices('Status', 'BOOK PAID')
+    STATUS_LIST = models.IntegerChoices('Status', 'BOOK PAID DONE')
     
     flight = models.ForeignKey(Flight, on_delete=models.CASCADE)
     ticket_class = models.ForeignKey(TicketClass, on_delete=models.RESTRICT)
@@ -81,6 +81,11 @@ class Ticket(models.Model):
     customer_phone = models.CharField(max_length=20)
     status = models.IntegerField(choices=STATUS_LIST.choices, default=1)
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    employee_paid = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='employee_paid')
     
     class Meta:
         ordering = ['-id']
+    
+    @property
+    def str_status(self):
+        return self.STATUS_LIST(self.status).label

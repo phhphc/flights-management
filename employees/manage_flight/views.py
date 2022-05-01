@@ -103,6 +103,7 @@ def add_ticket_class(request, flight_id):
     if request.method == 'POST':
         if form.is_valid():
             obj = form.save(commit=False)
+            # TODO: check ticket cost is available
             obj.flight = Flight.objects.get(pk=flight_id)
             obj.save()
             return redirect('manage_flight', flight_id=flight_id)
@@ -119,6 +120,7 @@ def edit_ticket_class(request, ticket_class_id):
 
     if request.method == 'POST':
         if form.is_valid():
+            # TODO: check ticket cost is available
             form.save()
             return redirect('manage_flight', flight_id=ticket.flight.pk)
 

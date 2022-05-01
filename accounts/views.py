@@ -15,8 +15,6 @@ def profile_page(request):
                           instance=request.user.customuser)
 
     tickets: list[Ticket] = Ticket.objects.filter(user=request.user.id)
-    for i in range(len(tickets)):
-        tickets[i].status = tickets[i].STATUS_LIST(tickets[i].status).label
 
     if (request.method == 'POST'):
         if (form.is_valid()):

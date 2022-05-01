@@ -61,6 +61,7 @@ def book_flight(request):
     if request.method == 'POST':
         if form.is_valid():
             obj = form.save(commit=False)
+            # TODO: Check if ticket seat is available
             obj.user = request.user
             obj.save()
             return render(request, 'flights/book_success.html')
