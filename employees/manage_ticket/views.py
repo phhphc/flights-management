@@ -39,13 +39,15 @@ def edit_ticket(request, ticket_id):
     return render(request, 'employees/manage_ticket/edit_ticket.html', {
         'form': form,
     })
-    
+
+
 def delete_ticket(request, ticket_id):
     ticket = Ticket.objects.get(id=ticket_id)
     # TODO: check if ticket.status != 3 (exported)
     ticket.delete()
-    
+
     return redirect('manage_ticket_home')
+
 
 @login_required
 def pay_ticket(request, ticket_id):
@@ -54,13 +56,14 @@ def pay_ticket(request, ticket_id):
     ticket.status = 2
     ticket.employee_paid = request.user
     ticket.save()
-    
+
     return redirect('manage_ticket_home')
+
 
 def export_ticket(request, ticket_id):
     ticket = Ticket.objects.get(id=ticket_id)
     # TODO: check if ticket.status == 2 (paid)
     ticket.status = 3
     ticket.save()
-    
+
     return redirect('manage_ticket_home')

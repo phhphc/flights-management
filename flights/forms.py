@@ -6,4 +6,4 @@ class BookTicketForm(ModelForm):
     class Meta:
         model = Ticket
         fields = '__all__'
-        exclude = ['status', 'user']
+        exclude = ['status', 'user', 'employee_paid']

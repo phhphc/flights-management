@@ -1,5 +1,6 @@
+from django.contrib import messages
 from django.shortcuts import render, redirect
-
+from models.models import Ticket
 
 from .forms import *
 
@@ -14,7 +15,8 @@ def home_page(request):
 
 def manage_flight(request, flight_id):
     flight = Flight.objects.get(pk=flight_id)
-    intermediate_airports = IntermediateAirport.objects.filter(flight=flight).order_by('sequence')
+    intermediate_airports = IntermediateAirport.objects.filter(
+        flight=flight).order_by('sequence')
     tickets = NumberOfTicket.objects.filter(flight__pk=flight_id)
 
     return render(request, 'employees/manage_flight/manage_flight.html', {
@@ -98,12 +100,11 @@ def delete_intermediate_airport(request, intermediate_airport_id):
 
 
 def add_ticket_class(request, flight_id):
-    form = NumberOfTicketForm(request.POST or None)
+    form = NumberOfTicketForm(flight_id=flight_id, data=request.POST or None)
 
     if request.method == 'POST':
         if form.is_valid():
             obj = form.save(commit=False)
-            # TODO: check ticket cost is available
             obj.flight = Flight.objects.get(pk=flight_id)
             obj.save()
             return redirect('manage_flight', flight_id=flight_id)
@@ -116,11 +117,11 @@ def add_ticket_class(request, flight_id):
 
 def edit_ticket_class(request, ticket_class_id):
     ticket = NumberOfTicket.objects.get(pk=ticket_class_id)
-    form = NumberOfTicketForm(request.POST or None, instance=ticket)
+    form = NumberOfTicketForm(
+        flight_id=ticket.flight.pk, data=request.POST or None, instance=ticket)
 
     if request.method == 'POST':
         if form.is_valid():
-            # TODO: check ticket cost is available
             form.save()
             return redirect('manage_flight', flight_id=ticket.flight.pk)
 
@@ -132,6 +133,13 @@ def edit_ticket_class(request, ticket_class_id):
 
 def delete_ticket_class(request, ticket_class_id):
     ticket = NumberOfTicket.objects.get(pk=ticket_class_id)
-    ticket.delete()
+
+    # If there are any tickets for this class, do not delete and send error message
+    if Ticket.objects.filter(
+            ticket_class=ticket.ticket_class.id, flight=ticket.flight.pk).exists():
+        messages.error(request, 'Cannot delete ticket class. There are customer tickets for this class.')
+        print('hi')
+    else:
+        ticket.delete()
 
     return redirect('manage_flight', flight_id=ticket.flight.pk)
