@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from models.models import Flight, NumberOfTicket, TicketCost
+from models.models import Flight, NumberOfTicket, TicketCost, IntermediateAirport
 from django.contrib.auth.decorators import login_required
 
 
@@ -24,6 +24,7 @@ def home_page(request):
 
 def flight_detail(request, flight_id):
     flight: Flight = Flight.objects.get(pk=flight_id)
+    intermediate_airports = IntermediateAirport.objects.filter(flight__pk=flight_id)
 
     ticket_details = NumberOfTicket.objects.filter(flight__pk=flight_id)
     for i in range(len(ticket_details)):
@@ -43,6 +44,7 @@ def flight_detail(request, flight_id):
 
     return render(request, 'flights/flight_detail.html', {
         'flight': flight,
+        'intermediate_airports': intermediate_airports,
         'ticket_details': ticket_details,
     })
 
@@ -63,6 +65,7 @@ def book_flight(request):
             obj = form.save(commit=False)
             # TODO: Check if ticket seat is available
             obj.user = request.user
+            obj.set_cost()
             obj.save()
             return render(request, 'flights/book_success.html')
 

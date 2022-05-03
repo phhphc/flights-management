@@ -16,6 +16,7 @@
             <th>Tên hành khách</th>
             <th>Số Điện Thoại</th>
             <th>CMND/CCCD</th>
+            <th>Giá vé</th>
             <th>Trạng Thái</th>
         </tr>
 
@@ -27,6 +28,7 @@
             <th>{{t.customer_name }}</th>
             <th>{{t.customer_phone }}</th>
             <th>{{t.customer_id_card }}</th>
+            <th>{{t.cost }}</th>
             <th>{{t.str_status }}</th>
             <th><a href="{% url 'edit_ticket_employee' t.id %}">Edit</a></th>
             <th><a href="{% url 'delete_ticket_employee' t.id %}">Delete</a></th>

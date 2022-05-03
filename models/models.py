@@ -31,7 +31,7 @@ class TicketCost(models.Model):
         Airport, on_delete=models.RESTRICT, related_name='tk_dst_airport', )
     src_airport = models.ForeignKey(
         Airport, on_delete=models.RESTRICT, related_name='tk_src_airport')
-    cost = models.DecimalField(decimal_places=3, max_digits=10)
+    cost = models.DecimalField(decimal_places=0, max_digits=12)
 
     class Meta:
         unique_together = (('ticket_class', 'dst_airport', 'src_airport'),)
@@ -50,6 +50,20 @@ class Flight(models.Model):
 
     def __str__(self):
         return 'CB%06X' % self.id
+
+    @property
+    def revenue(self):
+        return self.ticket_set.filter(status=3).aggregate(models.Sum('cost'))['cost__sum'] or 0
+
+    @property
+    def ticket_count(self):
+        return self.numberofticket_set.aggregate(models.Sum('quantity'))['quantity__sum'] or 0
+
+    @property
+    def ticket_ratio(self):
+        if self.ticket_count:
+            return self.ticket_set.filter(status=3).count() / self.ticket_count
+        return None
 
 
 class NumberOfTicket(models.Model):
@@ -71,6 +85,7 @@ class IntermediateAirport(models.Model):
 
     class Meta:
         unique_together = (('flight', 'airport'),)
+        ordering = ['sequence']
 
 
 class Ticket(models.Model):
@@ -81,6 +96,7 @@ class Ticket(models.Model):
     customer_name = models.CharField(max_length=100)
     customer_id_card = models.CharField(max_length=20)
     customer_phone = models.CharField(max_length=20)
+    cost = models.DecimalField(decimal_places=0, max_digits=12)
     status = models.IntegerField(choices=STATUS_LIST.choices, default=1)
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     employee_paid = models.ForeignKey(
@@ -92,3 +108,9 @@ class Ticket(models.Model):
     @property
     def str_status(self):
         return self.STATUS_LIST(self.status).label
+
+    def set_cost(self):
+        self.cost = TicketCost.objects.get(
+            ticket_class=self.ticket_class,
+            dst_airport=self.flight.dst_airport,
+            src_airport=self.flight.src_airport).cost

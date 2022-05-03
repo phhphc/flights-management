@@ -15,6 +15,29 @@
     <div>duration: {{flight.duration}}</div>
 </div>
 
+<br>
+
+<div>
+    <table>
+        <tr>
+            <th>Số thứ tự</th>
+            <th>Sân bay trung gian</th>
+            <th>Thời gian dừng</th>
+            <th>Ghi chú</th>
+        </tr>
+        {% for a in intermediate_airports %}
+        <tr>
+            <th>{{a.sequence}}</th>
+            <th>{{a.airport.name}}</th>
+            <th>{{a.stop_time}}</th>
+            <th>{{a.notes}}</th>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<br>
+
 <div>
     <h2>ticket cost</h2>
 

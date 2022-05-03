@@ -18,6 +18,7 @@ def add_ticket(request):
     if request.method == 'POST':
         if form.is_valid():
             obj = form.save(commit=False)
+            obj.set_cost()
             obj.status = 2
             obj.save()
             return redirect('manage_ticket_home')

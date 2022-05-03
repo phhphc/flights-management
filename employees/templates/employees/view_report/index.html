@@ -1,1 +1,64 @@
-this is report dashboard
+{% extends 'base.html' %}}
+
+{% block head %}
+<title>Report </title>
+{% endblock %}
+
+{% block content %}
+<h1>----------- This is Report --------------</h1>
+
+<div>
+    <form action="" method="get">
+        {{ form.as_p }}
+        <input type="submit" value="Get Report">
+    </form>
+</div>
+
+<div>
+    <h2>Báo cáo doanh thu bán vé các chuyến bay tháng {{month}} năm {{year}}</h2>
+    <table>
+        <tr>
+            <th>STT</th>
+            <th>Mã Chuyến bay</th>
+            <th>Số Vé</th>
+            <th>Tỉ lệ</th>
+            <th>Doanh Thu</th>
+        </tr>
+
+        {% for f in month_flights %}
+        <tr>
+            <th></th>
+            <th>{{f }}</th>
+            <th>{{f.ticket_count }}</th>
+            <th>{{f.ticket_ratio }}</th>
+            <th>{{f.revenue }}</th>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<div>
+    <h2>Báo cáo doanh thu năm {{year}}</h2>
+    <table>
+        <tr>
+            <th>STT</th>
+            <th>Tháng</th>
+            <th>Số chuyến bay</th>
+            <th>Doanh Thu</th>
+            <th>Tỉ lệ</th>
+        </tr>
+
+        {% for m in year_month_report %}
+        <tr>
+            <th></th>
+            <th>{{ m.month }}</th>
+            <th>{{m.flight_count }}</th>
+            <th>{{m.revenue }}</th>
+            <th>{{m.revenue }}</th>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<h1>----------- This is Report --------------</h1>
+{% endblock content %}
