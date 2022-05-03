@@ -15,11 +15,13 @@ def home_page(request):
 
 def add_ticket(request):
     form = TicketForm(request.POST or None)
+    # TODO: check if ticket cost exists
     if request.method == 'POST':
         if form.is_valid():
             obj = form.save(commit=False)
             obj.set_cost()
             obj.status = 2
+            obj.employee_paid = request.user
             obj.save()
             return redirect('manage_ticket_home')
 
