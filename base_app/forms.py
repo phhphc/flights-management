@@ -1,11 +1,26 @@
 from django.forms import ModelForm, ValidationError
-from models.models import Flight, NumberOfTicket, TicketCost, IntermediateAirport
+
+from .models import *
+
+
+class TicketForm(ModelForm):
+    class Meta:
+        model = Ticket
+        fields = ['flight', 'ticket_class', 'customer_name',
+                  'customer_id_card', 'customer_phone']
 
 
 class FlightForm(ModelForm):
     class Meta:
         model = Flight
         fields = '__all__'
+
+
+class IntermediateAirportForm(ModelForm):
+    class Meta:
+        model = IntermediateAirport
+        fields = '__all__'
+        exclude = ['flight']
 
 
 class NumberOfTicketForm(ModelForm):
@@ -36,17 +51,11 @@ class NumberOfTicketForm(ModelForm):
             raise ValidationError({
                 'ticket_class': [f'Ticket cost is not available for this ticket class from {flight.src_airport} to {flight.dst_airport}'],
             })
-            
+
         # check if quantity of ticket is bigger than customer's tickets
-        customer_tickets_count = flight.ticket_set.filter(ticket_class=self.data['ticket_class']).count()
+        customer_tickets_count = flight.ticket_set.filter(
+            ticket_class=self.data['ticket_class']).count()
         if int(self.data['quantity']) < customer_tickets_count:
             raise ValidationError({
                 'quantity': [f'There are {customer_tickets_count} customer\'s tickets of this ticket class'],
             })
-
-
-class IntermediateAirportForm(ModelForm):
-    class Meta:
-        model = IntermediateAirport
-        fields = '__all__'
-        exclude = ['flight']

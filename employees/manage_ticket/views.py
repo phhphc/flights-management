@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from models.models import Ticket
 
-from .forms import *
+from base_app.models import Ticket
+from base_app.forms import TicketForm
 
 
 def home_page(request):

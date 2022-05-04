@@ -1,9 +1,7 @@
-from pyexpat import model
-from attr import fields
 from django.forms import ModelForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from models.models import CustomUser
+from base_app.models import CustomUser
 
 
 class RegisterForm(UserCreationForm):

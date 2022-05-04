@@ -1,7 +1,6 @@
 from django.shortcuts import render
-from models.models import Flight
+from base_app.models import Flight
 from datetime import date
-
 
 from .forms import *
 

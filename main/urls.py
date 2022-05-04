@@ -1,4 +1,4 @@
-"""qlcb URL Configuration
+"""flights-management URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.0/topics/http/urls/
@@ -20,5 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
     path('employee/', include('employees.urls')),
-    path('', include('flights.urls')),
+    path('', include('customers.urls')),
 ]

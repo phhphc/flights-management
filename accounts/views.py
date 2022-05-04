@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
-from models.models import Ticket
+from base_app.models import Ticket
 
 
 from .forms import *
@@ -63,4 +63,4 @@ def register_page(request):
 def logout_page(request):
     logout(request)
     messages.success(request, "Logged out successfully!")
-    return redirect('login')
+    return redirect('home')

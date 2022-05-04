@@ -1,9 +1,8 @@
 from django.shortcuts import render
-from models.models import Flight, NumberOfTicket, TicketCost, IntermediateAirport
 from django.contrib.auth.decorators import login_required
 
-
-from .forms import *
+from base_app.models import Flight, NumberOfTicket, TicketCost, IntermediateAirport, Ticket
+from base_app.forms import TicketForm
 
 
 def home_page(request):
@@ -17,7 +16,7 @@ def home_page(request):
         flights[i].available_seats = total_seats - tickets.count()
         flights[i].booked_seats = tickets.filter(status=1).count()
 
-    return render(request, 'flights/home.html', {
+    return render(request, 'customers/home.html', {
         'flights': flights
     })
 
@@ -42,7 +41,7 @@ def flight_detail(request, flight_id):
 
         ticket_details[i].available_seats = ticket_details[i].quantity - tickets.count()
 
-    return render(request, 'flights/flight_detail.html', {
+    return render(request, 'customers/flight_detail.html', {
         'flight': flight,
         'intermediate_airports': intermediate_airports,
         'ticket_details': ticket_details,
@@ -52,7 +51,7 @@ def flight_detail(request, flight_id):
 @login_required(login_url='login')
 def book_flight(request):
     customer = request.user.customuser
-    form = BookTicketForm(request.POST or None, initial={
+    form = TicketForm(request.POST or None, initial={
         'flight': request.GET.get('flight'),
         'ticket_class': request.GET.get('ticket_class'),
         'customer_name': customer.name,
@@ -67,8 +66,8 @@ def book_flight(request):
             obj.user = request.user
             obj.set_cost()
             obj.save()
-            return render(request, 'flights/book_success.html')
+            return render(request, 'customers/book_success.html')
 
-    return render(request, 'flights/book_flight.html', {
+    return render(request, 'customers/book_flight.html', {
         'form': form,
     })

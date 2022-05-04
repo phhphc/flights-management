@@ -1,4 +1,3 @@
-from secrets import choice
 from django import forms
 from datetime import date
 

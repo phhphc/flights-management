@@ -1,8 +1,8 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect
-from models.models import Ticket
 
-from .forms import *
+from base_app.models import Ticket, Flight, IntermediateAirport, NumberOfTicket
+from base_app.forms import FlightForm, IntermediateAirportForm, NumberOfTicketForm
 
 
 def home_page(request):
