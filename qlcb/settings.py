@@ -34,6 +34,7 @@ DEBUG = env('DEBUG') == 'True'
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
+    'totam-consequuntur-reiciendis.herokuapp.com',
 ]
 
 
