@@ -99,7 +99,7 @@ def delete_intermediate_airport(request, intermediate_airport_id):
     return redirect('manage_flight', flight_id=airport.flight.pk)
 
 
-def add_ticket_class(request, flight_id):
+def add_flight_ticket_class(request, flight_id):
     form = NumberOfTicketForm(flight_id=flight_id, data=request.POST or None)
 
     if request.method == 'POST':
@@ -109,13 +109,13 @@ def add_ticket_class(request, flight_id):
             obj.save()
             return redirect('manage_flight', flight_id=flight_id)
 
-    return render(request, 'employees/manage_flight/add_ticket_class.html', {
+    return render(request, 'employees/manage_flight/add_flight_ticket_class.html', {
         'form': form,
         'flight_id': flight_id,
     })
 
 
-def edit_ticket_class(request, ticket_class_id):
+def edit_flight_ticket_class(request, ticket_class_id):
     ticket = NumberOfTicket.objects.get(pk=ticket_class_id)
     form = NumberOfTicketForm(
         flight_id=ticket.flight.pk, data=request.POST or None, instance=ticket)
@@ -125,13 +125,13 @@ def edit_ticket_class(request, ticket_class_id):
             form.save()
             return redirect('manage_flight', flight_id=ticket.flight.pk)
 
-    return render(request, 'employees/manage_flight/edit_ticket_class.html', {
+    return render(request, 'employees/manage_flight/edit_flight_ticket_class.html', {
         'form': form,
         'flight_id': ticket.flight.pk,
     })
 
 
-def delete_ticket_class(request, ticket_class_id):
+def delete_flight_ticket_class(request, ticket_class_id):
     ticket = NumberOfTicket.objects.get(pk=ticket_class_id)
 
     # If there are any tickets for this class, do not delete and send error message

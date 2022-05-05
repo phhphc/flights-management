@@ -1,0 +1,19 @@
+{% extends 'base.html' %}}
+
+{% block head %}
+<title>Add Ticket Cost</title>
+{% endblock %}
+
+{% block content %}
+<h1>----------- This is Add ticket Cost page--------------</h1>
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form }}
+
+    {{ form.errors }}
+    <input type="submit" value="Add Ticket Cost">
+</form>
+
+<h1>----------- This is Add ticket Cost page--------------</h1>
+{% endblock content %}

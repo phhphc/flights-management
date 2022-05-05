@@ -1,0 +1,35 @@
+{% extends 'base.html' %}}
+
+{% block head %}
+<title>Manage Airport </title>
+{% endblock %}
+
+{% block content %}
+<h1>----------- This is Manage Airport --------------</h1>
+
+<div>
+    <table>
+        <tr>
+            <th>Mã Sân Bay</th>
+            <th>Tên Sân Bay</th>
+        </tr>
+
+        {% for a in airports %}
+        <tr>
+            <th>{{a.code }}</th>
+            <th>{{a.name }}</th>
+            <th><a href="{% url 'edit_airport' a.id %}">Edit</a></th>
+            <th><a href="{% url 'delete_airport' a.id %}">Delete</a></th>
+        </tr>
+        {% endfor %}
+
+    </table>
+</div>
+
+
+<div>
+    <a href="{% url 'add_airport' %}">Add Airport</a>
+</div>
+
+<h1>----------- This is Manage Airport --------------</h1>
+{% endblock content %}

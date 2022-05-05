@@ -10,6 +10,23 @@ class TicketForm(ModelForm):
                   'customer_id_card', 'customer_phone']
 
 
+class TicketCostForm(ModelForm):
+    class Meta:
+        model = TicketCost
+        fields = '__all__'
+
+
+class AirportForm(ModelForm):
+    class Meta:
+        model = Airport
+        fields = '__all__'
+        
+class TicketClassForm(ModelForm):
+    class Meta:
+        model = TicketClass
+        fields = '__all__'
+
+
 class FlightForm(ModelForm):
     class Meta:
         model = Flight

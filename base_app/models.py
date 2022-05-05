@@ -1,3 +1,4 @@
+from enum import unique
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -11,7 +12,7 @@ class CustomUser(models.Model):
 
 
 class Airport(models.Model):
-    id = models.CharField(max_length=10, primary_key=True)
+    code = models.CharField(max_length=10, unique=False)
     name = models.CharField(max_length=100)
 
     def __str__(self):
@@ -26,11 +27,11 @@ class TicketClass(models.Model):
 
 
 class TicketCost(models.Model):
-    ticket_class = models.ForeignKey(TicketClass, on_delete=models.RESTRICT)
-    dst_airport = models.ForeignKey(
-        Airport, on_delete=models.RESTRICT, related_name='tk_dst_airport', )
     src_airport = models.ForeignKey(
         Airport, on_delete=models.RESTRICT, related_name='tk_src_airport')
+    dst_airport = models.ForeignKey(
+        Airport, on_delete=models.RESTRICT, related_name='tk_dst_airport', )
+    ticket_class = models.ForeignKey(TicketClass, on_delete=models.RESTRICT)
     cost = models.DecimalField(decimal_places=0, max_digits=12)
 
     class Meta:
