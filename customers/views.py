@@ -62,7 +62,6 @@ def book_flight(request):
     if request.method == 'POST':
         if form.is_valid():
             obj = form.save(commit=False)
-            # TODO: Check if ticket seat is available
             obj.user = request.user
             obj.set_cost()
             obj.save()
@@ -71,3 +70,20 @@ def book_flight(request):
     return render(request, 'customers/book_flight.html', {
         'form': form,
     })
+
+
+@login_required(login_url='login')
+def delete_book_flight(request, ticket_id):
+    ticket = Ticket.objects.get(pk=ticket_id)
+    
+    # TODO: check time
+    
+    # TODO: FE hide delete link if status is not booked
+  
+    # not response if ticket status is not booked
+    # not response if the user is not the owner of the ticket
+    # because delete link will not be shown in theses cases
+    if ticket.status == 1 and ticket.user == request.user:
+        ticket.delete()
+
+    return render(request, 'customers/delete_book_success.html')

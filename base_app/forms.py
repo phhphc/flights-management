@@ -1,13 +1,7 @@
+from genericpath import exists
 from django.forms import ModelForm, ValidationError
 
 from .models import *
-
-
-class TicketForm(ModelForm):
-    class Meta:
-        model = Ticket
-        fields = ['flight', 'ticket_class', 'customer_name',
-                  'customer_id_card', 'customer_phone']
 
 
 class TicketCostForm(ModelForm):
@@ -20,7 +14,8 @@ class AirportForm(ModelForm):
     class Meta:
         model = Airport
         fields = '__all__'
-        
+
+
 class TicketClassForm(ModelForm):
     class Meta:
         model = TicketClass
@@ -76,3 +71,25 @@ class NumberOfTicketForm(ModelForm):
             raise ValidationError({
                 'quantity': [f'There are {customer_tickets_count} customer\'s tickets of this ticket class'],
             })
+
+
+class TicketForm(ModelForm):
+    class Meta:
+        model = Ticket
+        fields = ['flight', 'ticket_class', 'customer_name',
+                  'customer_id_card', 'customer_phone']
+
+
+    def clean(self):
+        
+        # TODO: check if the ticket class is existed
+        
+        # check if available ticket is enough
+        total_ticket = NumberOfTicket.objects.get(flight__pk=self.data['flight'], ticket_class=self.data['ticket_class']).quantity
+        exists_ticket_count = Ticket.objects.filter(flight=self.data['flight'], ticket_class=self.data['ticket_class']).count()
+        if total_ticket <= exists_ticket_count:
+            raise ValidationError({
+                'ticket_class': [f'No tickets of this ticket class on this flight left !'],
+            })
+            
+        # TODO: if new ticket is a booked ticket, check if time is `one` day earlier than the flight's departure time

@@ -52,6 +52,7 @@
             <th>{{t.customer_phone}}</th>
             <th>{{t.cost}}</th>
             <th>{{t.str_status}}</th>
+            <th><a href="{% url 'delete_book_flight' t.id %}">Cancel</a></th>
         </tr>
         {% endfor %}
     </table>
