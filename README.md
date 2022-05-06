@@ -1,7 +1,7 @@
 # Flight Management App
 
 ## Install and Run
-```sh
+```console
 # install requirements
 pip install -r requirements.txt
 
