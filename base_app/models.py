@@ -115,3 +115,12 @@ class Ticket(models.Model):
             ticket_class=self.ticket_class,
             dst_airport=self.flight.dst_airport,
             src_airport=self.flight.src_airport).cost
+
+
+class Regulations(models.Model):
+    flight_time_min = models.DurationField()
+    intermediate_airport_max = models.PositiveSmallIntegerField()
+    intermediate_airport_time_min = models.DurationField()
+    intermediate_airport_time_max = models.DurationField()
+    book_ticket_before_min = models.DurationField()
+    cancel_ticket_before_min = models.DurationField()

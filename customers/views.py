@@ -99,13 +99,12 @@ def delete_book_flight(request, ticket_id):
     ticket = Ticket.objects.get(pk=ticket_id)
     
     # TODO: check time
-    
-    # TODO: FE hide delete link if status is not booked
   
-    # not response if ticket status is not booked
     # not response if the user is not the owner of the ticket
-    # because delete link will not be shown in theses cases
-    if ticket.status == 1 and ticket.user == request.user:
+    # because delete link will only be visible if the user is the owner
+    if ticket.status != 1:
+        messages.error(request, "You can only delete booked tickets!")
+    elif ticket.user == request.user:
         messages.success(request, "Ticket was deleted!")
         ticket.delete()
 

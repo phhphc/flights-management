@@ -26,7 +26,6 @@ def add_airport(request):
 
 
 def edit_airport(request, airport_id):
-    # TODO: edit airport_id becomes new_airport
     airport = Airport.objects.get(id=airport_id)
     form = AirportForm(request.POST or None, instance=airport)
     if request.method == 'POST':

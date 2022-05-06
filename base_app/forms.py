@@ -35,6 +35,12 @@ class FlightForm(ModelForm):
         fields = '__all__'
 
 
+class RegulationsForm(ModelForm):
+    class Meta:
+        model = Regulations
+        fields = '__all__'
+
+
 class IntermediateAirportForm(ModelForm):
     class Meta:
         model = IntermediateAirport

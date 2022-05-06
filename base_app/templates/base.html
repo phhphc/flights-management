@@ -9,15 +9,29 @@
     <!--  -->
     <!--  -->
     <style>
-        a + a {
+        a+a {
             margin-left: 20px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        th {
+            padding: 5px;
         }
     </style>
     <!--  -->
     <!--  -->
 
     {% block head %}
-    
+
     {% endblock %}
 </head>
 
@@ -26,7 +40,7 @@
     {% include 'navbar.html' %}
 
     {% block content %}
-    
+
     {% endblock %}
 
 </body>

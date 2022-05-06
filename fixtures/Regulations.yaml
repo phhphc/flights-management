@@ -1,0 +1,9 @@
+- model: base_app.regulations
+  pk: 1
+  fields:
+    flight_time_min: 01:30:00
+    intermediate_airport_max: 2
+    intermediate_airport_time_min: 01:00:00
+    intermediate_airport_time_max: 05:00:00
+    book_ticket_before_min: 1 00:00:00
+    cancel_ticket_before_min: 3 00:00:00

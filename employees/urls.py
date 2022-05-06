@@ -10,5 +10,6 @@ urlpatterns = [
     path('manage-ticket-class/', include('employees.manage_ticket_class.urls')),
     path('manage-flight/', include('employees.manage_flight.urls')),
     path('manage-ticket/', include('employees.manage_ticket.urls')),
+    path('manage-regulations/', include('employees.manage_regulations.urls')),
     path('view-report/', include('employees.view_report.urls')),
 ]

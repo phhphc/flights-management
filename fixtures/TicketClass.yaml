@@ -1,0 +1,8 @@
+- model: base_app.ticketclass
+  pk: 1
+  fields:
+    name: VIP
+- model: base_app.ticketclass
+  pk: 2
+  fields:
+    name: Popular

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}}
+
+{% block head %}
+<title>Manage Regulation </title>
+{% endblock %}
+
+{% block content %}
+<h1>----------- This is Manage Regulation Pages --------------</h1>
+
+<div>
+    <table>
+        <tr>
+            <th>Thời gian bay tối thiểu</th>
+            <th>Số sân bay trung gian tối đa</th>
+            <th>Thời gian dừng tối thiểu tại san bay trung gian</th>
+            <th>Thời gian dừng tối đa tại san bay trung gian</th>
+            <th>Thời gian chậm nhất khi đặt vé</th>
+            <th>Thời gian chậm nhất khi hủy đặt vé</th>
+        </tr>
+
+
+        <tr>
+            <th>{{regulations.flight_time_min }}</th>
+            <th>{{regulations.intermediate_airport_max }}</th>
+            <th>{{regulations.intermediate_airport_time_min }}</th>
+            <th>{{regulations.intermediate_airport_time_max }}</th>
+            <th>{{regulations.book_ticket_before_min }}</th>
+            <th>{{regulations.cancel_ticket_before_min }}</th>
+        </tr>
+        
+        
+    </table>
+</div>
+
+<div>
+    <a href="{% url 'edit_regulations' %}">Edit</a>
+</div>
+
+<h1>----------- This is Manage Regulation Pages --------------</h1>
+{% endblock content %}
