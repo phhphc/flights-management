@@ -11,7 +11,7 @@
     <h2>Flight Name: {{flight}}</h2>
     <div>src airport: {{flight.src_airport}}</div>
     <div>dst airport: {{flight.dst_airport}}</div>
-    <div>time: {{flight.flight_time}}</div>
+    <div>time: {{flight.departure_time}}</div>
     <div>duration: {{flight.duration}}</div>
     <a href={% url 'edit_flight' flight.id %}>Edit</a>
 </div>
@@ -36,16 +36,14 @@
         </tr>
         {% for a in intermediate_airports %}
         <tr>
-            <th>{{a.sequence}}</th>
+            <th>Use CSS</th>
             <th>{{a.airport.name}}</th>
             <th>{{a.stop_time}}</th>
             <th>{{a.notes}}</th>
-            <th><a href={% url 'edit_intermediate_airport' a.id %}>Edit</a></th>
-            <th><a href={% url 'delete_intermediate_airport' a.id %}>Delete</a></th>
         </tr>
         {% endfor %}
     </table>
-    <a href={% url 'add_intermediate_airport' flight.id %}>Add  Intermadiate Airport</a>
+    <a href={% url 'update_intermediate_airport' flight.id %}>Update Intermadiate Airport</a>
 </div>
 
 <br>

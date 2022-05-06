@@ -8,6 +8,12 @@
 <h1>----------- This is Manage Ticket Dashboard --------------</h1>
 
 <div>
+    {% for m in messages %}
+    <p id="messages">{{m}}</p>
+    {% endfor %}
+</div>
+
+<div>
     <table>
         <tr>
             <th>Mã Vé</th>

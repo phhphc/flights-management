@@ -1,8 +1,10 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect
+from django.forms import inlineformset_factory
 
-from base_app.models import Ticket, Flight, IntermediateAirport, NumberOfTicket
-from base_app.forms import FlightForm, IntermediateAirportForm, NumberOfTicketForm
+from base_app.models import Ticket, Flight, IntermediateAirport, NumberOfTicket, Regulations
+from base_app.forms import FlightForm, NumberOfTicketForm
+from base_app.formsets import BaseIntermediateAirportFormSet
 
 
 def home_page(request):
@@ -16,7 +18,7 @@ def home_page(request):
 def manage_flight(request, flight_id):
     flight = Flight.objects.get(pk=flight_id)
     intermediate_airports = IntermediateAirport.objects.filter(
-        flight=flight).order_by('sequence')
+        flight=flight)
     tickets = NumberOfTicket.objects.filter(flight__pk=flight_id)
 
     return render(request, 'employees/manage_flight/manage_flight.html', {
@@ -61,42 +63,29 @@ def delete_flight(request, flight_id):
     return redirect('employee_home')
 
 
-def add_intermediate_airport(request, flight_id):
-    form = IntermediateAirportForm(request.POST or None)
+def update_intermediate_airport(request, flight_id):
+    intermediate_airport_max = Regulations.objects.get(
+        pk=1).intermediate_airport_max
+
+    IntermediateAirportFormSet = inlineformset_factory(
+        Flight, IntermediateAirport,
+        fields=['airport', 'stop_time', 'notes'],
+        formset=BaseIntermediateAirportFormSet,
+        max_num=intermediate_airport_max,
+        validate_max=True)
+
+    flight = Flight.objects.get(pk=flight_id)
+    formset = IntermediateAirportFormSet(request.POST or None, instance=flight)
 
     if request.method == 'POST':
-        if form.is_valid():
-            obj = form.save(commit=False)
-            obj.flight = Flight.objects.get(pk=flight_id)
-            obj.save()
+        if formset.is_valid():
+            formset.save()
             return redirect('manage_flight', flight_id=flight_id)
 
-    return render(request, 'employees/manage_flight/add_intermediate_aitport.html', {
-        'form': form,
+    return render(request, 'employees/manage_flight/update_intermediate_aitport.html', {
+        'formset': formset,
         'flight_id': flight_id,
     })
-
-
-def edit_intermediate_airport(request, intermediate_airport_id):
-    airport = IntermediateAirport.objects.get(pk=intermediate_airport_id)
-    form = IntermediateAirportForm(request.POST or None, instance=airport)
-
-    if request.method == 'POST':
-        if form.is_valid():
-            form.save()
-            return redirect('manage_flight', flight_id=airport.flight.pk)
-
-    return render(request, 'employees/manage_flight/edit_intermediate_airport.html', {
-        'form': form,
-        'flight_id': airport.flight.pk,
-    })
-
-
-def delete_intermediate_airport(request, intermediate_airport_id):
-    airport = IntermediateAirport.objects.get(pk=intermediate_airport_id)
-    airport.delete()
-
-    return redirect('manage_flight', flight_id=airport.flight.pk)
 
 
 def add_flight_ticket_class(request, flight_id):
@@ -104,9 +93,7 @@ def add_flight_ticket_class(request, flight_id):
 
     if request.method == 'POST':
         if form.is_valid():
-            obj = form.save(commit=False)
-            obj.flight = Flight.objects.get(pk=flight_id)
-            obj.save()
+            form.save()
             return redirect('manage_flight', flight_id=flight_id)
 
     return render(request, 'employees/manage_flight/add_flight_ticket_class.html', {
@@ -137,7 +124,8 @@ def delete_flight_ticket_class(request, ticket_class_id):
     # If there are any tickets for this class, do not delete and send error message
     if Ticket.objects.filter(
             ticket_class=ticket.ticket_class.id, flight=ticket.flight.pk).exists():
-        messages.error(request, 'Cannot delete ticket class. There are customer tickets for this class.')
+        messages.error(
+            request, 'Cannot delete ticket class. There are customer tickets for this class.')
         print('hi')
     else:
         ticket.delete()

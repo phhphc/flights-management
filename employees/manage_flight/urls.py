@@ -11,9 +11,7 @@ urlpatterns = [
     path('edit-flight/<int:flight_id>/', edit_flight, name='edit_flight'),
     path('delete-flight/<int:flight_id>/', delete_flight, name='delete_flight'),
     
-    path('add-intermediate-airport/<int:flight_id>/', add_intermediate_airport, name='add_intermediate_airport'),
-    path('edit-intermediate-airport/<int:intermediate_airport_id>/', edit_intermediate_airport, name='edit_intermediate_airport'),
-    path('delete-intermediate-airport/<int:intermediate_airport_id>/', delete_intermediate_airport, name='delete_intermediate_airport'),
+    path('update-intermediate-airport/<int:flight_id>/', update_intermediate_airport, name='update_intermediate_airport'),
     
     path('add-ticket-class/<int:flight_id>/', add_flight_ticket_class, name='add_flight_ticket_class'),
     path('edit-ticket-class/<int:ticket_class_id>/', edit_flight_ticket_class, name='edit_flight_ticket_class'),

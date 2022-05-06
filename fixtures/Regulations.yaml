@@ -1,7 +1,7 @@
 - model: base_app.regulations
   pk: 1
   fields:
-    flight_time_min: 01:30:00
+    flight_duration_min: 01:30:00
     intermediate_airport_max: 2
     intermediate_airport_time_min: 01:00:00
     intermediate_airport_time_max: 05:00:00

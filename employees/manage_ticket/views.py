@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 
@@ -14,15 +15,12 @@ def home_page(request):
 
 
 def add_ticket(request):
-    form = TicketForm(request.POST or None)
-    # TODO: check if ticket cost exists
+    form = TicketForm(data=request.POST or None,
+                      employee=request.user)
     if request.method == 'POST':
         if form.is_valid():
-            obj = form.save(commit=False)
-            obj.set_cost()
-            obj.status = 2
-            obj.employee_paid = request.user
-            obj.save()
+            form.save()
+            messages.success(request, 'Ticket added')
             return redirect('manage_ticket_home')
 
     return render(request, 'employees/manage_ticket/add_ticket.html', {
@@ -33,10 +31,13 @@ def add_ticket(request):
 def edit_ticket(request, ticket_id):
     ticket = Ticket.objects.get(id=ticket_id)
     # TODO: check if ticket.status != 3 (exported)
-    form = TicketForm(request.POST or None, instance=ticket)
+    form = TicketForm(data=request.POST or None, 
+                      instance=ticket,
+                      employee=request.user)
     if request.method == 'POST':
         if form.is_valid():
             form.save()
+            messages.success(request, 'Ticket edited')
             return redirect('manage_ticket_home')
 
     return render(request, 'employees/manage_ticket/edit_ticket.html', {

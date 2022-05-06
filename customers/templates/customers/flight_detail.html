@@ -11,7 +11,7 @@
     <h2>Flight Name: {{flight}}</h2>
     <div>src airport: {{flight.src_airport}}</div>
     <div>dst airport: {{flight.dst_airport}}</div>
-    <div>time: {{flight.flight_time}}</div>
+    <div>departure time: {{flight.departure_time}}</div>
     <div>duration: {{flight.duration}}</div>
 </div>
 
@@ -27,7 +27,7 @@
         </tr>
         {% for a in intermediate_airports %}
         <tr>
-            <th>{{a.sequence}}</th>
+            <th>{{a.id}}</th>
             <th>{{a.airport.name}}</th>
             <th>{{a.stop_time}}</th>
             <th>{{a.notes}}</th>

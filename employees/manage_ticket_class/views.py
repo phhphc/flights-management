@@ -26,7 +26,6 @@ def add_ticket_class(request):
 
 
 def edit_ticket_class(request, ticket_class_id):
-    # TODO: edit ticket_class_id becomes new_ticket_class
     ticket_class = TicketClass.objects.get(id=ticket_class_id)
     form = TicketClassForm(request.POST or None, instance=ticket_class)
     if request.method == 'POST':
