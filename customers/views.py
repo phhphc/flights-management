@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.contrib import messages
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 
 from base_app.models import Flight, NumberOfTicket, TicketCost, IntermediateAirport, Ticket
-from base_app.forms import TicketForm
+from base_app.forms import TicketForm, CustomUserForm
 
 
 def home_page(request):
@@ -46,6 +47,25 @@ def flight_detail(request, flight_id):
         'intermediate_airports': intermediate_airports,
         'ticket_details': ticket_details,
     })
+    
+    
+@login_required(login_url='login')
+def profile_page(request):
+
+    form = CustomUserForm(request.POST or None,
+                          instance=request.user.customuser)
+
+    tickets: list[Ticket] = Ticket.objects.filter(user=request.user.id)
+
+    if (request.method == 'POST'):
+        if (form.is_valid()):
+            form.save()
+            messages.success(request, "Profile was updated!")
+
+    return render(request, 'customers/profile.html', {
+        'form': form,
+        'tickets': tickets,
+    })
 
 
 @login_required(login_url='login')
@@ -65,7 +85,9 @@ def book_flight(request):
             obj.user = request.user
             obj.set_cost()
             obj.save()
-            return render(request, 'customers/book_success.html')
+            
+            messages.success(request, "Ticket was booked!")
+            return redirect('profile')
 
     return render(request, 'customers/book_flight.html', {
         'form': form,
@@ -84,6 +106,7 @@ def delete_book_flight(request, ticket_id):
     # not response if the user is not the owner of the ticket
     # because delete link will not be shown in theses cases
     if ticket.status == 1 and ticket.user == request.user:
+        messages.success(request, "Ticket was deleted!")
         ticket.delete()
 
-    return render(request, 'customers/delete_book_success.html')
+    return redirect('profile')

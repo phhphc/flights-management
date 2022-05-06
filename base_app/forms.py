@@ -4,6 +4,13 @@ from django.forms import ModelForm, ValidationError
 from .models import *
 
 
+class CustomUserForm(ModelForm):
+    class Meta:
+        model = CustomUser
+        fields = '__all__'
+        exclude = ['user']
+
+
 class TicketCostForm(ModelForm):
     class Meta:
         model = TicketCost
@@ -79,17 +86,18 @@ class TicketForm(ModelForm):
         fields = ['flight', 'ticket_class', 'customer_name',
                   'customer_id_card', 'customer_phone']
 
-
     def clean(self):
-        
+
         # TODO: check if the ticket class is existed
-        
+
         # check if available ticket is enough
-        total_ticket = NumberOfTicket.objects.get(flight__pk=self.data['flight'], ticket_class=self.data['ticket_class']).quantity
-        exists_ticket_count = Ticket.objects.filter(flight=self.data['flight'], ticket_class=self.data['ticket_class']).count()
+        total_ticket = NumberOfTicket.objects.get(
+            flight__pk=self.data['flight'], ticket_class=self.data['ticket_class']).quantity
+        exists_ticket_count = Ticket.objects.filter(
+            flight=self.data['flight'], ticket_class=self.data['ticket_class']).count()
         if total_ticket <= exists_ticket_count:
             raise ValidationError({
                 'ticket_class': [f'No tickets of this ticket class on this flight left !'],
             })
-            
+
         # TODO: if new ticket is a booked ticket, check if time is `one` day earlier than the flight's departure time

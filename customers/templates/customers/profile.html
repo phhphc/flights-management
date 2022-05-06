@@ -1,0 +1,62 @@
+{% extends 'base.html' %}}
+
+{% block head %}
+<title>Profile</title>
+{% endblock %}
+
+{% block content %}
+<h1>----------- This is Profile Page --------------</h1>
+
+<div>
+    {% for m in messages %}
+    <p id="messages">{{m}}</p>
+    {% endfor %}
+</div>
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form }}
+
+    {{ user_form }}
+    <input type="submit" value="Update">
+</form>
+
+<br>
+
+<div>
+    <table>
+        <tr>
+            <th>MCB</th>
+            <th>Sân Bay Đi</th>
+            <th>Sân Bay Đến</th>
+            <th>Khởi Hành</th>
+            <th>Thời Gian Bay</th>
+            <th>Loại vé</th>
+            <th>Tên khách hàng</th>
+            <th>CMND/CCCD</th>
+            <th>Điện Thoại</th>
+            <th>Giá vé</th>
+            <th>Trạng thái</th>
+        </tr>
+
+        {% for t in tickets %}
+        <tr>
+            <th>{{ t.flight }}</th>
+            <th>{{ t.flight.src_airport }}</th>
+            <th>{{ t.flight.dst_airport }}</th>
+            <th>{{ t.flight.flight_time }}</th>
+            <th>{{ t.flight.duration }}</th>
+            <th>{{ t.ticket_class.name }}</th>
+            <th>{{t.customer_name}}</th>
+            <th>{{t.customer_id_card}}</th>
+            <th>{{t.customer_phone}}</th>
+            <th>{{t.cost}}</th>
+            <th>{{t.str_status}}</th>
+            <th><a href="{% url 'delete_book_flight' t.id %}">Cancel</a></th>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<h1>----------- This is Profile Page --------------</h1>
+{% endblock content %}

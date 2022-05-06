@@ -8,25 +8,6 @@ from base_app.models import Ticket
 from .forms import *
 
 
-@login_required(login_url='login')
-def profile_page(request):
-
-    form = CustomUserForm(request.POST or None,
-                          instance=request.user.customuser)
-
-    tickets: list[Ticket] = Ticket.objects.filter(user=request.user.id)
-
-    if (request.method == 'POST'):
-        if (form.is_valid()):
-            form.save()
-            messages.success(request, "Profile was updated!")
-
-    return render(request, 'accounts/profile.html', {
-        'form': form,
-        'tickets': tickets,
-    })
-
-
 def login_page(request):
     if request.method == "POST":
         user = authenticate(
