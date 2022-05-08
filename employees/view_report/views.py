@@ -11,11 +11,11 @@ def report_dashboard(request):
     year = request.GET.get('year') or todays_date.year
     month = request.GET.get('month') or todays_date.month
 
-    year_flights = Flight.objects.filter(flight_time__year=year)
+    year_flights = Flight.objects.filter(departure_time__year=year)
 
     year_month_report = []
     for m in range(1, 13):
-        month_flight = year_flights.filter(flight_time__month=m)
+        month_flight = year_flights.filter(departure_time__month=m)
 
         month_total_ticket = sum([f.ticket_count for f in month_flight])
         if month_total_ticket:
@@ -40,6 +40,6 @@ def report_dashboard(request):
         'form': form,
         'year': year,
         'month': month,
-        'month_flights': year_flights.filter(flight_time__month=month),
+        'month_flights': year_flights.filter(departure_time__month=month),
         'year_month_report': year_month_report,
     })
