@@ -37,8 +37,8 @@ def flight_detail(request, flight_id):
     ticket_details = NumberOfTicket.objects.filter(flight__pk=flight_id)
     for i in range(len(ticket_details)):
         ticket_details[i].cost = TicketCost.objects.get(
-            dst_airport__pk=flight.arrival_airport.pk,
-            src_airport__pk=flight.departure_airport.pk,
+            arrival_airport__pk=flight.arrival_airport.pk,
+            departure_airport__pk=flight.departure_airport.pk,
             ticket_class=ticket_details[i].ticket_class).cost
 
         tickets = Ticket.objects.filter(

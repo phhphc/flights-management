@@ -27,9 +27,9 @@ class TicketClass(models.Model):
 
 class TicketCost(models.Model):
     departure_airport = models.ForeignKey(
-        Airport, on_delete=models.RESTRICT, related_name='tk_src_airport')
+        Airport, on_delete=models.RESTRICT, related_name='tk_departure_airport')
     arrival_airport = models.ForeignKey(
-        Airport, on_delete=models.RESTRICT, related_name='tk_dst_airport', )
+        Airport, on_delete=models.RESTRICT, related_name='tk_arrival_airport', )
     ticket_class = models.ForeignKey(TicketClass, on_delete=models.RESTRICT)
     cost = models.DecimalField(decimal_places=0, max_digits=12)
 
