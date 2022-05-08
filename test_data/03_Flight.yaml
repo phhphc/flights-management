@@ -1,0 +1,700 @@
+- model: base_app.flight
+  pk: 1
+  fields:
+    dst_airport: 3
+    src_airport: 10
+    departure_time: 2022-01-07 16:56:24+00:00
+    duration: 06:16:36
+- model: base_app.flight
+  pk: 2
+  fields:
+    dst_airport: 3
+    src_airport: 2
+    departure_time: 2022-10-24 15:24:18+00:00
+    duration: 05:22:55
+- model: base_app.flight
+  pk: 3
+  fields:
+    dst_airport: 8
+    src_airport: 1
+    departure_time: 2022-08-05 19:56:06+00:00
+    duration: 06:24:29
+- model: base_app.flight
+  pk: 4
+  fields:
+    dst_airport: 6
+    src_airport: 4
+    departure_time: 2022-01-25 02:53:46+00:00
+    duration: 05:51:37
+- model: base_app.flight
+  pk: 5
+  fields:
+    dst_airport: 3
+    src_airport: 1
+    departure_time: 2022-01-05 04:27:00+00:00
+    duration: 06:16:18
+- model: base_app.flight
+  pk: 6
+  fields:
+    dst_airport: 5
+    src_airport: 10
+    departure_time: 2022-05-09 19:21:45+00:00
+    duration: 07:13:54
+- model: base_app.flight
+  pk: 7
+  fields:
+    dst_airport: 9
+    src_airport: 6
+    departure_time: 2022-05-08 03:03:03+00:00
+    duration: 06:25:17
+- model: base_app.flight
+  pk: 8
+  fields:
+    dst_airport: 4
+    src_airport: 9
+    departure_time: 2022-12-02 06:24:09+00:00
+    duration: 04:02:12
+- model: base_app.flight
+  pk: 9
+  fields:
+    dst_airport: 3
+    src_airport: 4
+    departure_time: 2022-05-21 20:29:28+00:00
+    duration: 02:36:48
+- model: base_app.flight
+  pk: 10
+  fields:
+    dst_airport: 6
+    src_airport: 7
+    departure_time: 2022-12-18 17:31:50+00:00
+    duration: 05:20:06
+- model: base_app.flight
+  pk: 11
+  fields:
+    dst_airport: 6
+    src_airport: 3
+    departure_time: 2022-01-14 08:19:13+00:00
+    duration: 09:07:14
+- model: base_app.flight
+  pk: 12
+  fields:
+    dst_airport: 7
+    src_airport: 2
+    departure_time: 2022-10-17 08:44:33+00:00
+    duration: 01:53:00
+- model: base_app.flight
+  pk: 13
+  fields:
+    dst_airport: 2
+    src_airport: 4
+    departure_time: 2022-09-20 00:02:59+00:00
+    duration: 01:52:13
+- model: base_app.flight
+  pk: 14
+  fields:
+    dst_airport: 3
+    src_airport: 10
+    departure_time: 2022-10-28 06:21:30+00:00
+    duration: 03:09:31
+- model: base_app.flight
+  pk: 15
+  fields:
+    dst_airport: 8
+    src_airport: 2
+    departure_time: 2022-08-02 01:40:07+00:00
+    duration: 01:33:16
+- model: base_app.flight
+  pk: 16
+  fields:
+    dst_airport: 4
+    src_airport: 2
+    departure_time: 2022-02-21 05:06:16+00:00
+    duration: 09:53:50
+- model: base_app.flight
+  pk: 17
+  fields:
+    dst_airport: 7
+    src_airport: 10
+    departure_time: 2022-04-08 01:06:26+00:00
+    duration: 05:32:53
+- model: base_app.flight
+  pk: 18
+  fields:
+    dst_airport: 1
+    src_airport: 7
+    departure_time: 2022-12-14 19:11:25+00:00
+    duration: 02:10:54
+- model: base_app.flight
+  pk: 19
+  fields:
+    dst_airport: 9
+    src_airport: 7
+    departure_time: 2022-12-14 08:18:11+00:00
+    duration: 09:21:00
+- model: base_app.flight
+  pk: 20
+  fields:
+    dst_airport: 5
+    src_airport: 6
+    departure_time: 2022-01-14 22:12:44+00:00
+    duration: 05:57:17
+- model: base_app.flight
+  pk: 21
+  fields:
+    dst_airport: 6
+    src_airport: 3
+    departure_time: 2022-12-04 09:15:51+00:00
+    duration: 07:46:11
+- model: base_app.flight
+  pk: 22
+  fields:
+    dst_airport: 9
+    src_airport: 10
+    departure_time: 2022-12-28 05:11:42+00:00
+    duration: 01:16:46
+- model: base_app.flight
+  pk: 23
+  fields:
+    dst_airport: 9
+    src_airport: 6
+    departure_time: 2022-04-08 02:55:29+00:00
+    duration: 03:10:27
+- model: base_app.flight
+  pk: 24
+  fields:
+    dst_airport: 7
+    src_airport: 1
+    departure_time: 2022-03-13 16:01:22+00:00
+    duration: 02:57:26
+- model: base_app.flight
+  pk: 25
+  fields:
+    dst_airport: 4
+    src_airport: 6
+    departure_time: 2022-07-17 15:23:25+00:00
+    duration: 02:16:17
+- model: base_app.flight
+  pk: 26
+  fields:
+    dst_airport: 7
+    src_airport: 4
+    departure_time: 2022-10-04 07:27:09+00:00
+    duration: 07:09:55
+- model: base_app.flight
+  pk: 27
+  fields:
+    dst_airport: 1
+    src_airport: 2
+    departure_time: 2022-11-02 19:59:26+00:00
+    duration: 06:01:53
+- model: base_app.flight
+  pk: 28
+  fields:
+    dst_airport: 4
+    src_airport: 8
+    departure_time: 2022-05-23 11:00:30+00:00
+    duration: 09:40:20
+- model: base_app.flight
+  pk: 29
+  fields:
+    dst_airport: 3
+    src_airport: 4
+    departure_time: 2022-11-14 01:19:51+00:00
+    duration: 06:39:39
+- model: base_app.flight
+  pk: 30
+  fields:
+    dst_airport: 9
+    src_airport: 1
+    departure_time: 2022-02-17 19:20:20+00:00
+    duration: 02:17:03
+- model: base_app.flight
+  pk: 31
+  fields:
+    dst_airport: 8
+    src_airport: 9
+    departure_time: 2022-02-24 06:06:47+00:00
+    duration: 04:13:03
+- model: base_app.flight
+  pk: 32
+  fields:
+    dst_airport: 2
+    src_airport: 9
+    departure_time: 2022-08-25 02:00:58+00:00
+    duration: 08:51:00
+- model: base_app.flight
+  pk: 33
+  fields:
+    dst_airport: 9
+    src_airport: 7
+    departure_time: 2022-12-09 19:14:10+00:00
+    duration: 08:17:40
+- model: base_app.flight
+  pk: 34
+  fields:
+    dst_airport: 1
+    src_airport: 5
+    departure_time: 2022-11-27 20:22:25+00:00
+    duration: 04:16:26
+- model: base_app.flight
+  pk: 35
+  fields:
+    dst_airport: 1
+    src_airport: 3
+    departure_time: 2022-01-21 18:50:38+00:00
+    duration: 05:22:28
+- model: base_app.flight
+  pk: 36
+  fields:
+    dst_airport: 1
+    src_airport: 10
+    departure_time: 2022-10-14 00:50:41+00:00
+    duration: 04:47:58
+- model: base_app.flight
+  pk: 37
+  fields:
+    dst_airport: 7
+    src_airport: 3
+    departure_time: 2022-06-20 11:21:14+00:00
+    duration: 08:53:42
+- model: base_app.flight
+  pk: 38
+  fields:
+    dst_airport: 6
+    src_airport: 1
+    departure_time: 2022-05-13 11:30:48+00:00
+    duration: 03:22:08
+- model: base_app.flight
+  pk: 39
+  fields:
+    dst_airport: 8
+    src_airport: 7
+    departure_time: 2022-12-07 13:26:18+00:00
+    duration: 08:01:19
+- model: base_app.flight
+  pk: 40
+  fields:
+    dst_airport: 5
+    src_airport: 10
+    departure_time: 2022-09-25 01:30:45+00:00
+    duration: 09:25:42
+- model: base_app.flight
+  pk: 41
+  fields:
+    dst_airport: 3
+    src_airport: 10
+    departure_time: 2022-09-10 09:15:14+00:00
+    duration: 08:09:47
+- model: base_app.flight
+  pk: 42
+  fields:
+    dst_airport: 3
+    src_airport: 6
+    departure_time: 2022-09-10 19:50:43+00:00
+    duration: 03:01:05
+- model: base_app.flight
+  pk: 43
+  fields:
+    dst_airport: 5
+    src_airport: 1
+    departure_time: 2022-11-07 14:01:51+00:00
+    duration: 08:53:44
+- model: base_app.flight
+  pk: 44
+  fields:
+    dst_airport: 2
+    src_airport: 7
+    departure_time: 2022-11-10 18:17:20+00:00
+    duration: 09:49:53
+- model: base_app.flight
+  pk: 45
+  fields:
+    dst_airport: 1
+    src_airport: 10
+    departure_time: 2022-07-12 20:14:07+00:00
+    duration: 01:09:28
+- model: base_app.flight
+  pk: 46
+  fields:
+    dst_airport: 7
+    src_airport: 6
+    departure_time: 2022-07-13 17:21:24+00:00
+    duration: 06:43:32
+- model: base_app.flight
+  pk: 47
+  fields:
+    dst_airport: 7
+    src_airport: 8
+    departure_time: 2022-06-14 21:09:45+00:00
+    duration: 02:42:09
+- model: base_app.flight
+  pk: 48
+  fields:
+    dst_airport: 10
+    src_airport: 3
+    departure_time: 2022-08-06 15:46:16+00:00
+    duration: 01:35:50
+- model: base_app.flight
+  pk: 49
+  fields:
+    dst_airport: 3
+    src_airport: 10
+    departure_time: 2022-05-25 07:46:52+00:00
+    duration: 07:30:21
+- model: base_app.flight
+  pk: 50
+  fields:
+    dst_airport: 9
+    src_airport: 8
+    departure_time: 2022-04-28 18:02:44+00:00
+    duration: 09:12:13
+- model: base_app.flight
+  pk: 51
+  fields:
+    dst_airport: 9
+    src_airport: 10
+    departure_time: 2022-05-16 09:23:04+00:00
+    duration: 07:10:31
+- model: base_app.flight
+  pk: 52
+  fields:
+    dst_airport: 4
+    src_airport: 2
+    departure_time: 2022-08-23 12:03:40+00:00
+    duration: 03:12:56
+- model: base_app.flight
+  pk: 53
+  fields:
+    dst_airport: 10
+    src_airport: 4
+    departure_time: 2022-06-13 20:03:03+00:00
+    duration: 06:09:27
+- model: base_app.flight
+  pk: 54
+  fields:
+    dst_airport: 3
+    src_airport: 4
+    departure_time: 2022-10-13 16:16:21+00:00
+    duration: 03:36:10
+- model: base_app.flight
+  pk: 55
+  fields:
+    dst_airport: 5
+    src_airport: 10
+    departure_time: 2022-01-05 08:17:05+00:00
+    duration: 08:24:30
+- model: base_app.flight
+  pk: 56
+  fields:
+    dst_airport: 6
+    src_airport: 1
+    departure_time: 2022-05-08 05:00:12+00:00
+    duration: 06:32:37
+- model: base_app.flight
+  pk: 57
+  fields:
+    dst_airport: 3
+    src_airport: 9
+    departure_time: 2022-04-07 13:12:27+00:00
+    duration: 01:44:29
+- model: base_app.flight
+  pk: 58
+  fields:
+    dst_airport: 5
+    src_airport: 1
+    departure_time: 2022-06-21 09:09:22+00:00
+    duration: 05:43:16
+- model: base_app.flight
+  pk: 59
+  fields:
+    dst_airport: 3
+    src_airport: 8
+    departure_time: 2022-03-01 10:29:13+00:00
+    duration: 07:10:55
+- model: base_app.flight
+  pk: 60
+  fields:
+    dst_airport: 2
+    src_airport: 8
+    departure_time: 2022-07-21 00:39:25+00:00
+    duration: 05:28:52
+- model: base_app.flight
+  pk: 61
+  fields:
+    dst_airport: 6
+    src_airport: 4
+    departure_time: 2022-07-09 09:51:18+00:00
+    duration: 09:23:58
+- model: base_app.flight
+  pk: 62
+  fields:
+    dst_airport: 6
+    src_airport: 8
+    departure_time: 2022-01-01 21:26:30+00:00
+    duration: 02:23:02
+- model: base_app.flight
+  pk: 63
+  fields:
+    dst_airport: 10
+    src_airport: 6
+    departure_time: 2022-08-11 15:35:30+00:00
+    duration: 09:02:51
+- model: base_app.flight
+  pk: 64
+  fields:
+    dst_airport: 8
+    src_airport: 10
+    departure_time: 2022-04-14 17:05:41+00:00
+    duration: 03:19:05
+- model: base_app.flight
+  pk: 65
+  fields:
+    dst_airport: 2
+    src_airport: 7
+    departure_time: 2022-07-18 14:05:38+00:00
+    duration: 09:53:42
+- model: base_app.flight
+  pk: 66
+  fields:
+    dst_airport: 2
+    src_airport: 4
+    departure_time: 2022-03-22 03:42:26+00:00
+    duration: 03:32:40
+- model: base_app.flight
+  pk: 67
+  fields:
+    dst_airport: 10
+    src_airport: 6
+    departure_time: 2022-05-20 16:55:24+00:00
+    duration: 06:10:16
+- model: base_app.flight
+  pk: 68
+  fields:
+    dst_airport: 7
+    src_airport: 9
+    departure_time: 2022-06-03 18:32:12+00:00
+    duration: 04:17:25
+- model: base_app.flight
+  pk: 69
+  fields:
+    dst_airport: 3
+    src_airport: 4
+    departure_time: 2022-05-10 03:19:52+00:00
+    duration: 02:20:36
+- model: base_app.flight
+  pk: 70
+  fields:
+    dst_airport: 6
+    src_airport: 8
+    departure_time: 2022-02-06 15:46:23+00:00
+    duration: 09:23:51
+- model: base_app.flight
+  pk: 71
+  fields:
+    dst_airport: 10
+    src_airport: 6
+    departure_time: 2022-07-12 16:47:15+00:00
+    duration: 01:13:49
+- model: base_app.flight
+  pk: 72
+  fields:
+    dst_airport: 4
+    src_airport: 1
+    departure_time: 2022-12-04 12:08:34+00:00
+    duration: 06:49:27
+- model: base_app.flight
+  pk: 73
+  fields:
+    dst_airport: 5
+    src_airport: 9
+    departure_time: 2022-01-08 05:50:42+00:00
+    duration: 09:53:45
+- model: base_app.flight
+  pk: 74
+  fields:
+    dst_airport: 3
+    src_airport: 6
+    departure_time: 2022-11-08 10:52:38+00:00
+    duration: 09:53:26
+- model: base_app.flight
+  pk: 75
+  fields:
+    dst_airport: 10
+    src_airport: 8
+    departure_time: 2022-05-03 08:02:46+00:00
+    duration: 01:50:37
+- model: base_app.flight
+  pk: 76
+  fields:
+    dst_airport: 3
+    src_airport: 8
+    departure_time: 2022-04-12 07:44:26+00:00
+    duration: 06:53:19
+- model: base_app.flight
+  pk: 77
+  fields:
+    dst_airport: 8
+    src_airport: 1
+    departure_time: 2022-08-13 23:43:51+00:00
+    duration: 01:49:52
+- model: base_app.flight
+  pk: 78
+  fields:
+    dst_airport: 2
+    src_airport: 8
+    departure_time: 2022-01-18 16:20:58+00:00
+    duration: 04:57:12
+- model: base_app.flight
+  pk: 79
+  fields:
+    dst_airport: 4
+    src_airport: 2
+    departure_time: 2022-07-04 07:50:22+00:00
+    duration: 01:24:41
+- model: base_app.flight
+  pk: 80
+  fields:
+    dst_airport: 6
+    src_airport: 1
+    departure_time: 2022-04-17 05:47:24+00:00
+    duration: 01:28:27
+- model: base_app.flight
+  pk: 81
+  fields:
+    dst_airport: 3
+    src_airport: 7
+    departure_time: 2022-03-07 11:32:32+00:00
+    duration: 01:01:56
+- model: base_app.flight
+  pk: 82
+  fields:
+    dst_airport: 9
+    src_airport: 10
+    departure_time: 2022-10-22 20:37:14+00:00
+    duration: 01:28:25
+- model: base_app.flight
+  pk: 83
+  fields:
+    dst_airport: 1
+    src_airport: 10
+    departure_time: 2022-08-22 15:07:44+00:00
+    duration: 09:53:25
+- model: base_app.flight
+  pk: 84
+  fields:
+    dst_airport: 7
+    src_airport: 8
+    departure_time: 2022-04-10 13:06:53+00:00
+    duration: 06:41:55
+- model: base_app.flight
+  pk: 85
+  fields:
+    dst_airport: 7
+    src_airport: 6
+    departure_time: 2022-08-11 09:50:03+00:00
+    duration: 07:53:21
+- model: base_app.flight
+  pk: 86
+  fields:
+    dst_airport: 8
+    src_airport: 9
+    departure_time: 2022-11-09 11:20:59+00:00
+    duration: 09:34:00
+- model: base_app.flight
+  pk: 87
+  fields:
+    dst_airport: 3
+    src_airport: 2
+    departure_time: 2022-02-10 17:39:51+00:00
+    duration: 05:19:56
+- model: base_app.flight
+  pk: 88
+  fields:
+    dst_airport: 6
+    src_airport: 1
+    departure_time: 2022-09-03 08:22:01+00:00
+    duration: 02:14:53
+- model: base_app.flight
+  pk: 89
+  fields:
+    dst_airport: 8
+    src_airport: 3
+    departure_time: 2022-02-16 00:10:58+00:00
+    duration: 04:21:10
+- model: base_app.flight
+  pk: 90
+  fields:
+    dst_airport: 10
+    src_airport: 3
+    departure_time: 2022-01-25 06:04:45+00:00
+    duration: 02:06:18
+- model: base_app.flight
+  pk: 91
+  fields:
+    dst_airport: 2
+    src_airport: 7
+    departure_time: 2022-02-26 09:05:49+00:00
+    duration: 07:38:41
+- model: base_app.flight
+  pk: 92
+  fields:
+    dst_airport: 2
+    src_airport: 3
+    departure_time: 2022-12-14 23:17:09+00:00
+    duration: 04:58:13
+- model: base_app.flight
+  pk: 93
+  fields:
+    dst_airport: 9
+    src_airport: 2
+    departure_time: 2022-06-18 23:54:45+00:00
+    duration: 03:15:40
+- model: base_app.flight
+  pk: 94
+  fields:
+    dst_airport: 4
+    src_airport: 8
+    departure_time: 2022-12-17 18:18:52+00:00
+    duration: 04:23:07
+- model: base_app.flight
+  pk: 95
+  fields:
+    dst_airport: 3
+    src_airport: 5
+    departure_time: 2022-06-10 01:31:41+00:00
+    duration: 06:50:28
+- model: base_app.flight
+  pk: 96
+  fields:
+    dst_airport: 5
+    src_airport: 10
+    departure_time: 2022-10-02 01:48:36+00:00
+    duration: 04:09:22
+- model: base_app.flight
+  pk: 97
+  fields:
+    dst_airport: 8
+    src_airport: 7
+    departure_time: 2022-01-09 13:10:56+00:00
+    duration: 02:55:52
+- model: base_app.flight
+  pk: 98
+  fields:
+    dst_airport: 7
+    src_airport: 6
+    departure_time: 2022-09-01 09:02:43+00:00
+    duration: 06:05:48
+- model: base_app.flight
+  pk: 99
+  fields:
+    dst_airport: 7
+    src_airport: 1
+    departure_time: 2022-03-20 19:56:03+00:00
+    duration: 05:51:29
+- model: base_app.flight
+  pk: 100
+  fields:
+    dst_airport: 8
+    src_airport: 1
+    departure_time: 2022-07-21 11:25:52+00:00
+    duration: 08:57:46

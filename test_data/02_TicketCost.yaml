@@ -1,0 +1,1260 @@
+- model: base_app.ticketcost
+  pk: 1
+  fields:
+    src_airport: 1
+    dst_airport: 2
+    ticket_class: 1
+    cost: '138375'
+- model: base_app.ticketcost
+  pk: 2
+  fields:
+    src_airport: 2
+    dst_airport: 1
+    ticket_class: 1
+    cost: '610635'
+- model: base_app.ticketcost
+  pk: 3
+  fields:
+    src_airport: 1
+    dst_airport: 2
+    ticket_class: 2
+    cost: '782747'
+- model: base_app.ticketcost
+  pk: 4
+  fields:
+    src_airport: 2
+    dst_airport: 1
+    ticket_class: 2
+    cost: '1884922'
+- model: base_app.ticketcost
+  pk: 5
+  fields:
+    src_airport: 1
+    dst_airport: 3
+    ticket_class: 1
+    cost: '406483'
+- model: base_app.ticketcost
+  pk: 6
+  fields:
+    src_airport: 3
+    dst_airport: 1
+    ticket_class: 1
+    cost: '604676'
+- model: base_app.ticketcost
+  pk: 7
+  fields:
+    src_airport: 1
+    dst_airport: 3
+    ticket_class: 2
+    cost: '286168'
+- model: base_app.ticketcost
+  pk: 8
+  fields:
+    src_airport: 3
+    dst_airport: 1
+    ticket_class: 2
+    cost: '1605440'
+- model: base_app.ticketcost
+  pk: 9
+  fields:
+    src_airport: 1
+    dst_airport: 4
+    ticket_class: 1
+    cost: '666224'
+- model: base_app.ticketcost
+  pk: 10
+  fields:
+    src_airport: 4
+    dst_airport: 1
+    ticket_class: 1
+    cost: '149763'
+- model: base_app.ticketcost
+  pk: 11
+  fields:
+    src_airport: 1
+    dst_airport: 4
+    ticket_class: 2
+    cost: '1138574'
+- model: base_app.ticketcost
+  pk: 12
+  fields:
+    src_airport: 4
+    dst_airport: 1
+    ticket_class: 2
+    cost: '1106831'
+- model: base_app.ticketcost
+  pk: 13
+  fields:
+    src_airport: 1
+    dst_airport: 5
+    ticket_class: 1
+    cost: '445440'
+- model: base_app.ticketcost
+  pk: 14
+  fields:
+    src_airport: 5
+    dst_airport: 1
+    ticket_class: 1
+    cost: '493277'
+- model: base_app.ticketcost
+  pk: 15
+  fields:
+    src_airport: 1
+    dst_airport: 5
+    ticket_class: 2
+    cost: '246114'
+- model: base_app.ticketcost
+  pk: 16
+  fields:
+    src_airport: 5
+    dst_airport: 1
+    ticket_class: 2
+    cost: '257899'
+- model: base_app.ticketcost
+  pk: 17
+  fields:
+    src_airport: 1
+    dst_airport: 6
+    ticket_class: 1
+    cost: '107926'
+- model: base_app.ticketcost
+  pk: 18
+  fields:
+    src_airport: 6
+    dst_airport: 1
+    ticket_class: 1
+    cost: '156682'
+- model: base_app.ticketcost
+  pk: 19
+  fields:
+    src_airport: 1
+    dst_airport: 6
+    ticket_class: 2
+    cost: '249763'
+- model: base_app.ticketcost
+  pk: 20
+  fields:
+    src_airport: 6
+    dst_airport: 1
+    ticket_class: 2
+    cost: '251398'
+- model: base_app.ticketcost
+  pk: 21
+  fields:
+    src_airport: 1
+    dst_airport: 7
+    ticket_class: 1
+    cost: '241541'
+- model: base_app.ticketcost
+  pk: 22
+  fields:
+    src_airport: 7
+    dst_airport: 1
+    ticket_class: 1
+    cost: '160226'
+- model: base_app.ticketcost
+  pk: 23
+  fields:
+    src_airport: 1
+    dst_airport: 7
+    ticket_class: 2
+    cost: '1675232'
+- model: base_app.ticketcost
+  pk: 24
+  fields:
+    src_airport: 7
+    dst_airport: 1
+    ticket_class: 2
+    cost: '1993566'
+- model: base_app.ticketcost
+  pk: 25
+  fields:
+    src_airport: 1
+    dst_airport: 8
+    ticket_class: 1
+    cost: '391450'
+- model: base_app.ticketcost
+  pk: 26
+  fields:
+    src_airport: 8
+    dst_airport: 1
+    ticket_class: 1
+    cost: '382458'
+- model: base_app.ticketcost
+  pk: 27
+  fields:
+    src_airport: 1
+    dst_airport: 8
+    ticket_class: 2
+    cost: '1854553'
+- model: base_app.ticketcost
+  pk: 28
+  fields:
+    src_airport: 8
+    dst_airport: 1
+    ticket_class: 2
+    cost: '945507'
+- model: base_app.ticketcost
+  pk: 29
+  fields:
+    src_airport: 1
+    dst_airport: 9
+    ticket_class: 1
+    cost: '999519'
+- model: base_app.ticketcost
+  pk: 30
+  fields:
+    src_airport: 9
+    dst_airport: 1
+    ticket_class: 1
+    cost: '539390'
+- model: base_app.ticketcost
+  pk: 31
+  fields:
+    src_airport: 1
+    dst_airport: 9
+    ticket_class: 2
+    cost: '1116228'
+- model: base_app.ticketcost
+  pk: 32
+  fields:
+    src_airport: 9
+    dst_airport: 1
+    ticket_class: 2
+    cost: '1937873'
+- model: base_app.ticketcost
+  pk: 33
+  fields:
+    src_airport: 1
+    dst_airport: 10
+    ticket_class: 1
+    cost: '102135'
+- model: base_app.ticketcost
+  pk: 34
+  fields:
+    src_airport: 10
+    dst_airport: 1
+    ticket_class: 1
+    cost: '127102'
+- model: base_app.ticketcost
+  pk: 35
+  fields:
+    src_airport: 1
+    dst_airport: 10
+    ticket_class: 2
+    cost: '1882988'
+- model: base_app.ticketcost
+  pk: 36
+  fields:
+    src_airport: 10
+    dst_airport: 1
+    ticket_class: 2
+    cost: '433235'
+- model: base_app.ticketcost
+  pk: 37
+  fields:
+    src_airport: 2
+    dst_airport: 3
+    ticket_class: 1
+    cost: '829881'
+- model: base_app.ticketcost
+  pk: 38
+  fields:
+    src_airport: 3
+    dst_airport: 2
+    ticket_class: 1
+    cost: '353757'
+- model: base_app.ticketcost
+  pk: 39
+  fields:
+    src_airport: 2
+    dst_airport: 3
+    ticket_class: 2
+    cost: '1475784'
+- model: base_app.ticketcost
+  pk: 40
+  fields:
+    src_airport: 3
+    dst_airport: 2
+    ticket_class: 2
+    cost: '1058253'
+- model: base_app.ticketcost
+  pk: 41
+  fields:
+    src_airport: 2
+    dst_airport: 4
+    ticket_class: 1
+    cost: '959957'
+- model: base_app.ticketcost
+  pk: 42
+  fields:
+    src_airport: 4
+    dst_airport: 2
+    ticket_class: 1
+    cost: '694985'
+- model: base_app.ticketcost
+  pk: 43
+  fields:
+    src_airport: 2
+    dst_airport: 4
+    ticket_class: 2
+    cost: '1974702'
+- model: base_app.ticketcost
+  pk: 44
+  fields:
+    src_airport: 4
+    dst_airport: 2
+    ticket_class: 2
+    cost: '1432727'
+- model: base_app.ticketcost
+  pk: 45
+  fields:
+    src_airport: 2
+    dst_airport: 5
+    ticket_class: 1
+    cost: '780633'
+- model: base_app.ticketcost
+  pk: 46
+  fields:
+    src_airport: 5
+    dst_airport: 2
+    ticket_class: 1
+    cost: '440084'
+- model: base_app.ticketcost
+  pk: 47
+  fields:
+    src_airport: 2
+    dst_airport: 5
+    ticket_class: 2
+    cost: '1153740'
+- model: base_app.ticketcost
+  pk: 48
+  fields:
+    src_airport: 5
+    dst_airport: 2
+    ticket_class: 2
+    cost: '943656'
+- model: base_app.ticketcost
+  pk: 49
+  fields:
+    src_airport: 2
+    dst_airport: 6
+    ticket_class: 1
+    cost: '656713'
+- model: base_app.ticketcost
+  pk: 50
+  fields:
+    src_airport: 6
+    dst_airport: 2
+    ticket_class: 1
+    cost: '566393'
+- model: base_app.ticketcost
+  pk: 51
+  fields:
+    src_airport: 2
+    dst_airport: 6
+    ticket_class: 2
+    cost: '689911'
+- model: base_app.ticketcost
+  pk: 52
+  fields:
+    src_airport: 6
+    dst_airport: 2
+    ticket_class: 2
+    cost: '1870583'
+- model: base_app.ticketcost
+  pk: 53
+  fields:
+    src_airport: 2
+    dst_airport: 7
+    ticket_class: 1
+    cost: '171422'
+- model: base_app.ticketcost
+  pk: 54
+  fields:
+    src_airport: 7
+    dst_airport: 2
+    ticket_class: 1
+    cost: '587854'
+- model: base_app.ticketcost
+  pk: 55
+  fields:
+    src_airport: 2
+    dst_airport: 7
+    ticket_class: 2
+    cost: '874476'
+- model: base_app.ticketcost
+  pk: 56
+  fields:
+    src_airport: 7
+    dst_airport: 2
+    ticket_class: 2
+    cost: '1915035'
+- model: base_app.ticketcost
+  pk: 57
+  fields:
+    src_airport: 2
+    dst_airport: 8
+    ticket_class: 1
+    cost: '982809'
+- model: base_app.ticketcost
+  pk: 58
+  fields:
+    src_airport: 8
+    dst_airport: 2
+    ticket_class: 1
+    cost: '474685'
+- model: base_app.ticketcost
+  pk: 59
+  fields:
+    src_airport: 2
+    dst_airport: 8
+    ticket_class: 2
+    cost: '337785'
+- model: base_app.ticketcost
+  pk: 60
+  fields:
+    src_airport: 8
+    dst_airport: 2
+    ticket_class: 2
+    cost: '725165'
+- model: base_app.ticketcost
+  pk: 61
+  fields:
+    src_airport: 2
+    dst_airport: 9
+    ticket_class: 1
+    cost: '686450'
+- model: base_app.ticketcost
+  pk: 62
+  fields:
+    src_airport: 9
+    dst_airport: 2
+    ticket_class: 1
+    cost: '594012'
+- model: base_app.ticketcost
+  pk: 63
+  fields:
+    src_airport: 2
+    dst_airport: 9
+    ticket_class: 2
+    cost: '705035'
+- model: base_app.ticketcost
+  pk: 64
+  fields:
+    src_airport: 9
+    dst_airport: 2
+    ticket_class: 2
+    cost: '1855768'
+- model: base_app.ticketcost
+  pk: 65
+  fields:
+    src_airport: 2
+    dst_airport: 10
+    ticket_class: 1
+    cost: '314184'
+- model: base_app.ticketcost
+  pk: 66
+  fields:
+    src_airport: 10
+    dst_airport: 2
+    ticket_class: 1
+    cost: '634407'
+- model: base_app.ticketcost
+  pk: 67
+  fields:
+    src_airport: 2
+    dst_airport: 10
+    ticket_class: 2
+    cost: '1833571'
+- model: base_app.ticketcost
+  pk: 68
+  fields:
+    src_airport: 10
+    dst_airport: 2
+    ticket_class: 2
+    cost: '1175286'
+- model: base_app.ticketcost
+  pk: 69
+  fields:
+    src_airport: 3
+    dst_airport: 4
+    ticket_class: 1
+    cost: '997709'
+- model: base_app.ticketcost
+  pk: 70
+  fields:
+    src_airport: 4
+    dst_airport: 3
+    ticket_class: 1
+    cost: '363718'
+- model: base_app.ticketcost
+  pk: 71
+  fields:
+    src_airport: 3
+    dst_airport: 4
+    ticket_class: 2
+    cost: '1602720'
+- model: base_app.ticketcost
+  pk: 72
+  fields:
+    src_airport: 4
+    dst_airport: 3
+    ticket_class: 2
+    cost: '1664630'
+- model: base_app.ticketcost
+  pk: 73
+  fields:
+    src_airport: 3
+    dst_airport: 5
+    ticket_class: 1
+    cost: '313293'
+- model: base_app.ticketcost
+  pk: 74
+  fields:
+    src_airport: 5
+    dst_airport: 3
+    ticket_class: 1
+    cost: '157751'
+- model: base_app.ticketcost
+  pk: 75
+  fields:
+    src_airport: 3
+    dst_airport: 5
+    ticket_class: 2
+    cost: '1973864'
+- model: base_app.ticketcost
+  pk: 76
+  fields:
+    src_airport: 5
+    dst_airport: 3
+    ticket_class: 2
+    cost: '1261403'
+- model: base_app.ticketcost
+  pk: 77
+  fields:
+    src_airport: 3
+    dst_airport: 6
+    ticket_class: 1
+    cost: '808227'
+- model: base_app.ticketcost
+  pk: 78
+  fields:
+    src_airport: 6
+    dst_airport: 3
+    ticket_class: 1
+    cost: '346698'
+- model: base_app.ticketcost
+  pk: 79
+  fields:
+    src_airport: 3
+    dst_airport: 6
+    ticket_class: 2
+    cost: '1267979'
+- model: base_app.ticketcost
+  pk: 80
+  fields:
+    src_airport: 6
+    dst_airport: 3
+    ticket_class: 2
+    cost: '315279'
+- model: base_app.ticketcost
+  pk: 81
+  fields:
+    src_airport: 3
+    dst_airport: 7
+    ticket_class: 1
+    cost: '725221'
+- model: base_app.ticketcost
+  pk: 82
+  fields:
+    src_airport: 7
+    dst_airport: 3
+    ticket_class: 1
+    cost: '199323'
+- model: base_app.ticketcost
+  pk: 83
+  fields:
+    src_airport: 3
+    dst_airport: 7
+    ticket_class: 2
+    cost: '350657'
+- model: base_app.ticketcost
+  pk: 84
+  fields:
+    src_airport: 7
+    dst_airport: 3
+    ticket_class: 2
+    cost: '1696185'
+- model: base_app.ticketcost
+  pk: 85
+  fields:
+    src_airport: 3
+    dst_airport: 8
+    ticket_class: 1
+    cost: '918720'
+- model: base_app.ticketcost
+  pk: 86
+  fields:
+    src_airport: 8
+    dst_airport: 3
+    ticket_class: 1
+    cost: '179744'
+- model: base_app.ticketcost
+  pk: 87
+  fields:
+    src_airport: 3
+    dst_airport: 8
+    ticket_class: 2
+    cost: '443138'
+- model: base_app.ticketcost
+  pk: 88
+  fields:
+    src_airport: 8
+    dst_airport: 3
+    ticket_class: 2
+    cost: '254688'
+- model: base_app.ticketcost
+  pk: 89
+  fields:
+    src_airport: 3
+    dst_airport: 9
+    ticket_class: 1
+    cost: '989694'
+- model: base_app.ticketcost
+  pk: 90
+  fields:
+    src_airport: 9
+    dst_airport: 3
+    ticket_class: 1
+    cost: '666047'
+- model: base_app.ticketcost
+  pk: 91
+  fields:
+    src_airport: 3
+    dst_airport: 9
+    ticket_class: 2
+    cost: '1610283'
+- model: base_app.ticketcost
+  pk: 92
+  fields:
+    src_airport: 9
+    dst_airport: 3
+    ticket_class: 2
+    cost: '1369442'
+- model: base_app.ticketcost
+  pk: 93
+  fields:
+    src_airport: 3
+    dst_airport: 10
+    ticket_class: 1
+    cost: '195111'
+- model: base_app.ticketcost
+  pk: 94
+  fields:
+    src_airport: 10
+    dst_airport: 3
+    ticket_class: 1
+    cost: '833199'
+- model: base_app.ticketcost
+  pk: 95
+  fields:
+    src_airport: 3
+    dst_airport: 10
+    ticket_class: 2
+    cost: '1842608'
+- model: base_app.ticketcost
+  pk: 96
+  fields:
+    src_airport: 10
+    dst_airport: 3
+    ticket_class: 2
+    cost: '201765'
+- model: base_app.ticketcost
+  pk: 97
+  fields:
+    src_airport: 4
+    dst_airport: 5
+    ticket_class: 1
+    cost: '347946'
+- model: base_app.ticketcost
+  pk: 98
+  fields:
+    src_airport: 5
+    dst_airport: 4
+    ticket_class: 1
+    cost: '416429'
+- model: base_app.ticketcost
+  pk: 99
+  fields:
+    src_airport: 4
+    dst_airport: 5
+    ticket_class: 2
+    cost: '928018'
+- model: base_app.ticketcost
+  pk: 100
+  fields:
+    src_airport: 5
+    dst_airport: 4
+    ticket_class: 2
+    cost: '815596'
+- model: base_app.ticketcost
+  pk: 101
+  fields:
+    src_airport: 4
+    dst_airport: 6
+    ticket_class: 1
+    cost: '449976'
+- model: base_app.ticketcost
+  pk: 102
+  fields:
+    src_airport: 6
+    dst_airport: 4
+    ticket_class: 1
+    cost: '384496'
+- model: base_app.ticketcost
+  pk: 103
+  fields:
+    src_airport: 4
+    dst_airport: 6
+    ticket_class: 2
+    cost: '1933813'
+- model: base_app.ticketcost
+  pk: 104
+  fields:
+    src_airport: 6
+    dst_airport: 4
+    ticket_class: 2
+    cost: '991651'
+- model: base_app.ticketcost
+  pk: 105
+  fields:
+    src_airport: 4
+    dst_airport: 7
+    ticket_class: 1
+    cost: '739475'
+- model: base_app.ticketcost
+  pk: 106
+  fields:
+    src_airport: 7
+    dst_airport: 4
+    ticket_class: 1
+    cost: '935187'
+- model: base_app.ticketcost
+  pk: 107
+  fields:
+    src_airport: 4
+    dst_airport: 7
+    ticket_class: 2
+    cost: '1915793'
+- model: base_app.ticketcost
+  pk: 108
+  fields:
+    src_airport: 7
+    dst_airport: 4
+    ticket_class: 2
+    cost: '1357955'
+- model: base_app.ticketcost
+  pk: 109
+  fields:
+    src_airport: 4
+    dst_airport: 8
+    ticket_class: 1
+    cost: '642784'
+- model: base_app.ticketcost
+  pk: 110
+  fields:
+    src_airport: 8
+    dst_airport: 4
+    ticket_class: 1
+    cost: '172723'
+- model: base_app.ticketcost
+  pk: 111
+  fields:
+    src_airport: 4
+    dst_airport: 8
+    ticket_class: 2
+    cost: '1351152'
+- model: base_app.ticketcost
+  pk: 112
+  fields:
+    src_airport: 8
+    dst_airport: 4
+    ticket_class: 2
+    cost: '1718353'
+- model: base_app.ticketcost
+  pk: 113
+  fields:
+    src_airport: 4
+    dst_airport: 9
+    ticket_class: 1
+    cost: '457195'
+- model: base_app.ticketcost
+  pk: 114
+  fields:
+    src_airport: 9
+    dst_airport: 4
+    ticket_class: 1
+    cost: '350270'
+- model: base_app.ticketcost
+  pk: 115
+  fields:
+    src_airport: 4
+    dst_airport: 9
+    ticket_class: 2
+    cost: '719985'
+- model: base_app.ticketcost
+  pk: 116
+  fields:
+    src_airport: 9
+    dst_airport: 4
+    ticket_class: 2
+    cost: '1747353'
+- model: base_app.ticketcost
+  pk: 117
+  fields:
+    src_airport: 4
+    dst_airport: 10
+    ticket_class: 1
+    cost: '227040'
+- model: base_app.ticketcost
+  pk: 118
+  fields:
+    src_airport: 10
+    dst_airport: 4
+    ticket_class: 1
+    cost: '431718'
+- model: base_app.ticketcost
+  pk: 119
+  fields:
+    src_airport: 4
+    dst_airport: 10
+    ticket_class: 2
+    cost: '1922296'
+- model: base_app.ticketcost
+  pk: 120
+  fields:
+    src_airport: 10
+    dst_airport: 4
+    ticket_class: 2
+    cost: '1658465'
+- model: base_app.ticketcost
+  pk: 121
+  fields:
+    src_airport: 5
+    dst_airport: 6
+    ticket_class: 1
+    cost: '848234'
+- model: base_app.ticketcost
+  pk: 122
+  fields:
+    src_airport: 6
+    dst_airport: 5
+    ticket_class: 1
+    cost: '887876'
+- model: base_app.ticketcost
+  pk: 123
+  fields:
+    src_airport: 5
+    dst_airport: 6
+    ticket_class: 2
+    cost: '538452'
+- model: base_app.ticketcost
+  pk: 124
+  fields:
+    src_airport: 6
+    dst_airport: 5
+    ticket_class: 2
+    cost: '1563698'
+- model: base_app.ticketcost
+  pk: 125
+  fields:
+    src_airport: 5
+    dst_airport: 7
+    ticket_class: 1
+    cost: '150159'
+- model: base_app.ticketcost
+  pk: 126
+  fields:
+    src_airport: 7
+    dst_airport: 5
+    ticket_class: 1
+    cost: '531752'
+- model: base_app.ticketcost
+  pk: 127
+  fields:
+    src_airport: 5
+    dst_airport: 7
+    ticket_class: 2
+    cost: '1888664'
+- model: base_app.ticketcost
+  pk: 128
+  fields:
+    src_airport: 7
+    dst_airport: 5
+    ticket_class: 2
+    cost: '628032'
+- model: base_app.ticketcost
+  pk: 129
+  fields:
+    src_airport: 5
+    dst_airport: 8
+    ticket_class: 1
+    cost: '891049'
+- model: base_app.ticketcost
+  pk: 130
+  fields:
+    src_airport: 8
+    dst_airport: 5
+    ticket_class: 1
+    cost: '588378'
+- model: base_app.ticketcost
+  pk: 131
+  fields:
+    src_airport: 5
+    dst_airport: 8
+    ticket_class: 2
+    cost: '1953866'
+- model: base_app.ticketcost
+  pk: 132
+  fields:
+    src_airport: 8
+    dst_airport: 5
+    ticket_class: 2
+    cost: '1959416'
+- model: base_app.ticketcost
+  pk: 133
+  fields:
+    src_airport: 5
+    dst_airport: 9
+    ticket_class: 1
+    cost: '478713'
+- model: base_app.ticketcost
+  pk: 134
+  fields:
+    src_airport: 9
+    dst_airport: 5
+    ticket_class: 1
+    cost: '951271'
+- model: base_app.ticketcost
+  pk: 135
+  fields:
+    src_airport: 5
+    dst_airport: 9
+    ticket_class: 2
+    cost: '1142799'
+- model: base_app.ticketcost
+  pk: 136
+  fields:
+    src_airport: 9
+    dst_airport: 5
+    ticket_class: 2
+    cost: '1178593'
+- model: base_app.ticketcost
+  pk: 137
+  fields:
+    src_airport: 5
+    dst_airport: 10
+    ticket_class: 1
+    cost: '136332'
+- model: base_app.ticketcost
+  pk: 138
+  fields:
+    src_airport: 10
+    dst_airport: 5
+    ticket_class: 1
+    cost: '149706'
+- model: base_app.ticketcost
+  pk: 139
+  fields:
+    src_airport: 5
+    dst_airport: 10
+    ticket_class: 2
+    cost: '1507773'
+- model: base_app.ticketcost
+  pk: 140
+  fields:
+    src_airport: 10
+    dst_airport: 5
+    ticket_class: 2
+    cost: '358503'
+- model: base_app.ticketcost
+  pk: 141
+  fields:
+    src_airport: 6
+    dst_airport: 7
+    ticket_class: 1
+    cost: '540531'
+- model: base_app.ticketcost
+  pk: 142
+  fields:
+    src_airport: 7
+    dst_airport: 6
+    ticket_class: 1
+    cost: '956735'
+- model: base_app.ticketcost
+  pk: 143
+  fields:
+    src_airport: 6
+    dst_airport: 7
+    ticket_class: 2
+    cost: '846046'
+- model: base_app.ticketcost
+  pk: 144
+  fields:
+    src_airport: 7
+    dst_airport: 6
+    ticket_class: 2
+    cost: '1029913'
+- model: base_app.ticketcost
+  pk: 145
+  fields:
+    src_airport: 6
+    dst_airport: 8
+    ticket_class: 1
+    cost: '216929'
+- model: base_app.ticketcost
+  pk: 146
+  fields:
+    src_airport: 8
+    dst_airport: 6
+    ticket_class: 1
+    cost: '756764'
+- model: base_app.ticketcost
+  pk: 147
+  fields:
+    src_airport: 6
+    dst_airport: 8
+    ticket_class: 2
+    cost: '224175'
+- model: base_app.ticketcost
+  pk: 148
+  fields:
+    src_airport: 8
+    dst_airport: 6
+    ticket_class: 2
+    cost: '1352217'
+- model: base_app.ticketcost
+  pk: 149
+  fields:
+    src_airport: 6
+    dst_airport: 9
+    ticket_class: 1
+    cost: '491787'
+- model: base_app.ticketcost
+  pk: 150
+  fields:
+    src_airport: 9
+    dst_airport: 6
+    ticket_class: 1
+    cost: '795785'
+- model: base_app.ticketcost
+  pk: 151
+  fields:
+    src_airport: 6
+    dst_airport: 9
+    ticket_class: 2
+    cost: '1197526'
+- model: base_app.ticketcost
+  pk: 152
+  fields:
+    src_airport: 9
+    dst_airport: 6
+    ticket_class: 2
+    cost: '1551902'
+- model: base_app.ticketcost
+  pk: 153
+  fields:
+    src_airport: 6
+    dst_airport: 10
+    ticket_class: 1
+    cost: '580872'
+- model: base_app.ticketcost
+  pk: 154
+  fields:
+    src_airport: 10
+    dst_airport: 6
+    ticket_class: 1
+    cost: '550686'
+- model: base_app.ticketcost
+  pk: 155
+  fields:
+    src_airport: 6
+    dst_airport: 10
+    ticket_class: 2
+    cost: '1181586'
+- model: base_app.ticketcost
+  pk: 156
+  fields:
+    src_airport: 10
+    dst_airport: 6
+    ticket_class: 2
+    cost: '1490136'
+- model: base_app.ticketcost
+  pk: 157
+  fields:
+    src_airport: 7
+    dst_airport: 8
+    ticket_class: 1
+    cost: '637502'
+- model: base_app.ticketcost
+  pk: 158
+  fields:
+    src_airport: 8
+    dst_airport: 7
+    ticket_class: 1
+    cost: '319472'
+- model: base_app.ticketcost
+  pk: 159
+  fields:
+    src_airport: 7
+    dst_airport: 8
+    ticket_class: 2
+    cost: '690271'
+- model: base_app.ticketcost
+  pk: 160
+  fields:
+    src_airport: 8
+    dst_airport: 7
+    ticket_class: 2
+    cost: '238673'
+- model: base_app.ticketcost
+  pk: 161
+  fields:
+    src_airport: 7
+    dst_airport: 9
+    ticket_class: 1
+    cost: '796638'
+- model: base_app.ticketcost
+  pk: 162
+  fields:
+    src_airport: 9
+    dst_airport: 7
+    ticket_class: 1
+    cost: '121055'
+- model: base_app.ticketcost
+  pk: 163
+  fields:
+    src_airport: 7
+    dst_airport: 9
+    ticket_class: 2
+    cost: '1637145'
+- model: base_app.ticketcost
+  pk: 164
+  fields:
+    src_airport: 9
+    dst_airport: 7
+    ticket_class: 2
+    cost: '646736'
+- model: base_app.ticketcost
+  pk: 165
+  fields:
+    src_airport: 7
+    dst_airport: 10
+    ticket_class: 1
+    cost: '601623'
+- model: base_app.ticketcost
+  pk: 166
+  fields:
+    src_airport: 10
+    dst_airport: 7
+    ticket_class: 1
+    cost: '150287'
+- model: base_app.ticketcost
+  pk: 167
+  fields:
+    src_airport: 7
+    dst_airport: 10
+    ticket_class: 2
+    cost: '1812881'
+- model: base_app.ticketcost
+  pk: 168
+  fields:
+    src_airport: 10
+    dst_airport: 7
+    ticket_class: 2
+    cost: '901169'
+- model: base_app.ticketcost
+  pk: 169
+  fields:
+    src_airport: 8
+    dst_airport: 9
+    ticket_class: 1
+    cost: '815888'
+- model: base_app.ticketcost
+  pk: 170
+  fields:
+    src_airport: 9
+    dst_airport: 8
+    ticket_class: 1
+    cost: '473594'
+- model: base_app.ticketcost
+  pk: 171
+  fields:
+    src_airport: 8
+    dst_airport: 9
+    ticket_class: 2
+    cost: '456690'
+- model: base_app.ticketcost
+  pk: 172
+  fields:
+    src_airport: 9
+    dst_airport: 8
+    ticket_class: 2
+    cost: '1952300'
+- model: base_app.ticketcost
+  pk: 173
+  fields:
+    src_airport: 8
+    dst_airport: 10
+    ticket_class: 1
+    cost: '515344'
+- model: base_app.ticketcost
+  pk: 174
+  fields:
+    src_airport: 10
+    dst_airport: 8
+    ticket_class: 1
+    cost: '176573'
+- model: base_app.ticketcost
+  pk: 175
+  fields:
+    src_airport: 8
+    dst_airport: 10
+    ticket_class: 2
+    cost: '1035157'
+- model: base_app.ticketcost
+  pk: 176
+  fields:
+    src_airport: 10
+    dst_airport: 8
+    ticket_class: 2
+    cost: '290006'
+- model: base_app.ticketcost
+  pk: 177
+  fields:
+    src_airport: 9
+    dst_airport: 10
+    ticket_class: 1
+    cost: '123001'
+- model: base_app.ticketcost
+  pk: 178
+  fields:
+    src_airport: 10
+    dst_airport: 9
+    ticket_class: 1
+    cost: '707859'
+- model: base_app.ticketcost
+  pk: 179
+  fields:
+    src_airport: 9
+    dst_airport: 10
+    ticket_class: 2
+    cost: '554208'
+- model: base_app.ticketcost
+  pk: 180
+  fields:
+    src_airport: 10
+    dst_airport: 9
+    ticket_class: 2
+    cost: '713606'
