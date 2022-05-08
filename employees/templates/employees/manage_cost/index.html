@@ -8,6 +8,15 @@
 <h1>----------- This is Manage Ticket Cost --------------</h1>
 
 <div>
+    <form method="get" action="">
+        {{ticket_cost_filter.form}}
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+<br>
+
+<div>
     <table>
         <tr>
             <th>Sân bay đi</th>
@@ -18,8 +27,8 @@
 
         {% for c in ticket_costs %}
         <tr>
-            <th>{{c.src_airport }}</th>
-            <th>{{c.dst_airport }}</th>
+            <th>{{c.departure_airport }}</th>
+            <th>{{c.arrival_airport }}</th>
             <th>{{c.ticket_class }}</th>
             <th>{{c.cost }}</th>
             <th><a href="{% url 'edit_ticket_cost' c.id %}">Edit</a></th>

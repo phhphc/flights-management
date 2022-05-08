@@ -5,13 +5,17 @@ from django.forms import inlineformset_factory
 from base_app.models import Ticket, Flight, IntermediateAirport, NumberOfTicket, Regulations
 from base_app.forms import FlightForm, NumberOfTicketForm
 from base_app.formsets import BaseIntermediateAirportFormSet
+from base_app.filters import FlightFilter
 
 
 def home_page(request):
     flights = Flight.objects.all().order_by('-pk')
+    flight_filter = FlightFilter(request.GET, queryset=flights)
+    flights = flight_filter.qs
 
     return render(request, 'employees/manage_flight/index.html', {
         'flights': flights,
+        "flight_filter": flight_filter,
     })
 
 

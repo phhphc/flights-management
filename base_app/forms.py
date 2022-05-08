@@ -83,10 +83,10 @@ class NumberOfTicketForm(ModelForm):
         # check if the ticket cost is available
         if not TicketCost.objects.filter(
                 ticket_class=self.data['ticket_class'],
-                dst_airport=flight.dst_airport,
-                src_airport=flight.src_airport).exists():
+                arrival_airport=flight.arrival_airport,
+                departure_airport=flight.departure_airport).exists():
             raise ValidationError({
-                'ticket_class': [f'Ticket cost is not available for this ticket class from {flight.src_airport} to {flight.dst_airport}'],
+                'ticket_class': [f'Ticket cost is not available for this ticket class from {flight.departure_airport} to {flight.arrival_airport}'],
             })
 
         # check if quantity of ticket is bigger than customer's tickets

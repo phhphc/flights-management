@@ -9,8 +9,8 @@
 
 <div>
     <h2>Flight Name: {{flight}}</h2>
-    <div>src airport: {{flight.src_airport}}</div>
-    <div>dst airport: {{flight.dst_airport}}</div>
+    <div>src airport: {{flight.departure_airport}}</div>
+    <div>dst airport: {{flight.arrival_airport}}</div>
     <div>time: {{flight.departure_time}}</div>
     <div>duration: {{flight.duration}}</div>
     <a href={% url 'edit_flight' flight.id %}>Edit</a>

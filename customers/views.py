@@ -5,10 +5,15 @@ from django.utils import timezone
 
 from base_app.models import Flight, NumberOfTicket, TicketCost, IntermediateAirport, Ticket, Regulations
 from base_app.forms import TicketForm, CustomUserForm
+from base_app.filters import FlightFilter
 
 
 def home_page(request):
     flights: list[Flight] = Flight.objects.all()
+    
+    flight_filter = FlightFilter(request.GET, queryset=flights)
+    flights = flight_filter.qs
+    
     for i in range(len(flights)):
         total_seats = sum(
             [tk.quantity for tk in NumberOfTicket.objects.filter(flight__pk=flights[i].pk)])
@@ -19,7 +24,8 @@ def home_page(request):
         flights[i].booked_seats = tickets.filter(status=1).count()
 
     return render(request, 'customers/home.html', {
-        'flights': flights
+        'flights': flights,
+        "flight_filter": flight_filter,
     })
 
 
@@ -31,8 +37,8 @@ def flight_detail(request, flight_id):
     ticket_details = NumberOfTicket.objects.filter(flight__pk=flight_id)
     for i in range(len(ticket_details)):
         ticket_details[i].cost = TicketCost.objects.get(
-            dst_airport__pk=flight.dst_airport.pk,
-            src_airport__pk=flight.src_airport.pk,
+            dst_airport__pk=flight.arrival_airport.pk,
+            src_airport__pk=flight.departure_airport.pk,
             ticket_class=ticket_details[i].ticket_class).cost
 
         tickets = Ticket.objects.filter(

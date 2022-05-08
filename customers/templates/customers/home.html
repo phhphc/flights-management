@@ -7,6 +7,15 @@
 {% block content %}
 <h1>----------- This is Home Page --------------</h1>
 
+<div>
+    <form method="get" action="">
+        {{flight_filter.form}}
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+<br>
+
 <table>
     <tr>
         <th>MCB</th>
@@ -21,8 +30,8 @@
     {% for f in flights %}
     <tr>
         <th>{{f}}</th>
-        <th>{{f.src_airport}}</th>
-        <th>{{f.dst_airport}}</th>
+        <th>{{f.departure_airport}}</th>
+        <th>{{f.arrival_airport}}</th>
         <th>{{f.departure_time}}</th>
         <th>{{f.duration}}</th>
         <th>{{f.available_seats}}</th>

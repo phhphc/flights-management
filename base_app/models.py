@@ -26,22 +26,22 @@ class TicketClass(models.Model):
 
 
 class TicketCost(models.Model):
-    src_airport = models.ForeignKey(
+    departure_airport = models.ForeignKey(
         Airport, on_delete=models.RESTRICT, related_name='tk_src_airport')
-    dst_airport = models.ForeignKey(
+    arrival_airport = models.ForeignKey(
         Airport, on_delete=models.RESTRICT, related_name='tk_dst_airport', )
     ticket_class = models.ForeignKey(TicketClass, on_delete=models.RESTRICT)
     cost = models.DecimalField(decimal_places=0, max_digits=12)
 
     class Meta:
-        unique_together = (('ticket_class', 'dst_airport', 'src_airport'),)
+        unique_together = (('ticket_class', 'arrival_airport', 'departure_airport'),)
 
 
 class Flight(models.Model):
-    dst_airport = models.ForeignKey(
-        Airport, on_delete=models.RESTRICT, related_name='dst_airport')
-    src_airport = models.ForeignKey(
-        Airport, on_delete=models.RESTRICT, related_name='src_airport')
+    arrival_airport = models.ForeignKey(
+        Airport, on_delete=models.RESTRICT, related_name='arrival_airport')
+    departure_airport = models.ForeignKey(
+        Airport, on_delete=models.RESTRICT, related_name='departure_airport')
     departure_time = models.DateTimeField()
     duration = models.DurationField()
 
@@ -107,8 +107,8 @@ class Ticket(models.Model):
     def set_cost(self):
         self.cost = TicketCost.objects.get(
             ticket_class=self.ticket_class,
-            dst_airport=self.flight.dst_airport,
-            src_airport=self.flight.src_airport).cost
+            arrival_airport=self.flight.arrival_airport,
+            departure_airport=self.flight.departure_airport).cost
 
 
 class Regulations(models.Model):
