@@ -53,11 +53,13 @@
         <tr>
             <th>Hang Ve</th>
             <th>So luong</th>
+            <th>Gia Ve</th>
         </tr>
-        {% for t in tickets %}
+        {% for t in flight_tickets %}
         <tr>
             <th>{{t.ticket_class}}</th>
             <th>{{t.quantity}}</th>
+            <th>{{t.cost}}</th>
             <th><a href={% url 'edit_flight_ticket_class' t.id %}>Edit</a></th>
             <th><a href={% url 'delete_flight_ticket_class' t.id %}>Delete</a></th>
         </tr>

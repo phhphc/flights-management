@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from matplotlib.axis import Tick
 
 
 class CustomUser(models.Model):
@@ -34,7 +35,8 @@ class TicketCost(models.Model):
     cost = models.DecimalField(decimal_places=0, max_digits=12)
 
     class Meta:
-        unique_together = (('ticket_class', 'arrival_airport', 'departure_airport'),)
+        unique_together = (
+            ('ticket_class', 'arrival_airport', 'departure_airport'),)
 
 
 class Flight(models.Model):
@@ -53,27 +55,34 @@ class Flight(models.Model):
 
     @property
     def revenue(self):
-        return self.ticket_set.filter(status=3).aggregate(models.Sum('cost'))['cost__sum'] or 0
+        return Ticket.objects.filter(flight_ticket__flight=self, status=3).aggregate(models.Sum('flight_ticket__cost'))['flight_ticket__cost__sum'] or 0
 
     @property
     def ticket_count(self):
-        return self.numberofticket_set.aggregate(models.Sum('quantity'))['quantity__sum'] or 0
+        return self.flightticket_set.aggregate(models.Sum('quantity'))['quantity__sum'] or 0
 
     @property
     def ticket_ratio(self):
         if self.ticket_count:
-            return self.ticket_set.filter(status=3).count() / self.ticket_count
+            return Ticket.objects.filter(flight_ticket__flight=self, status=3).count() / self.ticket_count
         return None
 
 
-class NumberOfTicket(models.Model):
+class FlightTicket(models.Model):
     flight = models.ForeignKey(Flight, on_delete=models.CASCADE)
     ticket_class = models.ForeignKey(TicketClass, on_delete=models.RESTRICT)
     quantity = models.PositiveIntegerField(default=0)
+    cost = models.DecimalField(decimal_places=0, max_digits=12)
 
     class Meta:
         unique_together = (('ticket_class', 'flight'),)
         ordering = ['ticket_class']
+
+    def set_cost(self):
+        self.cost = TicketCost.objects.get(
+            ticket_class=self.ticket_class,
+            arrival_airport=self.flight.arrival_airport,
+            departure_airport=self.flight.departure_airport).cost
 
 
 class IntermediateAirport(models.Model):
@@ -86,12 +95,10 @@ class IntermediateAirport(models.Model):
 class Ticket(models.Model):
     STATUS_LIST = models.IntegerChoices('Status', 'BOOK PAID DONE')
 
-    flight = models.ForeignKey(Flight, on_delete=models.CASCADE)
-    ticket_class = models.ForeignKey(TicketClass, on_delete=models.RESTRICT)
+    flight_ticket = models.ForeignKey(FlightTicket, on_delete=models.CASCADE)
     customer_name = models.CharField(max_length=100)
     customer_id_card = models.CharField(max_length=20)
     customer_phone = models.CharField(max_length=20)
-    cost = models.DecimalField(decimal_places=0, max_digits=12)
     status = models.IntegerField(choices=STATUS_LIST.choices, default=1)
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     employee_paid = models.ForeignKey(
@@ -103,12 +110,6 @@ class Ticket(models.Model):
     @property
     def str_status(self):
         return self.STATUS_LIST(self.status).label
-
-    def set_cost(self):
-        self.cost = TicketCost.objects.get(
-            ticket_class=self.ticket_class,
-            arrival_airport=self.flight.arrival_airport,
-            departure_airport=self.flight.departure_airport).cost
 
 
 class Regulations(models.Model):

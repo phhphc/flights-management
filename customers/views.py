@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 
-from base_app.models import Flight, NumberOfTicket, TicketCost, IntermediateAirport, Ticket, Regulations
+from base_app.models import Flight, FlightTicket, TicketCost, IntermediateAirport, Ticket, Regulations
 from base_app.forms import TicketForm, CustomUserForm
 from base_app.filters import FlightFilter
 
@@ -16,9 +16,9 @@ def home_page(request):
     
     for i in range(len(flights)):
         total_seats = sum(
-            [tk.quantity for tk in NumberOfTicket.objects.filter(flight__pk=flights[i].pk)])
+            [tk.quantity for tk in FlightTicket.objects.filter(flight__pk=flights[i].pk)])
 
-        tickets: list[Ticket] = Ticket.objects.filter(flight__pk=flights[i].pk)
+        tickets: list[Ticket] = Ticket.objects.filter(flight_ticket__flight__pk=flights[i].pk)
 
         flights[i].available_seats = total_seats - tickets.count()
         flights[i].booked_seats = tickets.filter(status=1).count()
@@ -34,27 +34,16 @@ def flight_detail(request, flight_id):
     intermediate_airports = IntermediateAirport.objects.filter(
         flight__pk=flight_id)
 
-    ticket_details = NumberOfTicket.objects.filter(flight__pk=flight_id)
-    for i in range(len(ticket_details)):
-        ticket_details[i].cost = TicketCost.objects.get(
-            arrival_airport__pk=flight.arrival_airport.pk,
-            departure_airport__pk=flight.departure_airport.pk,
-            ticket_class=ticket_details[i].ticket_class).cost
-
-        tickets = Ticket.objects.filter(
-            flight__pk=flight.pk,
-            ticket_class=ticket_details[i].ticket_class)
-
-        ticket_details[i].booked_count = tickets.filter(
-            status=1).count()
-
-        ticket_details[i].available_seats = ticket_details[i].quantity - \
-            tickets.count()
+    flight_tickets = FlightTicket.objects.filter(flight__pk=flight_id)
+    for ft in flight_tickets:
+        tickets = ft.ticket_set.all() 
+        ft.booked_count = tickets.filter(status=1).count()
+        ft.available_seats = ft.quantity - tickets.count()
 
     return render(request, 'customers/flight_detail.html', {
         'flight': flight,
         'intermediate_airports': intermediate_airports,
-        'ticket_details': ticket_details,
+        'flight_tickets': flight_tickets,
     })
 
 

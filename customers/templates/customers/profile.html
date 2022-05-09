@@ -41,16 +41,16 @@
 
         {% for t in tickets %}
         <tr>
-            <th>{{ t.flight }}</th>
-            <th>{{ t.flight.departure_airport }}</th>
-            <th>{{ t.flight.arrival_airport }}</th>
-            <th>{{ t.flight.departure_time }}</th>
-            <th>{{ t.flight.duration }}</th>
-            <th>{{ t.ticket_class.name }}</th>
+            <th>{{ t.flight_ticket.flight }}</th>
+            <th>{{ t.flight_ticket.flight.departure_airport }}</th>
+            <th>{{ t.flight_ticket.flight.arrival_airport }}</th>
+            <th>{{ t.flight_ticket.flight.departure_time }}</th>
+            <th>{{ t.flight_ticket.flight.duration }}</th>
+            <th>{{ t.flight_ticket.ticket_class }}</th>
             <th>{{t.customer_name}}</th>
             <th>{{t.customer_id_card}}</th>
             <th>{{t.customer_phone}}</th>
-            <th>{{t.cost}}</th>
+            <th>{{t.flight_ticket.cost}}</th>
             <th>{{t.str_status}}</th>
             <th><a href="{% url 'delete_book_flight' t.id %}">Cancel</a></th>
         </tr>

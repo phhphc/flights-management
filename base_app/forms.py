@@ -1,4 +1,5 @@
 from django.forms import ModelForm, ValidationError
+from django import forms
 from django.utils import timezone
 
 from .models import *
@@ -49,22 +50,23 @@ class RegulationsForm(ModelForm):
         fields = '__all__'
 
 
-class NumberOfTicketForm(ModelForm):
+class FlightTicketForm(ModelForm):
     class Meta:
-        model = NumberOfTicket
+        model = FlightTicket
         fields = '__all__'
-        exclude = ['flight']
+        exclude = ['flight', 'cost']
 
     def __init__(self, flight_id, *args, **kwargs):
         self.flight_id = flight_id
-        super(NumberOfTicketForm, self).__init__(*args, **kwargs)
+        super(FlightTicketForm, self).__init__(*args, **kwargs)
 
     def save(self, commit=True):
-        instant = super(NumberOfTicketForm, self).save(commit=False)
+        instant = super(FlightTicketForm, self).save(commit=False)
 
-        # if instant.flight is None, add the flight
+        # if instant.flight is None, add the flight and cost
         if not self.instance.pk:
             instant.flight = Flight.objects.get(pk=self.flight_id)
+            instant.set_cost()
 
         if commit:
             instant.save()
@@ -74,7 +76,7 @@ class NumberOfTicketForm(ModelForm):
         flight: Flight = Flight.objects.get(pk=self.flight_id)
 
         # check if the ticket class is duplicated
-        if flight.numberofticket_set.filter(
+        if flight.flightticket_set.filter(
                 ticket_class=self.data['ticket_class']).exclude(pk=self.instance.pk):
             raise ValidationError({
                 'ticket_class': ['Ticket class already exists for this flight'],
@@ -99,9 +101,12 @@ class NumberOfTicketForm(ModelForm):
 
 
 class TicketForm(ModelForm):
+    flight = forms.ModelChoiceField(queryset=Flight.objects.all())
+    ticket_class = forms.ModelChoiceField(queryset=TicketClass.objects.all())
+
     class Meta:
         model = Ticket
-        fields = ['flight', 'ticket_class', 'customer_name',
+        fields = ['customer_name',
                   'customer_id_card', 'customer_phone']
 
     def __init__(self, user=None, employee=None, edit=False, *args, **kwargs):
@@ -121,8 +126,9 @@ class TicketForm(ModelForm):
             if not self.edit and self.employee:
                 instant.employee_paid = self.employee
                 instant.status = 2
-            # set cost to the ticket cost
-            instant.set_cost()
+            # set flight_ticket
+            instant.flight_ticket = FlightTicket.objects.get(
+                flight__pk=self.data['flight'], ticket_class__pk=self.data['ticket_class'])
 
         if commit:
             instant.save()
@@ -130,26 +136,30 @@ class TicketForm(ModelForm):
 
     def clean(self):
 
-        # TODO: check if the ticket class is existed
-
-        # check if available ticket is enough
-        total_ticket = NumberOfTicket.objects.get(
-            flight__pk=self.data['flight'], ticket_class=self.data['ticket_class']).quantity
+        # check if ticket_type is avalable
+        try:
+            total_ticket = FlightTicket.objects.get(
+                flight__pk=self.data['flight'], ticket_class=self.data['ticket_class']).quantity
+        except FlightTicket.DoesNotExist:
+            raise ValidationError({
+                'ticket_class': [f'Ticket class is not available for this flight'],
+            })
         exists_ticket_count = Ticket.objects.filter(
-            flight=self.data['flight'], ticket_class=self.data['ticket_class']).count()
+            flight_ticket__flight=self.data['flight'], flight_ticket__ticket_class=self.data['ticket_class']).count()
         if total_ticket <= exists_ticket_count:
             raise ValidationError({
                 'ticket_class': [f'No tickets of this ticket class on this flight left !'],
             })
 
         # if new ticket is created not by employee (customer book)
+        # check if time before the departure time - book_ticket_before_min
         if not self.instance.pk and not self.employee:
             book_ticket_before_min = Regulations.objects.get(
                 pk=1).book_ticket_before_min  # get the minimun booking time before flight
             # get the departure time of the flight
             departure_time = Flight.objects.get(
                 pk=self.data['flight']).departure_time
-            # can only book ticket before the departure time - book_ticket_before_min
+            # check time
             if departure_time - timezone.now() < book_ticket_before_min:
                 raise ValidationError({
                     'flight': [f'You can only book ticket before {departure_time - book_ticket_before_min}'],

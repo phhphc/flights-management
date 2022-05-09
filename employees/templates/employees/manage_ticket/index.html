@@ -29,12 +29,12 @@
         {% for t in tickets %}
         <tr>
             <th>{{t.id }}</th>
-            <th>{{t.flight }}</th>
-            <th>{{t.ticket_class }}</th>
+            <th>{{t.flight_ticket.flight }}</th>
+            <th>{{t.flight_ticket.ticket_class }}</th>
             <th>{{t.customer_name }}</th>
             <th>{{t.customer_phone }}</th>
             <th>{{t.customer_id_card }}</th>
-            <th>{{t.cost }}</th>
+            <th>{{t.flight_ticket.cost }}</th>
             <th>{{t.str_status }}</th>
             <th><a href="{% url 'edit_ticket_employee' t.id %}">Edit</a></th>
             <th><a href="{% url 'delete_ticket_employee' t.id %}">Delete</a></th>
