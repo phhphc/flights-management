@@ -30,6 +30,7 @@ class TicketFilter(django_filters.FilterSet):
         fields = {
             'flight_ticket__flight__departure_airport': ['exact'],
             'flight_ticket__flight__arrival_airport': ['exact'],
+            'flight_ticket__flight__departure_time': ['date__gte', 'date__lte'],
             'flight_ticket__ticket_class': ['exact'],
             'status': ['exact'],
         }

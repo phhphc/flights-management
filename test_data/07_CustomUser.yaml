@@ -5,7 +5,7 @@
     name: Ernest Villanueva
     phone: 0171-392-4752
     email: root@root.com
-    id_card: 8b584270-f273-444d-8fb1-bf0dc9e7a880
+    id_card: 8b584270f273
 - model: base_app.customuser
   pk: 2
   fields:
@@ -13,7 +13,7 @@
     name: Charles Jones
     phone: 0152-288-1732
     email: user1@gmail.com
-    id_card: 0a4f0198-358a-4e8b-ba11-81617d6552e4
+    id_card: 0a4f0198358a
 - model: base_app.customuser
   pk: 3
   fields:
@@ -21,7 +21,7 @@
     name: Gilbert Bourgeaud
     phone: 378-333-0116
     email: user2@gmail.com
-    id_card: a8772ab1-4144-4fd3-9bd0-c2c7b2123508
+    id_card: a8772ab14144
 - model: base_app.customuser
   pk: 4
   fields:
@@ -29,4 +29,4 @@
     name: Corey Yarbrough
     phone: 700-671-4661
     email: user3@gmail.com
-    id_card: 361dafb9-52b3-40b3-83c8-edf4b04242f2
+    id_card: 361dafb952b3

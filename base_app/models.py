@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from matplotlib.axis import Tick
 
 
 class CustomUser(models.Model):
@@ -9,6 +8,9 @@ class CustomUser(models.Model):
     phone = models.CharField(max_length=20, blank=True)
     email = models.EmailField(max_length=254, blank=True)
     id_card = models.CharField(max_length=20, blank=True)
+    
+    def __str__(self):
+        return self.user.__str__() + ' - ' + self.name
 
 
 class Airport(models.Model):
@@ -75,7 +77,6 @@ class FlightTicket(models.Model):
     cost = models.DecimalField(decimal_places=0, max_digits=12)
 
     class Meta:
-        unique_together = (('ticket_class', 'flight'),)
         ordering = ['ticket_class']
 
     def set_cost(self):
@@ -95,7 +96,7 @@ class IntermediateAirport(models.Model):
 class Ticket(models.Model):
     STATUS_LIST = models.IntegerChoices('Status', 'BOOK PAID DONE')
 
-    flight_ticket = models.ForeignKey(FlightTicket, on_delete=models.CASCADE)
+    flight_ticket = models.ForeignKey(FlightTicket, on_delete=models.RESTRICT)
     customer_name = models.CharField(max_length=100)
     customer_id_card = models.CharField(max_length=20)
     customer_phone = models.CharField(max_length=20)

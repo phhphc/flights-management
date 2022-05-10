@@ -1,4 +1,4 @@
-from django.forms import BaseInlineFormSet
+from django.forms import BaseInlineFormSet, ValidationError
 
 from .models import *
 
@@ -6,7 +6,6 @@ from .models import *
 class BaseIntermediateAirportFormSet(BaseInlineFormSet):
 
     def clean(self):
-        # Don't bother validating the formset unless each form is valid on its own
         if any(self.errors):
             return
 
@@ -39,3 +38,64 @@ class BaseIntermediateAirportFormSet(BaseInlineFormSet):
             if stop_time > intermediate_airport_time_max:
                 form.add_error(
                     'stop_time', ['Stop time is bigger than maximum'])
+
+
+class BaseFlightTicketsFormSet(BaseInlineFormSet):
+
+    def clean(self):
+        if any(self.errors):
+            return
+
+        ticket_class_list = []
+        for form in self.forms:
+            # ignore empty forms
+            if form.empty_permitted:
+                continue
+
+            ticket_class = form.cleaned_data.get('ticket_class')
+            try:
+                # if form is delete
+                # If there are any tickets for this class, prevent delete and send error message
+                if self.can_delete and self._should_delete_form(form):
+                    if self.instance.flightticket_set.get(ticket_class=ticket_class).ticket_set.exists():
+                        raise ValidationError(
+                            f'Cannot delete ticket class {ticket_class} because there are tickets for this class')
+                    continue
+
+                # check that no ticket_class is duplicated
+                if ticket_class.pk in ticket_class_list:
+                    form.add_error(
+                        'ticket_class', ['Ticket_class is duplicated'])
+                ticket_class_list.append(ticket_class.pk)
+
+                # check if ticket cost is available
+                if not TicketCost.objects.filter(
+                        departure_airport=self.instance.departure_airport,
+                        arrival_airport=self.instance.arrival_airport,
+                        ticket_class=ticket_class).exists():
+                    form.add_error(
+                        'ticket_class', [
+                            f'There are no price for this ticket class form {self.instance.departure_airport} to {self.instance.arrival_airport}'])
+
+                # check if quantity of ticket is bigger than customer's tickets
+                customer_tickets_count = self.instance.flightticket_set.get(
+                    ticket_class=ticket_class).ticket_set.count()
+                if int(form.cleaned_data['quantity']) < customer_tickets_count:
+                    form.add_error(
+                        'quantity', [
+                            f'There are {customer_tickets_count} customer\'s tickets of this ticket class'])
+            except FlightTicket.DoesNotExist:
+                pass
+
+    def save(self, commit=True):
+        obj_list = super(BaseFlightTicketsFormSet, self).save(commit=False)
+        for obj in obj_list:
+            if not obj.cost:
+                obj.set_cost()
+            if commit:
+                obj.save()
+
+        for obj in self.deleted_objects:
+            obj.delete()
+
+        return obj_list

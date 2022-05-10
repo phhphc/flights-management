@@ -50,56 +50,6 @@ class RegulationsForm(ModelForm):
         fields = '__all__'
 
 
-class FlightTicketForm(ModelForm):
-    class Meta:
-        model = FlightTicket
-        fields = '__all__'
-        exclude = ['flight', 'cost']
-
-    def __init__(self, flight_id, *args, **kwargs):
-        self.flight_id = flight_id
-        super(FlightTicketForm, self).__init__(*args, **kwargs)
-
-    def save(self, commit=True):
-        instant = super(FlightTicketForm, self).save(commit=False)
-
-        # if instant.flight is None, add the flight and cost
-        if not self.instance.pk:
-            instant.flight = Flight.objects.get(pk=self.flight_id)
-            instant.set_cost()
-
-        if commit:
-            instant.save()
-        return instant
-
-    def clean(self):
-        flight: Flight = Flight.objects.get(pk=self.flight_id)
-
-        # check if the ticket class is duplicated
-        if flight.flightticket_set.filter(
-                ticket_class=self.data['ticket_class']).exclude(pk=self.instance.pk):
-            raise ValidationError({
-                'ticket_class': ['Ticket class already exists for this flight'],
-            })
-
-        # check if the ticket cost is available
-        if not TicketCost.objects.filter(
-                ticket_class=self.data['ticket_class'],
-                arrival_airport=flight.arrival_airport,
-                departure_airport=flight.departure_airport).exists():
-            raise ValidationError({
-                'ticket_class': [f'Ticket cost is not available for this ticket class from {flight.departure_airport} to {flight.arrival_airport}'],
-            })
-
-        # check if quantity of ticket is bigger than customer's tickets
-        customer_tickets_count = flight.ticket_set.filter(
-            ticket_class=self.data['ticket_class']).count()
-        if int(self.data['quantity']) < customer_tickets_count:
-            raise ValidationError({
-                'quantity': [f'There are {customer_tickets_count} customer\'s tickets of this ticket class'],
-            })
-
-
 class TicketForm(ModelForm):
     flight = forms.ModelChoiceField(queryset=Flight.objects.all())
     ticket_class = forms.ModelChoiceField(queryset=TicketClass.objects.all())

@@ -3,22 +3,23 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 
-from base_app.models import Flight, FlightTicket, TicketCost, IntermediateAirport, Ticket, Regulations
+from base_app.models import Flight, FlightTicket, IntermediateAirport, Ticket, Regulations
 from base_app.forms import TicketForm, CustomUserForm
-from base_app.filters import FlightFilter
+from base_app.filters import FlightFilter, TicketFilter
 
 
 def home_page(request):
     flights: list[Flight] = Flight.objects.all()
-    
+
     flight_filter = FlightFilter(request.GET, queryset=flights)
     flights = flight_filter.qs
-    
+
     for i in range(len(flights)):
         total_seats = sum(
             [tk.quantity for tk in FlightTicket.objects.filter(flight__pk=flights[i].pk)])
 
-        tickets: list[Ticket] = Ticket.objects.filter(flight_ticket__flight__pk=flights[i].pk)
+        tickets: list[Ticket] = Ticket.objects.filter(
+            flight_ticket__flight__pk=flights[i].pk)
 
         flights[i].available_seats = total_seats - tickets.count()
         flights[i].booked_seats = tickets.filter(status=1).count()
@@ -36,7 +37,7 @@ def flight_detail(request, flight_id):
 
     flight_tickets = FlightTicket.objects.filter(flight__pk=flight_id)
     for ft in flight_tickets:
-        tickets = ft.ticket_set.all() 
+        tickets = ft.ticket_set.all()
         ft.booked_count = tickets.filter(status=1).count()
         ft.available_seats = ft.quantity - tickets.count()
 
@@ -52,8 +53,9 @@ def profile_page(request):
 
     form = CustomUserForm(request.POST or None,
                           instance=request.user.customuser)
-
-    tickets: list[Ticket] = Ticket.objects.filter(user=request.user.id)
+    tickets = Ticket.objects.filter(user=request.user.id)
+    ticket_filter = TicketFilter(request.GET, queryset=tickets)
+    tickets = ticket_filter.qs
 
     if (request.method == 'POST'):
         if (form.is_valid()):
@@ -63,6 +65,7 @@ def profile_page(request):
     return render(request, 'customers/profile.html', {
         'form': form,
         'tickets': tickets,
+        'ticket_filter': ticket_filter,
     })
 
 
@@ -96,7 +99,7 @@ def delete_book_flight(request, ticket_id):
 
     cancel_ticket_before_min = Regulations.objects.get(
         pk=1).cancel_ticket_before_min
-    departure_time = ticket.flight.departure_time
+    departure_time = ticket.flight_ticket.flight.departure_time
     # check time
     if departure_time - timezone.now() < cancel_ticket_before_min:
         messages.error(

@@ -2,6 +2,10 @@
 
 ## Install and Run
 ```bash
+# create environment variable
+cp ./.env.example ./.env
+## manually edit .env file
+
 # install requirements
 pip install -r requirements.txt
 

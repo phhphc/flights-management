@@ -2,9 +2,9 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.forms import inlineformset_factory
 
-from base_app.models import Ticket, Flight, IntermediateAirport, FlightTicket, Regulations
-from base_app.forms import FlightForm, FlightTicketForm
-from base_app.formsets import BaseIntermediateAirportFormSet
+from base_app.models import TicketClass, Flight, IntermediateAirport, FlightTicket, Regulations
+from base_app.forms import FlightForm
+from base_app.formsets import BaseIntermediateAirportFormSet, BaseFlightTicketsFormSet
 from base_app.filters import FlightFilter
 
 
@@ -92,44 +92,24 @@ def update_intermediate_airport(request, flight_id):
     })
 
 
-def add_flight_ticket_class(request, flight_id):
-    form = FlightTicketForm(flight_id=flight_id, data=request.POST or None)
-
+def update_flight_ticket_class(request, flight_id):
+    
+    FlightTicketFormSet = inlineformset_factory(
+        Flight, FlightTicket,
+        fields=['ticket_class', 'quantity'],
+        formset=BaseFlightTicketsFormSet,
+        max_num = TicketClass.objects.all().count(),
+        validate_max=True)
+    
+    flight = Flight.objects.get(pk=flight_id)
+    formset = FlightTicketFormSet(request.POST or None, instance=flight)
+    
     if request.method == 'POST':
-        if form.is_valid():
-            form.save()
+        if formset.is_valid():
+            formset.save()
             return redirect('manage_flight', flight_id=flight_id)
 
-    return render(request, 'employees/manage_flight/add_flight_ticket_class.html', {
-        'form': form,
+    return render(request, 'employees/manage_flight/update_flight_ticket_class.html', {
+        'formset': formset,
         'flight_id': flight_id,
     })
-
-
-def edit_flight_ticket_class(request, ticket_class_id):
-    ticket = FlightTicket.objects.get(pk=ticket_class_id)
-    form = FlightTicketForm(
-        flight_id=ticket.flight.pk, data=request.POST or None, instance=ticket)
-
-    if request.method == 'POST':
-        if form.is_valid():
-            form.save()
-            return redirect('manage_flight', flight_id=ticket.flight.pk)
-
-    return render(request, 'employees/manage_flight/edit_flight_ticket_class.html', {
-        'form': form,
-        'flight_id': ticket.flight.pk,
-    })
-
-
-def delete_flight_ticket_class(request, ticket_class_id):
-    ticket_class = FlightTicket.objects.get(pk=ticket_class_id)
-
-    # If there are any tickets for this class, do not delete and send error message
-    if ticket_class.ticket_set.e > 0:
-        messages.error(
-            request, 'Cannot delete ticket class. There are customer tickets for this class.')
-    else:
-        ticket_class.delete()
-
-    return redirect('manage_flight', flight_id=ticket_class.flight.pk)

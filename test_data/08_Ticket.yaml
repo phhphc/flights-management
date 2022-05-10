@@ -3,7 +3,7 @@
   fields:
     flight_ticket: 51
     customer_name: Trudy Green
-    customer_id_card: 8b584270-f273-444d-8fb1-bf0dc9e7a880
+    customer_id_card: 8b584270f273
     customer_phone: 808-449-3545
     status: 1
     user: 4
@@ -13,7 +13,7 @@
   fields:
     flight_ticket: 82
     customer_name: Joe Appling
-    customer_id_card: d1d87c24-7ce7-4e14-b1f3-c0e476436701
+    customer_id_card: d1d87c247ce7
     customer_phone: 799-317-3740
     status: 3
     user: 2
@@ -23,7 +23,7 @@
   fields:
     flight_ticket: 162
     customer_name: Richard Harbison
-    customer_id_card: 2b23312b-d6b8-48de-8496-ccf2d119e892
+    customer_id_card: 2b23312bd6b8
     customer_phone: 143-498-3019
     status: 3
     user: 1
@@ -33,7 +33,7 @@
   fields:
     flight_ticket: 2
     customer_name: Tamara Hilton
-    customer_id_card: 19250df9-0685-4f69-b37e-70d6024df76b
+    customer_id_card: 19250df90685
     customer_phone: 630-065-5298
     status: 3
     user: 4
@@ -43,7 +43,7 @@
   fields:
     flight_ticket: 105
     customer_name: Margaret Rayborn
-    customer_id_card: b533ea5f-3484-4beb-95cc-a4ed6edd74ad
+    customer_id_card: b533ea5f3484
     customer_phone: 721-557-7721
     status: 1
     user: 1
@@ -53,7 +53,7 @@
   fields:
     flight_ticket: 173
     customer_name: Gregory Bush
-    customer_id_card: b8f8757b-b2f6-41fa-8af3-dbd25d031085
+    customer_id_card: b8f8757bb2f6
     customer_phone: 475-165-6500
     status: 3
     user: 3
@@ -63,7 +63,7 @@
   fields:
     flight_ticket: 115
     customer_name: Louise Davis
-    customer_id_card: 0a4f0198-358a-4e8b-ba11-81617d6552e4
+    customer_id_card: 0a4f0198358a
     customer_phone: 930-175-7437
     status: 3
     user: 3
@@ -73,7 +73,7 @@
   fields:
     flight_ticket: 80
     customer_name: Kathleen Corn
-    customer_id_card: dbdce8e6-617d-499e-9db8-b3960570564d
+    customer_id_card: dbdce8e6617d
     customer_phone: 403-062-9882
     status: 3
     user: 2
@@ -83,7 +83,7 @@
   fields:
     flight_ticket: 64
     customer_name: Guy Weidenbach
-    customer_id_card: 88cbd4d8-1a79-4839-b76c-bf77382afe3c
+    customer_id_card: 88cbd4d81a79
     customer_phone: 136-289-9980
     status: 3
     user: 2
@@ -93,7 +93,7 @@
   fields:
     flight_ticket: 123
     customer_name: Christin Burns
-    customer_id_card: a8772ab1-4144-4fd3-9bd0-c2c7b2123508
+    customer_id_card: a8772ab14144
     customer_phone: 531-814-9329
     status: 1
     user: 3
@@ -103,7 +103,7 @@
   fields:
     flight_ticket: 172
     customer_name: Roxanne Davis
-    customer_id_card: 6caf36f2-65ba-4705-9c7e-ec3617a2a0ca
+    customer_id_card: 6caf36f265ba
     customer_phone: 476-249-5118
     status: 3
     user: 2
@@ -113,7 +113,7 @@
   fields:
     flight_ticket: 136
     customer_name: Emma Knight
-    customer_id_card: 361dafb9-52b3-40b3-83c8-edf4b04242f2
+    customer_id_card: 361dafb952b3
     customer_phone: 962-578-6099
     status: 2
     user: 1
@@ -123,7 +123,7 @@
   fields:
     flight_ticket: 70
     customer_name: Marina Stein
-    customer_id_card: 20c5f74d-449d-42f8-8330-6ffd499d0fc4
+    customer_id_card: 20c5f74d449d
     customer_phone: 700-671-4661
     status: 1
     user: 3
@@ -133,7 +133,7 @@
   fields:
     flight_ticket: 189
     customer_name: Tonya Crawford
-    customer_id_card: 6d2d4b5e-b559-4457-a8ce-26d86acbcfcd
+    customer_id_card: 6d2d4b5eb559
     customer_phone: 378-333-0116
     status: 3
     user: 4
@@ -143,7 +143,7 @@
   fields:
     flight_ticket: 134
     customer_name: Terry Krenz
-    customer_id_card: 9a2a95e7-669a-4d46-befe-222f5218b445
+    customer_id_card: 9a2a95e7669a
     customer_phone: 851-098-4776
     status: 3
     user: 2
@@ -153,7 +153,7 @@
   fields:
     flight_ticket: 48
     customer_name: Lillie Hall
-    customer_id_card: 4cd44e3a-ca73-43a3-8f8e-15d5f1f09700
+    customer_id_card: 4cd44e3aca73
     customer_phone: 813-286-2137
     status: 1
     user: 4
@@ -163,7 +163,7 @@
   fields:
     flight_ticket: 155
     customer_name: William Aleman
-    customer_id_card: 0313536f-0ef7-4f61-bde0-d3ad0b9875c4
+    customer_id_card: 0313536f0ef7
     customer_phone: 871-640-0952
     status: 1
     user: 3
@@ -173,7 +173,7 @@
   fields:
     flight_ticket: 103
     customer_name: Faye Powell
-    customer_id_card: fdd24615-6708-4e88-8a19-d938349ef720
+    customer_id_card: fdd246156708
     customer_phone: 132-619-9690
     status: 1
     user: 3
@@ -183,7 +183,7 @@
   fields:
     flight_ticket: 38
     customer_name: Betty Johnson
-    customer_id_card: 39fb0d2f-0fcd-49b7-b8ea-ed8781b1b43c
+    customer_id_card: 39fb0d2f0fcd
     customer_phone: 984-707-1413
     status: 3
     user: 2
@@ -193,7 +193,7 @@
   fields:
     flight_ticket: 3
     customer_name: Amanda Tooks
-    customer_id_card: 4a7ac9dd-1cb1-45df-b27d-43c5b319646d
+    customer_id_card: 4a7ac9dd1cb1
     customer_phone: 323-670-5552
     status: 1
     user: 1
@@ -203,7 +203,7 @@
   fields:
     flight_ticket: 6
     customer_name: Jack Lovingood
-    customer_id_card: 1760b267-4637-4664-9cd6-c26b28d4d1e4
+    customer_id_card: 1760b2674637
     customer_phone: 587-844-0172
     status: 1
     user: 4
@@ -213,7 +213,7 @@
   fields:
     flight_ticket: 23
     customer_name: Luis Lasalle
-    customer_id_card: ef732e3e-0ebb-4d46-9048-80b4b33bf916
+    customer_id_card: ef732e3e0ebb
     customer_phone: 113-314-7335
     status: 3
     user: 2
@@ -223,7 +223,7 @@
   fields:
     flight_ticket: 186
     customer_name: Robin Slavens
-    customer_id_card: 92c46e90-fdcd-4a28-9294-7de32285a753
+    customer_id_card: 92c46e90fdcd
     customer_phone: 537-071-4181
     status: 1
     user: 1
@@ -233,7 +233,7 @@
   fields:
     flight_ticket: 52
     customer_name: Wanda Ormond
-    customer_id_card: 202e0895-996a-4cf4-a7e2-12bc35874f9f
+    customer_id_card: 202e0895996a
     customer_phone: 281-163-0509
     status: 2
     user: 4
@@ -243,7 +243,7 @@
   fields:
     flight_ticket: 137
     customer_name: Penny Rosiles
-    customer_id_card: cdb189ec-9cba-47dc-8826-0cd1f182d207
+    customer_id_card: cdb189ec9cba
     customer_phone: 829-567-1721
     status: 2
     user: 2
@@ -253,7 +253,7 @@
   fields:
     flight_ticket: 7
     customer_name: Francisco Kinsey
-    customer_id_card: fca915e1-8db4-476a-aca5-d1c16a2807aa
+    customer_id_card: fca915e18db4
     customer_phone: 171-392-0486
     status: 1
     user: 4
@@ -263,7 +263,7 @@
   fields:
     flight_ticket: 158
     customer_name: Tyler Lundgren
-    customer_id_card: 083073f8-4792-402e-9fd3-3c1ee00a9e26
+    customer_id_card: 083073f84792
     customer_phone: 857-212-4509
     status: 3
     user: 1
@@ -273,7 +273,7 @@
   fields:
     flight_ticket: 108
     customer_name: Donna Cunningham
-    customer_id_card: bdf7994f-f057-45c3-9a9f-93279c207e33
+    customer_id_card: bdf7994ff057
     customer_phone: 706-365-5067
     status: 2
     user: 3
@@ -283,7 +283,7 @@
   fields:
     flight_ticket: 128
     customer_name: Harold Wade
-    customer_id_card: b51b311c-1890-4438-a91b-19cebbf251b7
+    customer_id_card: b51b311c1890
     customer_phone: 860-037-9398
     status: 1
     user: 4
@@ -293,7 +293,7 @@
   fields:
     flight_ticket: 21
     customer_name: Karen Charlot
-    customer_id_card: 3a489ce7-a50b-4a3b-b369-be2a3ea26ab2
+    customer_id_card: 3a489ce7a50b
     customer_phone: 680-836-5868
     status: 3
     user: 4
@@ -303,7 +303,7 @@
   fields:
     flight_ticket: 119
     customer_name: Miranda Beauregard
-    customer_id_card: d14676cc-bdbf-44c7-b03e-5fb7f7fee220
+    customer_id_card: d14676ccbdbf
     customer_phone: 759-751-8292
     status: 1
     user: 1
@@ -313,7 +313,7 @@
   fields:
     flight_ticket: 160
     customer_name: Debbie Miller
-    customer_id_card: 45a57a51-7345-4f88-b107-4780cb5afa3f
+    customer_id_card: 45a57a517345
     customer_phone: 169-448-4176
     status: 2
     user: 2
@@ -323,7 +323,7 @@
   fields:
     flight_ticket: 104
     customer_name: Abe White
-    customer_id_card: 9853d6b3-c69b-4498-9a92-328a5a3afb53
+    customer_id_card: 9853d6b3c69b
     customer_phone: 554-181-7068
     status: 3
     user: 3
@@ -333,7 +333,7 @@
   fields:
     flight_ticket: 159
     customer_name: Gladys Cochran
-    customer_id_card: 0ded2438-4b70-4378-a580-867a7f93b215
+    customer_id_card: 0ded24384b70
     customer_phone: 310-358-7621
     status: 1
     user: 1
@@ -343,7 +343,7 @@
   fields:
     flight_ticket: 175
     customer_name: Jaime Ulloa
-    customer_id_card: 7121bff3-2714-46ca-a99d-4c720ba34990
+    customer_id_card: 7121bff32714
     customer_phone: 510-765-6320
     status: 2
     user: 4
@@ -353,7 +353,7 @@
   fields:
     flight_ticket: 160
     customer_name: Bok Mckoy
-    customer_id_card: fa1d018c-fbe6-4168-9756-ef1f08e1e90c
+    customer_id_card: fa1d018cfbe6
     customer_phone: 270-542-2449
     status: 3
     user: 2
@@ -363,7 +363,7 @@
   fields:
     flight_ticket: 129
     customer_name: Arthur Garduno
-    customer_id_card: a2818c11-0610-40b8-9ae9-e7fe23358863
+    customer_id_card: a2818c110610
     customer_phone: 145-323-8089
     status: 1
     user: 3
@@ -373,7 +373,7 @@
   fields:
     flight_ticket: 86
     customer_name: Reynaldo Urmeneta
-    customer_id_card: 7e8d8b9c-3c38-4bcb-b030-e86f6fe6b57c
+    customer_id_card: 7e8d8b9c3c38
     customer_phone: 579-501-1043
     status: 2
     user: 4
@@ -383,7 +383,7 @@
   fields:
     flight_ticket: 166
     customer_name: John Lee
-    customer_id_card: 95be9bea-8b98-4a43-84a5-ba51edddfa3a
+    customer_id_card: 95be9bea8b98
     customer_phone: 585-109-1327
     status: 2
     user: 3
@@ -393,7 +393,7 @@
   fields:
     flight_ticket: 46
     customer_name: Mary Jones
-    customer_id_card: 3f0b501a-e807-4763-9e14-85246e00d58c
+    customer_id_card: 3f0b501ae807
     customer_phone: 715-092-1046
     status: 2
     user: 2
@@ -403,7 +403,7 @@
   fields:
     flight_ticket: 114
     customer_name: Shane Mcdonald
-    customer_id_card: 6550856e-3270-451e-abae-19db1cb37bba
+    customer_id_card: 6550856e3270
     customer_phone: 726-709-8263
     status: 1
     user: 2
@@ -413,7 +413,7 @@
   fields:
     flight_ticket: 186
     customer_name: Berenice Close
-    customer_id_card: 1ac7edc4-e529-485e-a5f7-3909b545606d
+    customer_id_card: 1ac7edc4e529
     customer_phone: 628-521-2010
     status: 3
     user: 1
@@ -423,7 +423,7 @@
   fields:
     flight_ticket: 186
     customer_name: Walter Smith
-    customer_id_card: cf53be17-eb64-4a3b-8130-d5d9b0039d63
+    customer_id_card: cf53be17eb64
     customer_phone: 237-623-7117
     status: 1
     user: 4
@@ -433,7 +433,7 @@
   fields:
     flight_ticket: 132
     customer_name: Willie Linder
-    customer_id_card: 5c4467a9-a616-4b59-900e-3cd88a5aac8f
+    customer_id_card: 5c4467a9a616
     customer_phone: 290-008-4160
     status: 1
     user: 2
@@ -443,7 +443,7 @@
   fields:
     flight_ticket: 34
     customer_name: Jessica Batista
-    customer_id_card: 23b9c071-9ae8-4f4a-b90d-0176a320e73c
+    customer_id_card: 23b9c0719ae8
     customer_phone: 547-553-9489
     status: 3
     user: 4
@@ -453,7 +453,7 @@
   fields:
     flight_ticket: 28
     customer_name: Christine Brazzle
-    customer_id_card: eea43734-7bbc-4777-b92c-978d56cdfa8e
+    customer_id_card: eea437347bbc
     customer_phone: 448-577-3443
     status: 3
     user: 4
@@ -463,7 +463,7 @@
   fields:
     flight_ticket: 162
     customer_name: Tyler Connell
-    customer_id_card: 11d8d63a-93e1-4e61-8e9d-9b3d65512b63
+    customer_id_card: 11d8d63a93e1
     customer_phone: 907-731-1877
     status: 2
     user: 2
@@ -473,7 +473,7 @@
   fields:
     flight_ticket: 140
     customer_name: Russell Coleman
-    customer_id_card: 3fe07eaa-8407-4321-aab8-c1422454a1a9
+    customer_id_card: 3fe07eaa8407
     customer_phone: 824-501-8648
     status: 3
     user: 2
@@ -483,7 +483,7 @@
   fields:
     flight_ticket: 172
     customer_name: Jeane Helms
-    customer_id_card: 3e209dc7-ef55-4959-91ad-a895f0d8c328
+    customer_id_card: 3e209dc7ef55
     customer_phone: 559-110-8053
     status: 3
     user: 4
@@ -493,7 +493,7 @@
   fields:
     flight_ticket: 91
     customer_name: Greta Mccollum
-    customer_id_card: 64fea116-87db-4a26-801f-990837f42f4e
+    customer_id_card: 64fea11687db
     customer_phone: 224-846-2410
     status: 2
     user: 2
@@ -503,7 +503,7 @@
   fields:
     flight_ticket: 60
     customer_name: David Roberts
-    customer_id_card: fcf817fb-c59b-43c6-b73d-dcb346176fb1
+    customer_id_card: fcf817fbc59b
     customer_phone: 958-126-1321
     status: 2
     user: 3
@@ -513,7 +513,7 @@
   fields:
     flight_ticket: 139
     customer_name: Marie Nagel
-    customer_id_card: 3f7d9585-9210-4a92-956f-b33387d5a71a
+    customer_id_card: 3f7d95859210
     customer_phone: 507-375-5868
     status: 3
     user: 2
@@ -523,7 +523,7 @@
   fields:
     flight_ticket: 16
     customer_name: Owen Edwards
-    customer_id_card: 2557edf7-0d7b-47af-9d44-58e616a026f2
+    customer_id_card: 2557edf70d7b
     customer_phone: 798-490-0123
     status: 3
     user: 4
@@ -533,7 +533,7 @@
   fields:
     flight_ticket: 200
     customer_name: Billy Dunbar
-    customer_id_card: 8076a866-fd1a-4d76-ba01-99c5b801614d
+    customer_id_card: 8076a866fd1a
     customer_phone: 148-525-4205
     status: 1
     user: 4
@@ -543,7 +543,7 @@
   fields:
     flight_ticket: 181
     customer_name: Georgeann Michl
-    customer_id_card: be4299cd-dc0d-46d6-8299-49eb4d220ec9
+    customer_id_card: be4299cddc0d
     customer_phone: 282-223-2295
     status: 1
     user: 1
@@ -553,7 +553,7 @@
   fields:
     flight_ticket: 152
     customer_name: Aurelio Kassner
-    customer_id_card: fc33d057-da76-4b44-94e8-be1b81ddf8a1
+    customer_id_card: fc33d057da76
     customer_phone: 261-869-2456
     status: 2
     user: 4
@@ -563,7 +563,7 @@
   fields:
     flight_ticket: 194
     customer_name: Mark Manchini
-    customer_id_card: e356ad69-e94b-4f46-8132-bdda9684c537
+    customer_id_card: e356ad69e94b
     customer_phone: 378-066-7821
     status: 1
     user: 1
@@ -573,7 +573,7 @@
   fields:
     flight_ticket: 102
     customer_name: Crystal Rocque
-    customer_id_card: d39ed83f-38e3-4f9a-bca1-1a0fcbd5ba37
+    customer_id_card: d39ed83f38e3
     customer_phone: 174-485-4865
     status: 3
     user: 1
@@ -583,7 +583,7 @@
   fields:
     flight_ticket: 121
     customer_name: Laura White
-    customer_id_card: 37d4bdbf-e9e7-47bb-bc23-8e4a1c1dea45
+    customer_id_card: 37d4bdbfe9e7
     customer_phone: 729-001-3896
     status: 2
     user: 2
@@ -593,7 +593,7 @@
   fields:
     flight_ticket: 81
     customer_name: Pam Roberts
-    customer_id_card: 410a2ba0-9b3b-45a0-8e2e-c66cfa6b3ebc
+    customer_id_card: 410a2ba09b3b
     customer_phone: 600-095-5119
     status: 2
     user: 3
@@ -603,7 +603,7 @@
   fields:
     flight_ticket: 106
     customer_name: Jeffrey Gridley
-    customer_id_card: 0c5ce319-ab32-401c-a137-9a26a0eb8226
+    customer_id_card: 0c5ce319ab32
     customer_phone: 918-360-6206
     status: 2
     user: 4
@@ -613,7 +613,7 @@
   fields:
     flight_ticket: 160
     customer_name: Beau Gartner
-    customer_id_card: 17829509-e3cf-4c96-b116-b8869721eddf
+    customer_id_card: 17829509e3cf
     customer_phone: 741-452-5205
     status: 3
     user: 1
@@ -623,7 +623,7 @@
   fields:
     flight_ticket: 181
     customer_name: Lawrence Patterson
-    customer_id_card: 92cbd561-47c3-472f-9444-10ad3a31ecbe
+    customer_id_card: 92cbd56147c3
     customer_phone: 406-082-3977
     status: 1
     user: 4
@@ -633,7 +633,7 @@
   fields:
     flight_ticket: 152
     customer_name: Douglas Martin
-    customer_id_card: 9b472680-646b-4cc5-8392-dd16255d1f84
+    customer_id_card: 9b472680646b
     customer_phone: 161-259-3079
     status: 1
     user: 4
@@ -643,7 +643,7 @@
   fields:
     flight_ticket: 149
     customer_name: Casey Griffen
-    customer_id_card: 92c31e01-240e-4c07-b72a-2d1a6a20a32f
+    customer_id_card: 92c31e01240e
     customer_phone: 459-690-3694
     status: 1
     user: 4
@@ -653,7 +653,7 @@
   fields:
     flight_ticket: 143
     customer_name: Tony Long
-    customer_id_card: e16ab33e-fe1b-4664-a07d-d814cf5c0617
+    customer_id_card: e16ab33efe1b
     customer_phone: 317-203-1864
     status: 3
     user: 1
@@ -663,7 +663,7 @@
   fields:
     flight_ticket: 123
     customer_name: Glynis Bengel
-    customer_id_card: c020e563-f5ca-489d-975c-e5ac574deba7
+    customer_id_card: c020e563f5ca
     customer_phone: 954-709-8603
     status: 3
     user: 4
@@ -673,7 +673,7 @@
   fields:
     flight_ticket: 199
     customer_name: Jessica Tuck
-    customer_id_card: 31eb63f5-2cc0-4e0d-ad02-866a3a1c86ab
+    customer_id_card: 31eb63f52cc0
     customer_phone: 803-675-1950
     status: 3
     user: 1
@@ -683,7 +683,7 @@
   fields:
     flight_ticket: 173
     customer_name: Carol Leach
-    customer_id_card: 10eaf23e-9ce0-464b-8af4-820b71e76332
+    customer_id_card: 10eaf23e9ce0
     customer_phone: 464-616-6321
     status: 2
     user: 3
@@ -693,7 +693,7 @@
   fields:
     flight_ticket: 133
     customer_name: Andy Cady
-    customer_id_card: b44b2176-c702-4eb2-9731-4016cee0d4f4
+    customer_id_card: b44b2176c702
     customer_phone: 530-631-3396
     status: 3
     user: 1
@@ -703,7 +703,7 @@
   fields:
     flight_ticket: 102
     customer_name: Jason Marshall
-    customer_id_card: 60a95138-d828-470d-865e-ae8077638d8e
+    customer_id_card: 60a95138d828
     customer_phone: 989-571-3503
     status: 2
     user: 1
@@ -713,7 +713,7 @@
   fields:
     flight_ticket: 92
     customer_name: Rosie Bosley
-    customer_id_card: ca793fca-1003-454e-af76-a9a7ba19bef5
+    customer_id_card: ca793fca1003
     customer_phone: 669-090-0272
     status: 1
     user: 3
@@ -723,7 +723,7 @@
   fields:
     flight_ticket: 149
     customer_name: Pierre Bassani
-    customer_id_card: 532152dc-fc8e-489c-b217-df10e52fdb8e
+    customer_id_card: 532152dcfc8e
     customer_phone: 429-636-2790
     status: 2
     user: 1
@@ -733,7 +733,7 @@
   fields:
     flight_ticket: 1
     customer_name: Penny Gochal
-    customer_id_card: c04eba3b-e901-4780-b82c-5845af643ff0
+    customer_id_card: c04eba3be901
     customer_phone: 496-211-8394
     status: 2
     user: 2
@@ -743,7 +743,7 @@
   fields:
     flight_ticket: 197
     customer_name: Kathryn Lentz
-    customer_id_card: ce0d063c-f118-4458-8050-db272d7b88bb
+    customer_id_card: ce0d063cf118
     customer_phone: 455-678-8822
     status: 3
     user: 3
@@ -753,7 +753,7 @@
   fields:
     flight_ticket: 182
     customer_name: Donald Cherry
-    customer_id_card: a633d174-fe2b-4077-b755-90f8127a17d4
+    customer_id_card: a633d174fe2b
     customer_phone: 425-348-2470
     status: 3
     user: 1
@@ -763,7 +763,7 @@
   fields:
     flight_ticket: 121
     customer_name: Anthony Graap
-    customer_id_card: 1d4b73a4-52d1-4517-bad8-11a891ca9619
+    customer_id_card: 1d4b73a452d1
     customer_phone: 165-327-1782
     status: 3
     user: 1
@@ -773,7 +773,7 @@
   fields:
     flight_ticket: 55
     customer_name: Timothy Mandel
-    customer_id_card: 42958b3e-ec98-42db-8ee2-bc84d32bb45b
+    customer_id_card: 42958b3eec98
     customer_phone: 693-572-0632
     status: 3
     user: 4
@@ -783,7 +783,7 @@
   fields:
     flight_ticket: 86
     customer_name: Kathryn Bolling
-    customer_id_card: 28d528af-1097-4c1c-9a35-5466d804f4b3
+    customer_id_card: 28d528af1097
     customer_phone: 873-538-8775
     status: 1
     user: 1
@@ -793,7 +793,7 @@
   fields:
     flight_ticket: 157
     customer_name: Rachel Ellis
-    customer_id_card: 00e43c5b-aefd-4c38-a8ee-e299b186b7c0
+    customer_id_card: 00e43c5baefd
     customer_phone: 728-088-7960
     status: 1
     user: 3
@@ -803,7 +803,7 @@
   fields:
     flight_ticket: 134
     customer_name: Denis Geddes
-    customer_id_card: 02c391f8-277c-497d-b7b6-a3bb75462ffb
+    customer_id_card: 02c391f8277c
     customer_phone: 226-394-3470
     status: 3
     user: 2
@@ -813,7 +813,7 @@
   fields:
     flight_ticket: 73
     customer_name: Rudy Laudat
-    customer_id_card: 87e31fca-a747-4f96-833f-876e263b2738
+    customer_id_card: 87e31fcaa747
     customer_phone: 843-451-4970
     status: 3
     user: 4
@@ -823,7 +823,7 @@
   fields:
     flight_ticket: 43
     customer_name: David Addams
-    customer_id_card: aa81d231-9b2f-48fb-8e4b-3e66dfa6f743
+    customer_id_card: aa81d2319b2f
     customer_phone: 919-343-4903
     status: 2
     user: 2
@@ -833,7 +833,7 @@
   fields:
     flight_ticket: 55
     customer_name: Michele Davis
-    customer_id_card: c549b7e8-efc9-46e8-a2fd-93b3bde53f83
+    customer_id_card: c549b7e8efc9
     customer_phone: 766-662-5662
     status: 2
     user: 4
@@ -843,7 +843,7 @@
   fields:
     flight_ticket: 39
     customer_name: Joshua Lancaster
-    customer_id_card: 40c49160-0e18-4d63-b502-57777ad35ea2
+    customer_id_card: 40c491600e18
     customer_phone: 435-641-1271
     status: 2
     user: 3
@@ -853,7 +853,7 @@
   fields:
     flight_ticket: 170
     customer_name: Chris Mahnken
-    customer_id_card: 34e848d2-2bd9-42df-a185-179ee79aa67d
+    customer_id_card: 34e848d22bd9
     customer_phone: 198-610-5296
     status: 2
     user: 3
@@ -863,7 +863,7 @@
   fields:
     flight_ticket: 188
     customer_name: Robert Leonard
-    customer_id_card: fc7bde39-096e-4e61-9308-e2dc6d741879
+    customer_id_card: fc7bde39096e
     customer_phone: 448-646-8187
     status: 3
     user: 3
@@ -873,7 +873,7 @@
   fields:
     flight_ticket: 159
     customer_name: Henry Mcknight
-    customer_id_card: e77a8e5f-668f-4a70-a3ad-21befabb7ad0
+    customer_id_card: e77a8e5f668f
     customer_phone: 591-428-2988
     status: 2
     user: 3
@@ -883,7 +883,7 @@
   fields:
     flight_ticket: 89
     customer_name: James Arriola
-    customer_id_card: 8b60b0c1-053c-4756-930b-b56f271d36a9
+    customer_id_card: 8b60b0c1053c
     customer_phone: 356-217-0160
     status: 1
     user: 2
@@ -893,7 +893,7 @@
   fields:
     flight_ticket: 195
     customer_name: Matthew Fleming
-    customer_id_card: 41ca22e1-2532-427b-92ab-f18d7b29103e
+    customer_id_card: 41ca22e12532
     customer_phone: 106-412-8303
     status: 1
     user: 1
@@ -903,7 +903,7 @@
   fields:
     flight_ticket: 133
     customer_name: Janet Lewis
-    customer_id_card: c5121080-c0b3-4435-8fe0-e880387f0460
+    customer_id_card: c5121080c0b3
     customer_phone: 371-496-5456
     status: 2
     user: 4
@@ -913,7 +913,7 @@
   fields:
     flight_ticket: 27
     customer_name: Edgar Childress
-    customer_id_card: 3be4af8e-7144-4264-a9f6-9316bb700f19
+    customer_id_card: 3be4af8e7144
     customer_phone: 455-057-7072
     status: 2
     user: 4
@@ -923,7 +923,7 @@
   fields:
     flight_ticket: 191
     customer_name: Jason Rodriquez
-    customer_id_card: 26f81a2f-4cca-4ecc-8bfa-f66f39773edb
+    customer_id_card: 26f81a2f4cca
     customer_phone: 559-287-1960
     status: 2
     user: 2
@@ -933,7 +933,7 @@
   fields:
     flight_ticket: 153
     customer_name: Lynda Taylor
-    customer_id_card: a20bbb0b-f77d-4969-966b-dc1aa63f6f58
+    customer_id_card: a20bbb0bf77d
     customer_phone: 338-553-0465
     status: 2
     user: 3
@@ -943,7 +943,7 @@
   fields:
     flight_ticket: 188
     customer_name: Joy Rosenfield
-    customer_id_card: 32f37b3d-8940-4c87-8ab4-f2101569ecb7
+    customer_id_card: 32f37b3d8940
     customer_phone: 229-676-8084
     status: 3
     user: 1
@@ -953,7 +953,7 @@
   fields:
     flight_ticket: 186
     customer_name: Evelyn Haynes
-    customer_id_card: 18ac498f-b9b6-4c1a-bee7-9ce1edec9e4a
+    customer_id_card: 18ac498fb9b6
     customer_phone: 393-731-6120
     status: 1
     user: 2
@@ -963,7 +963,7 @@
   fields:
     flight_ticket: 20
     customer_name: Patricia Dugat
-    customer_id_card: 4c4c3876-16d7-4502-b3ce-f8a34cfead59
+    customer_id_card: 4c4c387616d7
     customer_phone: 647-416-7399
     status: 1
     user: 3
@@ -973,7 +973,7 @@
   fields:
     flight_ticket: 100
     customer_name: Rita Schmidt
-    customer_id_card: 6092a713-18b7-47d0-8035-6a6ba4fd5b3a
+    customer_id_card: 6092a71318b7
     customer_phone: 938-603-6898
     status: 1
     user: 3
@@ -983,7 +983,7 @@
   fields:
     flight_ticket: 145
     customer_name: James Moser
-    customer_id_card: 3ec5dcf2-c895-4e1b-b9fa-891e1ca99abe
+    customer_id_card: 3ec5dcf2c895
     customer_phone: 257-382-8167
     status: 3
     user: 3
@@ -993,7 +993,7 @@
   fields:
     flight_ticket: 74
     customer_name: Samuel Cox
-    customer_id_card: ffa75656-c9f2-4dfd-9224-ee28d625d905
+    customer_id_card: ffa75656c9f2
     customer_phone: 720-701-3773
     status: 2
     user: 1
@@ -1003,7 +1003,7 @@
   fields:
     flight_ticket: 107
     customer_name: Michael Fields
-    customer_id_card: f85a39db-6986-407a-a8e2-00a7c0e397d3
+    customer_id_card: f85a39db6986
     customer_phone: 389-099-3234
     status: 3
     user: 2
@@ -1013,7 +1013,7 @@
   fields:
     flight_ticket: 69
     customer_name: Marianela Power
-    customer_id_card: 679d0909-e9de-48b8-ad55-d05976fea965
+    customer_id_card: 679d0909e9de
     customer_phone: 604-141-6040
     status: 1
     user: 3
@@ -1023,7 +1023,7 @@
   fields:
     flight_ticket: 180
     customer_name: Michael Elmer
-    customer_id_card: ff653d42-af8a-4b28-8b7e-50755a4b3819
+    customer_id_card: ff653d42af8a
     customer_phone: 390-382-7031
     status: 2
     user: 4
@@ -1033,7 +1033,7 @@
   fields:
     flight_ticket: 152
     customer_name: Lois Brown
-    customer_id_card: 9f769144-6a2f-40a0-8aec-f6371dfb85cb
+    customer_id_card: 9f7691446a2f
     customer_phone: 355-611-5934
     status: 1
     user: 2
@@ -1043,7 +1043,7 @@
   fields:
     flight_ticket: 113
     customer_name: Carlos Stanley
-    customer_id_card: 73eed2b2-ba01-443e-b236-6005b9cf138e
+    customer_id_card: 73eed2b2ba01
     customer_phone: 224-136-6723
     status: 2
     user: 3
@@ -1053,7 +1053,7 @@
   fields:
     flight_ticket: 185
     customer_name: Olen Martinez
-    customer_id_card: eea52ee6-7c2c-455d-b087-78761b8d73e8
+    customer_id_card: eea52ee67c2c
     customer_phone: 515-791-9995
     status: 2
     user: 1
@@ -1063,7 +1063,7 @@
   fields:
     flight_ticket: 178
     customer_name: Harold Cochran
-    customer_id_card: 0a59599a-2f6d-4e2c-8d4f-6598668fa639
+    customer_id_card: 0a59599a2f6d
     customer_phone: 572-415-8218
     status: 3
     user: 3
@@ -1073,7 +1073,7 @@
   fields:
     flight_ticket: 84
     customer_name: Brenda Valdez
-    customer_id_card: 38a0f780-42b3-42d7-89dd-6dfccca8c140
+    customer_id_card: 38a0f78042b3
     customer_phone: 895-251-2219
     status: 1
     user: 3
@@ -1083,7 +1083,7 @@
   fields:
     flight_ticket: 26
     customer_name: Hugh Ryan
-    customer_id_card: 43ceb948-358c-4c76-8433-d81e677117f9
+    customer_id_card: 43ceb948358c
     customer_phone: 105-782-2082
     status: 1
     user: 3
@@ -1093,7 +1093,7 @@
   fields:
     flight_ticket: 200
     customer_name: Larry Lally
-    customer_id_card: db9a2ae3-b428-4074-975d-b800fecca163
+    customer_id_card: db9a2ae3b428
     customer_phone: 720-731-6086
     status: 3
     user: 3
@@ -1103,7 +1103,7 @@
   fields:
     flight_ticket: 38
     customer_name: Shane Watts
-    customer_id_card: c93d74c6-3188-44de-a195-f645e035264f
+    customer_id_card: c93d74c63188
     customer_phone: 468-580-5250
     status: 3
     user: 1
@@ -1113,7 +1113,7 @@
   fields:
     flight_ticket: 200
     customer_name: Carole Booton
-    customer_id_card: b99ac888-7db9-46a9-ae74-bc4d8aebfffb
+    customer_id_card: b99ac8887db9
     customer_phone: 523-485-4864
     status: 2
     user: 3
@@ -1123,7 +1123,7 @@
   fields:
     flight_ticket: 200
     customer_name: Joseph Schmidt
-    customer_id_card: 6c9b0c72-ffb0-4191-aee0-a3f73769ed66
+    customer_id_card: 6c9b0c72ffb0
     customer_phone: 299-614-9017
     status: 3
     user: 3
@@ -1133,7 +1133,7 @@
   fields:
     flight_ticket: 92
     customer_name: Francine Golden
-    customer_id_card: 190bc6d2-a826-403a-a823-aa6db640e85d
+    customer_id_card: 190bc6d2a826
     customer_phone: 404-139-8076
     status: 2
     user: 4
@@ -1143,7 +1143,7 @@
   fields:
     flight_ticket: 44
     customer_name: Mattie Holley
-    customer_id_card: d7c84e1a-8d01-4098-ae9f-fcf253e6bb78
+    customer_id_card: d7c84e1a8d01
     customer_phone: 951-657-1665
     status: 1
     user: 4
@@ -1153,7 +1153,7 @@
   fields:
     flight_ticket: 200
     customer_name: Robert Authement
-    customer_id_card: f9b9ccdf-e1ac-46b9-a801-a3498e0247bf
+    customer_id_card: f9b9ccdfe1ac
     customer_phone: 741-856-3567
     status: 1
     user: 2
@@ -1163,7 +1163,7 @@
   fields:
     flight_ticket: 136
     customer_name: Martha Moore
-    customer_id_card: 3eb045aa-15c6-4e6c-9273-cd022f5aab5e
+    customer_id_card: 3eb045aa15c6
     customer_phone: 531-298-3712
     status: 3
     user: 2
@@ -1173,7 +1173,7 @@
   fields:
     flight_ticket: 97
     customer_name: Eleanor Watson
-    customer_id_card: ee5f8e2a-cae6-44c3-87e0-0e11e3072b5d
+    customer_id_card: ee5f8e2acae6
     customer_phone: 222-468-4733
     status: 3
     user: 3
@@ -1183,7 +1183,7 @@
   fields:
     flight_ticket: 145
     customer_name: Cheryl Riley
-    customer_id_card: 4dd5086c-0444-421e-b54a-397c5685a3e7
+    customer_id_card: 4dd5086c0444
     customer_phone: 907-172-8397
     status: 2
     user: 4
@@ -1193,7 +1193,7 @@
   fields:
     flight_ticket: 128
     customer_name: Staci Robert
-    customer_id_card: 09e5475a-8546-47da-85dc-341d903c89a5
+    customer_id_card: 09e5475a8546
     customer_phone: 173-557-8024
     status: 1
     user: 4
@@ -1203,7 +1203,7 @@
   fields:
     flight_ticket: 92
     customer_name: Latrice Purnell
-    customer_id_card: 0e9f9cf1-dfbb-4004-8e86-c4cbb51f1279
+    customer_id_card: 0e9f9cf1dfbb
     customer_phone: 117-555-0722
     status: 3
     user: 1
@@ -1213,7 +1213,7 @@
   fields:
     flight_ticket: 92
     customer_name: Michael Pierce
-    customer_id_card: 4e2e1c25-571f-480d-b7cc-93c343f470a3
+    customer_id_card: 4e2e1c25571f
     customer_phone: 866-735-3452
     status: 1
     user: 1
@@ -1223,7 +1223,7 @@
   fields:
     flight_ticket: 69
     customer_name: Gary Consla
-    customer_id_card: 4971b7f1-ea33-4ff1-b7f8-8f50bd1ecf52
+    customer_id_card: 4971b7f1ea33
     customer_phone: 439-689-2621
     status: 2
     user: 2
@@ -1233,7 +1233,7 @@
   fields:
     flight_ticket: 148
     customer_name: Michael Paisley
-    customer_id_card: fa7f56ed-7e10-45c4-8581-8f802d003272
+    customer_id_card: fa7f56ed7e10
     customer_phone: 650-588-0564
     status: 3
     user: 4
@@ -1243,7 +1243,7 @@
   fields:
     flight_ticket: 64
     customer_name: Steven Murphy
-    customer_id_card: d92f77c6-ff56-43c7-9fa5-39928a66b016
+    customer_id_card: d92f77c6ff56
     customer_phone: 345-309-4980
     status: 3
     user: 2
@@ -1253,7 +1253,7 @@
   fields:
     flight_ticket: 25
     customer_name: Gregory Sauer
-    customer_id_card: c64b56e4-3765-4a66-b312-2175c405aebc
+    customer_id_card: c64b56e43765
     customer_phone: 240-686-9432
     status: 1
     user: 3
@@ -1263,7 +1263,7 @@
   fields:
     flight_ticket: 59
     customer_name: Kristy Hadsall
-    customer_id_card: caa61f17-d2c3-4363-a226-aed927647bc5
+    customer_id_card: caa61f17d2c3
     customer_phone: 620-882-7687
     status: 1
     user: 1
@@ -1273,7 +1273,7 @@
   fields:
     flight_ticket: 164
     customer_name: Thomas Simpson
-    customer_id_card: 6eafb146-c37e-445a-a7a7-36c55b68301f
+    customer_id_card: 6eafb146c37e
     customer_phone: 401-159-2892
     status: 1
     user: 1
@@ -1283,7 +1283,7 @@
   fields:
     flight_ticket: 27
     customer_name: Jose King
-    customer_id_card: bff1e439-3c79-4ae6-9391-c04b0c1cb0f1
+    customer_id_card: bff1e4393c79
     customer_phone: 789-180-2311
     status: 3
     user: 4
@@ -1293,7 +1293,7 @@
   fields:
     flight_ticket: 140
     customer_name: Stephanie Rodriguez
-    customer_id_card: 1adf6dc5-8ec3-4b76-b1c5-630f19e8f136
+    customer_id_card: 1adf6dc58ec3
     customer_phone: 979-688-5458
     status: 1
     user: 3
@@ -1303,7 +1303,7 @@
   fields:
     flight_ticket: 196
     customer_name: Jimmy Cummins
-    customer_id_card: 9f74e087-fbd6-4a89-8f2a-150242ca01d1
+    customer_id_card: 9f74e087fbd6
     customer_phone: 952-421-2196
     status: 2
     user: 4
@@ -1313,7 +1313,7 @@
   fields:
     flight_ticket: 107
     customer_name: Robert Greenfeld
-    customer_id_card: 5ec4e271-a5bf-4ae1-9b27-fb089053fe79
+    customer_id_card: 5ec4e271a5bf
     customer_phone: 377-206-3423
     status: 3
     user: 3
@@ -1323,7 +1323,7 @@
   fields:
     flight_ticket: 79
     customer_name: Sarah Cole
-    customer_id_card: a59f1136-0887-4877-ac4c-313b4d84094e
+    customer_id_card: a59f11360887
     customer_phone: 544-054-5958
     status: 3
     user: 2
@@ -1333,7 +1333,7 @@
   fields:
     flight_ticket: 81
     customer_name: Keith Bombard
-    customer_id_card: 66c818f5-a954-448a-8b02-94960fb80298
+    customer_id_card: 66c818f5a954
     customer_phone: 938-856-1943
     status: 1
     user: 4
@@ -1343,7 +1343,7 @@
   fields:
     flight_ticket: 157
     customer_name: Luis West
-    customer_id_card: a3f4831f-b585-4e74-83dd-0c08c7e7783f
+    customer_id_card: a3f4831fb585
     customer_phone: 276-187-0044
     status: 2
     user: 1
@@ -1353,7 +1353,7 @@
   fields:
     flight_ticket: 19
     customer_name: Marc Tripp
-    customer_id_card: a9ec2627-f438-42a6-9cfb-4cb09cf88e98
+    customer_id_card: a9ec2627f438
     customer_phone: 842-166-3891
     status: 1
     user: 2
@@ -1363,7 +1363,7 @@
   fields:
     flight_ticket: 122
     customer_name: Melinda Oliver
-    customer_id_card: e9d7217a-daac-4bc5-abb6-6bcff8137c59
+    customer_id_card: e9d7217adaac
     customer_phone: 135-040-1317
     status: 2
     user: 4
@@ -1373,7 +1373,7 @@
   fields:
     flight_ticket: 146
     customer_name: Brett Harris
-    customer_id_card: b7de31f4-cef8-4970-8cf1-63db3c65959f
+    customer_id_card: b7de31f4cef8
     customer_phone: 613-018-8040
     status: 1
     user: 4
@@ -1383,7 +1383,7 @@
   fields:
     flight_ticket: 123
     customer_name: Karin Vandenbosch
-    customer_id_card: fd0fafe7-e742-4d6d-90de-254f4e6af633
+    customer_id_card: fd0fafe7e742
     customer_phone: 814-650-1529
     status: 2
     user: 1
@@ -1393,7 +1393,7 @@
   fields:
     flight_ticket: 200
     customer_name: Kelsey Cartier
-    customer_id_card: a866e065-21f0-46b8-9a3c-1acd68507376
+    customer_id_card: a866e06521f0
     customer_phone: 907-343-5653
     status: 2
     user: 2
@@ -1403,7 +1403,7 @@
   fields:
     flight_ticket: 84
     customer_name: Stephen Melius
-    customer_id_card: 2b9d7a86-2cd3-412d-92b0-3a26173cdcb2
+    customer_id_card: 2b9d7a862cd3
     customer_phone: 708-003-7889
     status: 2
     user: 3
@@ -1413,7 +1413,7 @@
   fields:
     flight_ticket: 109
     customer_name: Sara Littlejohn
-    customer_id_card: e3586761-ca65-465f-ab4c-a555a4002f69
+    customer_id_card: e3586761ca65
     customer_phone: 823-739-2455
     status: 2
     user: 1
@@ -1423,7 +1423,7 @@
   fields:
     flight_ticket: 47
     customer_name: Geraldine Delo
-    customer_id_card: 150b49e1-e57f-4cc7-bfea-8c070cd8327f
+    customer_id_card: 150b49e1e57f
     customer_phone: 200-774-5881
     status: 2
     user: 1
@@ -1433,7 +1433,7 @@
   fields:
     flight_ticket: 9
     customer_name: Shawn Reed
-    customer_id_card: 86bc5af5-a4a2-4672-9c0f-01638561c353
+    customer_id_card: 86bc5af5a4a2
     customer_phone: 694-321-3523
     status: 3
     user: 2
@@ -1443,7 +1443,7 @@
   fields:
     flight_ticket: 170
     customer_name: Carol Carvalho
-    customer_id_card: 5873aae4-102a-49a4-9be3-a640425ddb21
+    customer_id_card: 5873aae4102a
     customer_phone: 518-041-5814
     status: 1
     user: 2
@@ -1453,7 +1453,7 @@
   fields:
     flight_ticket: 87
     customer_name: Louise Holland
-    customer_id_card: ac553475-d6ca-4002-8f8b-305e7feb38d8
+    customer_id_card: ac553475d6ca
     customer_phone: 226-336-9069
     status: 1
     user: 4
@@ -1463,7 +1463,7 @@
   fields:
     flight_ticket: 143
     customer_name: James Tomidy
-    customer_id_card: 71f093fc-4fff-4d3f-a83f-a5178e1ace85
+    customer_id_card: 71f093fc4fff
     customer_phone: 903-753-0991
     status: 3
     user: 3
@@ -1473,7 +1473,7 @@
   fields:
     flight_ticket: 144
     customer_name: Manuel Johnson
-    customer_id_card: e95351bb-52ca-4040-b505-55c91d89b0e5
+    customer_id_card: e95351bb52ca
     customer_phone: 470-307-8326
     status: 3
     user: 3
@@ -1483,7 +1483,7 @@
   fields:
     flight_ticket: 21
     customer_name: Barry Vollmar
-    customer_id_card: accfed1e-cb9b-433a-bd43-3f66da03e841
+    customer_id_card: accfed1ecb9b
     customer_phone: 322-497-9507
     status: 2
     user: 3
@@ -1493,7 +1493,7 @@
   fields:
     flight_ticket: 38
     customer_name: Maria Hogsett
-    customer_id_card: 709edd7e-6b78-4dbd-9be8-115cc8060b1b
+    customer_id_card: 709edd7e6b78
     customer_phone: 883-451-5611
     status: 2
     user: 3
@@ -1503,7 +1503,7 @@
   fields:
     flight_ticket: 102
     customer_name: Jacqueline Brown
-    customer_id_card: 1c2bb222-21d2-4035-961a-cb9ad2cf233a
+    customer_id_card: 1c2bb22221d2
     customer_phone: 609-016-3305
     status: 3
     user: 2
@@ -1513,7 +1513,7 @@
   fields:
     flight_ticket: 143
     customer_name: Myrtie Calderon
-    customer_id_card: a7747b6a-8644-461c-9d2d-5d1d20a16ea2
+    customer_id_card: a7747b6a8644
     customer_phone: 486-390-4036
     status: 3
     user: 3
@@ -1523,7 +1523,7 @@
   fields:
     flight_ticket: 74
     customer_name: Martin Lewis
-    customer_id_card: 56464279-08e9-4397-a985-e518820e372f
+    customer_id_card: 5646427908e9
     customer_phone: 337-708-1724
     status: 2
     user: 2
@@ -1533,7 +1533,7 @@
   fields:
     flight_ticket: 116
     customer_name: Amber Baker
-    customer_id_card: a501f9cd-79ba-4bcd-b319-4c69d1e348a5
+    customer_id_card: a501f9cd79ba
     customer_phone: 589-146-6194
     status: 3
     user: 3
@@ -1543,7 +1543,7 @@
   fields:
     flight_ticket: 13
     customer_name: Kathryn Wells
-    customer_id_card: 472b9438-d4b0-45b9-b120-a7c0ddf6a197
+    customer_id_card: 472b9438d4b0
     customer_phone: 225-637-1902
     status: 2
     user: 4
@@ -1553,7 +1553,7 @@
   fields:
     flight_ticket: 153
     customer_name: Jenny Pepper
-    customer_id_card: 8f824567-c926-4422-a66e-c1d457299c12
+    customer_id_card: 8f824567c926
     customer_phone: 973-545-9343
     status: 3
     user: 2
@@ -1563,7 +1563,7 @@
   fields:
     flight_ticket: 71
     customer_name: Elizabeth Coyle
-    customer_id_card: bfed3bb9-4d36-4dec-bea3-2568e8f521b6
+    customer_id_card: bfed3bb94d36
     customer_phone: 335-792-0762
     status: 2
     user: 1
@@ -1573,7 +1573,7 @@
   fields:
     flight_ticket: 99
     customer_name: Bill Silva
-    customer_id_card: 7b754dfc-92e7-4162-849f-1e8b8e43f46d
+    customer_id_card: 7b754dfc92e7
     customer_phone: 654-544-3726
     status: 3
     user: 1
@@ -1583,7 +1583,7 @@
   fields:
     flight_ticket: 133
     customer_name: Katie Selley
-    customer_id_card: 3f9c5145-1e72-4d1f-8e1b-62d0e3eb43c3
+    customer_id_card: 3f9c51451e72
     customer_phone: 296-402-9370
     status: 2
     user: 1
@@ -1593,7 +1593,7 @@
   fields:
     flight_ticket: 26
     customer_name: Jane Theisen
-    customer_id_card: 3874ef28-7a7a-4a02-a354-f7699b5ef91a
+    customer_id_card: 3874ef287a7a
     customer_phone: 128-273-2785
     status: 3
     user: 3
@@ -1603,7 +1603,7 @@
   fields:
     flight_ticket: 64
     customer_name: Maria Boone
-    customer_id_card: f2cc4d93-8dfe-4be6-87fe-e68852d0eb89
+    customer_id_card: f2cc4d938dfe
     customer_phone: 262-646-5902
     status: 3
     user: 3
@@ -1613,7 +1613,7 @@
   fields:
     flight_ticket: 96
     customer_name: Jeremiah Fazzone
-    customer_id_card: bdb68e2f-c1d9-4f0d-a996-32664b44f741
+    customer_id_card: bdb68e2fc1d9
     customer_phone: 589-561-1330
     status: 2
     user: 4
@@ -1623,7 +1623,7 @@
   fields:
     flight_ticket: 87
     customer_name: Timmy Barto
-    customer_id_card: e02d2c00-aafc-43cb-9c05-c2eb64d22a9e
+    customer_id_card: e02d2c00aafc
     customer_phone: 459-042-2054
     status: 3
     user: 4
@@ -1633,7 +1633,7 @@
   fields:
     flight_ticket: 186
     customer_name: Hal Shelstad
-    customer_id_card: 839732e9-c0f4-4559-860d-d5e449bed9e1
+    customer_id_card: 839732e9c0f4
     customer_phone: 397-624-0848
     status: 2
     user: 3
@@ -1643,7 +1643,7 @@
   fields:
     flight_ticket: 26
     customer_name: Craig Berry
-    customer_id_card: 03a52a26-1e66-4b9b-b26a-8c284b6dd1e7
+    customer_id_card: 03a52a261e66
     customer_phone: 527-058-5453
     status: 1
     user: 2
@@ -1653,7 +1653,7 @@
   fields:
     flight_ticket: 61
     customer_name: Williams Maurer
-    customer_id_card: 71b22953-781e-4f4a-9969-94e176fb6c68
+    customer_id_card: 71b22953781e
     customer_phone: 173-496-0011
     status: 2
     user: 1
@@ -1663,7 +1663,7 @@
   fields:
     flight_ticket: 131
     customer_name: Charles Newsome
-    customer_id_card: 3a516f54-2c7b-45fb-8799-5deb281b5059
+    customer_id_card: 3a516f542c7b
     customer_phone: 220-355-9015
     status: 2
     user: 4
@@ -1673,7 +1673,7 @@
   fields:
     flight_ticket: 1
     customer_name: Aimee Anderson
-    customer_id_card: 690e1718-85c5-4988-a1b8-b15b515c1374
+    customer_id_card: 690e171885c5
     customer_phone: 434-181-0465
     status: 3
     user: 2
@@ -1683,7 +1683,7 @@
   fields:
     flight_ticket: 131
     customer_name: Ruth Ferrigno
-    customer_id_card: aad6d62a-be08-40f3-b8a8-656dcbb50d8e
+    customer_id_card: aad6d62abe08
     customer_phone: 436-356-8957
     status: 3
     user: 4
@@ -1693,7 +1693,7 @@
   fields:
     flight_ticket: 168
     customer_name: Arturo Richard
-    customer_id_card: 44a2b8d4-3b1f-41d4-9604-3a4c55c97dfb
+    customer_id_card: 44a2b8d43b1f
     customer_phone: 650-034-9884
     status: 1
     user: 4
@@ -1703,7 +1703,7 @@
   fields:
     flight_ticket: 108
     customer_name: Blanca Coyne
-    customer_id_card: 38443b13-6461-4929-886c-3e3566e53575
+    customer_id_card: 38443b136461
     customer_phone: 634-844-8982
     status: 2
     user: 3
@@ -1713,7 +1713,7 @@
   fields:
     flight_ticket: 30
     customer_name: Angela Moultry
-    customer_id_card: 09c41392-aa82-46eb-9648-02be7a6e1c2d
+    customer_id_card: 09c41392aa82
     customer_phone: 618-354-9467
     status: 2
     user: 4
@@ -1723,7 +1723,7 @@
   fields:
     flight_ticket: 187
     customer_name: Minnie Melara
-    customer_id_card: 06ec51e6-23eb-45d8-a3cf-f7ff038777d5
+    customer_id_card: 06ec51e623eb
     customer_phone: 701-354-0470
     status: 1
     user: 3
@@ -1733,7 +1733,7 @@
   fields:
     flight_ticket: 68
     customer_name: Robert Salvatierra
-    customer_id_card: 60fd5562-3dcc-48c1-8454-02532e67105c
+    customer_id_card: 60fd55623dcc
     customer_phone: 928-142-7384
     status: 3
     user: 4
@@ -1743,7 +1743,7 @@
   fields:
     flight_ticket: 85
     customer_name: John Larson
-    customer_id_card: c92e72c4-0aa6-48b3-ac46-ed2d3c0de25f
+    customer_id_card: c92e72c40aa6
     customer_phone: 670-332-6791
     status: 3
     user: 4
@@ -1753,7 +1753,7 @@
   fields:
     flight_ticket: 35
     customer_name: Teresa Lippert
-    customer_id_card: 63312c56-f83d-4266-a7dd-f761cb82b155
+    customer_id_card: 63312c56f83d
     customer_phone: 942-857-3115
     status: 1
     user: 2
@@ -1763,7 +1763,7 @@
   fields:
     flight_ticket: 78
     customer_name: Evelyn Rees
-    customer_id_card: fc725b08-fa0d-4308-af48-d5faa11f624e
+    customer_id_card: fc725b08fa0d
     customer_phone: 681-231-2235
     status: 2
     user: 2
@@ -1773,7 +1773,7 @@
   fields:
     flight_ticket: 62
     customer_name: Daniel Robinson
-    customer_id_card: d0221967-23f2-49bf-91c0-b7cc66e72680
+    customer_id_card: d022196723f2
     customer_phone: 693-352-4010
     status: 2
     user: 4
@@ -1783,7 +1783,7 @@
   fields:
     flight_ticket: 155
     customer_name: Theresa Griffin
-    customer_id_card: b245f5ee-df92-43c9-8b59-79591338d046
+    customer_id_card: b245f5eedf92
     customer_phone: 149-109-6425
     status: 2
     user: 4
@@ -1793,7 +1793,7 @@
   fields:
     flight_ticket: 42
     customer_name: Brian Stonge
-    customer_id_card: 0da903d2-7c24-4184-a502-6bed896fc16c
+    customer_id_card: 0da903d27c24
     customer_phone: 543-408-5994
     status: 3
     user: 4
@@ -1803,7 +1803,7 @@
   fields:
     flight_ticket: 19
     customer_name: Maureen Catron
-    customer_id_card: 4440cebd-9c50-4a4b-8ed0-418e526c3df5
+    customer_id_card: 4440cebd9c50
     customer_phone: 690-115-8136
     status: 3
     user: 4
@@ -1813,7 +1813,7 @@
   fields:
     flight_ticket: 95
     customer_name: Gertrude Hopkins
-    customer_id_card: 678162c0-8d88-4825-ab83-b01d3fda3cb1
+    customer_id_card: 678162c08d88
     customer_phone: 880-584-9978
     status: 2
     user: 1
@@ -1823,7 +1823,7 @@
   fields:
     flight_ticket: 23
     customer_name: Cynthia Masterson
-    customer_id_card: 4fde49ed-4eee-4866-abe4-b76bdb709679
+    customer_id_card: 4fde49ed4eee
     customer_phone: 283-058-1210
     status: 3
     user: 3
@@ -1833,7 +1833,7 @@
   fields:
     flight_ticket: 171
     customer_name: Carmina Vargas
-    customer_id_card: 3d3166fd-1844-40b4-9378-8aa15002436d
+    customer_id_card: 3d3166fd1844
     customer_phone: 672-038-5810
     status: 3
     user: 1
@@ -1843,7 +1843,7 @@
   fields:
     flight_ticket: 155
     customer_name: Mark Mays
-    customer_id_card: 6fb9353b-367d-451b-b2a3-85c0c0af5535
+    customer_id_card: 6fb9353b367d
     customer_phone: 728-146-6855
     status: 3
     user: 4
@@ -1853,7 +1853,7 @@
   fields:
     flight_ticket: 121
     customer_name: Ursula Gish
-    customer_id_card: e5dfdf0f-39e3-420b-908b-e5d42c888326
+    customer_id_card: e5dfdf0f39e3
     customer_phone: 616-651-4170
     status: 1
     user: 1
@@ -1863,7 +1863,7 @@
   fields:
     flight_ticket: 19
     customer_name: John Jones
-    customer_id_card: e48b412c-381f-4b47-8a77-f7ae932f05a8
+    customer_id_card: e48b412c381f
     customer_phone: 170-427-9101
     status: 2
     user: 2
@@ -1873,7 +1873,7 @@
   fields:
     flight_ticket: 41
     customer_name: Mae Shepherd
-    customer_id_card: 64af17fd-1cd9-47d7-8a07-619ba7e40a70
+    customer_id_card: 64af17fd1cd9
     customer_phone: 443-225-4808
     status: 2
     user: 1
@@ -1883,7 +1883,7 @@
   fields:
     flight_ticket: 129
     customer_name: Charlotte Oconnor
-    customer_id_card: 3bde2d8d-fb17-4c6f-bd97-72c805fa9e04
+    customer_id_card: 3bde2d8dfb17
     customer_phone: 329-661-7468
     status: 3
     user: 3
@@ -1893,7 +1893,7 @@
   fields:
     flight_ticket: 169
     customer_name: Alice Vala
-    customer_id_card: ac68461b-1f83-41d9-838d-03fef36b6c64
+    customer_id_card: ac68461b1f83
     customer_phone: 995-613-8705
     status: 3
     user: 1
@@ -1903,7 +1903,7 @@
   fields:
     flight_ticket: 29
     customer_name: Warren Hardy
-    customer_id_card: bd4d991c-3438-486d-b19e-b1df345ac788
+    customer_id_card: bd4d991c3438
     customer_phone: 146-623-0760
     status: 1
     user: 2
@@ -1913,7 +1913,7 @@
   fields:
     flight_ticket: 53
     customer_name: Ron Young
-    customer_id_card: 791a0451-fe6c-4eb7-ac46-3e4d11b6e137
+    customer_id_card: 791a0451fe6c
     customer_phone: 270-007-6694
     status: 3
     user: 1
@@ -1923,7 +1923,7 @@
   fields:
     flight_ticket: 196
     customer_name: Cindy Bennett
-    customer_id_card: 27d480ba-11ed-4b13-8ad9-5fb32210d547
+    customer_id_card: 27d480ba11ed
     customer_phone: 931-143-8302
     status: 2
     user: 2
@@ -1933,7 +1933,7 @@
   fields:
     flight_ticket: 43
     customer_name: Mable Carter
-    customer_id_card: b4c00770-bf28-4685-8ff6-f00cee33cd2a
+    customer_id_card: b4c00770bf28
     customer_phone: 620-774-5753
     status: 3
     user: 1
@@ -1943,7 +1943,7 @@
   fields:
     flight_ticket: 193
     customer_name: Kenneth Myers
-    customer_id_card: 5562d62f-dd27-4483-8904-5b2e9382250d
+    customer_id_card: 5562d62fdd27
     customer_phone: 691-036-3282
     status: 3
     user: 1
@@ -1953,7 +1953,7 @@
   fields:
     flight_ticket: 148
     customer_name: Mary Shuler
-    customer_id_card: 13048d0a-35e9-4c7a-9bf6-ecc2bf5bc5f1
+    customer_id_card: 13048d0a35e9
     customer_phone: 707-505-0111
     status: 1
     user: 3
@@ -1963,7 +1963,7 @@
   fields:
     flight_ticket: 16
     customer_name: Therese Peters
-    customer_id_card: f114a094-ded9-4081-bf6f-58b96756c3f3
+    customer_id_card: f114a094ded9
     customer_phone: 705-702-1972
     status: 2
     user: 1
@@ -1973,7 +1973,7 @@
   fields:
     flight_ticket: 46
     customer_name: Elsa Fuqua
-    customer_id_card: bcb901d3-33d9-4944-b5b8-00d4692d76b4
+    customer_id_card: bcb901d333d9
     customer_phone: 770-826-0634
     status: 2
     user: 3
@@ -1983,7 +1983,7 @@
   fields:
     flight_ticket: 149
     customer_name: Heather Sigler
-    customer_id_card: 8ccbb8c9-4e0f-443d-961e-1ea1ac3dce4b
+    customer_id_card: 8ccbb8c94e0f
     customer_phone: 455-721-9499
     status: 2
     user: 1
@@ -1993,7 +1993,7 @@
   fields:
     flight_ticket: 118
     customer_name: Irene Herbert
-    customer_id_card: f47eb0db-1650-46e2-8934-180687895a24
+    customer_id_card: f47eb0db1650
     customer_phone: 354-184-6685
     status: 2
     user: 3
@@ -2003,7 +2003,7 @@
   fields:
     flight_ticket: 155
     customer_name: Brian Cardenas
-    customer_id_card: d8a488d2-7b18-4f2b-b444-66e996337107
+    customer_id_card: d8a488d27b18
     customer_phone: 514-858-2747
     status: 3
     user: 2
@@ -2013,7 +2013,7 @@
   fields:
     flight_ticket: 60
     customer_name: Mary Roffe
-    customer_id_card: 4d8c89c4-89c7-4bd8-bb2f-7c9282c20eac
+    customer_id_card: 4d8c89c489c7
     customer_phone: 763-430-7939
     status: 3
     user: 2
@@ -2023,7 +2023,7 @@
   fields:
     flight_ticket: 182
     customer_name: John Walsh
-    customer_id_card: e5a7822a-de08-41b6-ab1a-6d2a669669e8
+    customer_id_card: e5a7822ade08
     customer_phone: 719-513-6902
     status: 3
     user: 4
@@ -2033,7 +2033,7 @@
   fields:
     flight_ticket: 15
     customer_name: Daniel Lacey
-    customer_id_card: 1bd753a5-57ec-4cce-8273-1a8e25472939
+    customer_id_card: 1bd753a557ec
     customer_phone: 591-094-1450
     status: 3
     user: 2
@@ -2043,7 +2043,7 @@
   fields:
     flight_ticket: 43
     customer_name: George Hunt
-    customer_id_card: 68bb490b-4ef1-4f24-8df6-8254e1862f63
+    customer_id_card: 68bb490b4ef1
     customer_phone: 562-126-2432
     status: 2
     user: 3
@@ -2053,7 +2053,7 @@
   fields:
     flight_ticket: 151
     customer_name: Mary Evenson
-    customer_id_card: 97fde807-1e6a-4e3b-a75e-671c1bbed697
+    customer_id_card: 97fde8071e6a
     customer_phone: 488-744-0537
     status: 3
     user: 4
@@ -2063,7 +2063,7 @@
   fields:
     flight_ticket: 71
     customer_name: Ima Bolinger
-    customer_id_card: 901a3623-6952-4512-b7a9-254998300f24
+    customer_id_card: 901a36236952
     customer_phone: 659-134-0466
     status: 3
     user: 1
@@ -2073,7 +2073,7 @@
   fields:
     flight_ticket: 6
     customer_name: Nilda Jackson
-    customer_id_card: 7de19df9-1f7c-4a51-942e-0ae3f454a924
+    customer_id_card: 7de19df91f7c
     customer_phone: 808-755-0397
     status: 2
     user: 4
@@ -2083,7 +2083,7 @@
   fields:
     flight_ticket: 53
     customer_name: Patrick Stevens
-    customer_id_card: d741355b-2909-40fc-95e8-9e1aa950ea8e
+    customer_id_card: d741355b2909
     customer_phone: 720-797-8009
     status: 3
     user: 4
@@ -2093,7 +2093,7 @@
   fields:
     flight_ticket: 51
     customer_name: John Lim
-    customer_id_card: aabff0e9-f17d-415f-b64a-734551094056
+    customer_id_card: aabff0e9f17d
     customer_phone: 269-552-3297
     status: 1
     user: 2
@@ -2103,7 +2103,7 @@
   fields:
     flight_ticket: 122
     customer_name: Cindy Davidson
-    customer_id_card: 79d7e2c7-dc3e-4605-8642-4e331aaeceae
+    customer_id_card: 79d7e2c7dc3e
     customer_phone: 881-608-9302
     status: 2
     user: 2
@@ -2113,7 +2113,7 @@
   fields:
     flight_ticket: 45
     customer_name: Gregory Davis
-    customer_id_card: 94b9f3b7-2691-4a54-8a58-35df404ee344
+    customer_id_card: 94b9f3b72691
     customer_phone: 567-271-6570
     status: 3
     user: 3
@@ -2123,7 +2123,7 @@
   fields:
     flight_ticket: 63
     customer_name: Julia Guignard
-    customer_id_card: 852836c8-8ac5-4ff2-a74f-c8a0b0ec9804
+    customer_id_card: 852836c88ac5
     customer_phone: 530-350-5344
     status: 3
     user: 2
@@ -2133,7 +2133,7 @@
   fields:
     flight_ticket: 56
     customer_name: Dan Carlo
-    customer_id_card: 870e91a6-fec9-4bf7-a795-364656b090db
+    customer_id_card: 870e91a6fec9
     customer_phone: 155-305-8699
     status: 1
     user: 3
@@ -2143,7 +2143,7 @@
   fields:
     flight_ticket: 132
     customer_name: Charlie Collins
-    customer_id_card: 61676513-c87b-47f1-871a-eaf08e7404e3
+    customer_id_card: 61676513c87b
     customer_phone: 894-743-5158
     status: 1
     user: 1
@@ -2153,7 +2153,7 @@
   fields:
     flight_ticket: 125
     customer_name: Dennis Lucero
-    customer_id_card: 90ff4b46-ad0d-4291-97af-a609747a4b19
+    customer_id_card: 90ff4b46ad0d
     customer_phone: 492-698-4775
     status: 2
     user: 3
@@ -2163,7 +2163,7 @@
   fields:
     flight_ticket: 113
     customer_name: Katie Braden
-    customer_id_card: ff1c2b8f-f953-425d-99a8-378e33fc2059
+    customer_id_card: ff1c2b8ff953
     customer_phone: 385-301-3063
     status: 2
     user: 3
@@ -2173,7 +2173,7 @@
   fields:
     flight_ticket: 198
     customer_name: Blake Jordan
-    customer_id_card: 59adb858-b677-4d15-8b6e-f74eb2d8ad67
+    customer_id_card: 59adb858b677
     customer_phone: 698-153-7763
     status: 1
     user: 1
@@ -2183,7 +2183,7 @@
   fields:
     flight_ticket: 1
     customer_name: Michael Johnson
-    customer_id_card: 1315f8c6-a202-4933-895b-620f2715b570
+    customer_id_card: 1315f8c6a202
     customer_phone: 806-144-7629
     status: 1
     user: 4
@@ -2193,7 +2193,7 @@
   fields:
     flight_ticket: 89
     customer_name: Kristy Jones
-    customer_id_card: bcf10f44-b427-4b52-8a0c-7877fce37f34
+    customer_id_card: bcf10f44b427
     customer_phone: 149-534-1783
     status: 2
     user: 1
@@ -2203,7 +2203,7 @@
   fields:
     flight_ticket: 58
     customer_name: Martin Glenn
-    customer_id_card: 8e3175c1-370c-46ed-abed-6d1f0f78a913
+    customer_id_card: 8e3175c1370c
     customer_phone: 135-126-8424
     status: 3
     user: 2
@@ -2213,7 +2213,7 @@
   fields:
     flight_ticket: 91
     customer_name: Ronald Hu
-    customer_id_card: 8855fb5b-acf7-4a6c-ac3a-5871bcbb17d1
+    customer_id_card: 8855fb5bacf7
     customer_phone: 626-319-7264
     status: 3
     user: 4
@@ -2223,7 +2223,7 @@
   fields:
     flight_ticket: 22
     customer_name: Eileen West
-    customer_id_card: ada1cc43-9df3-4328-8514-1cfbf5665e8a
+    customer_id_card: ada1cc439df3
     customer_phone: 402-577-0908
     status: 2
     user: 1
@@ -2233,7 +2233,7 @@
   fields:
     flight_ticket: 156
     customer_name: Armando Bryant
-    customer_id_card: ae3886e1-f00f-4ca2-b3be-c546a9618a34
+    customer_id_card: ae3886e1f00f
     customer_phone: 910-677-1051
     status: 1
     user: 2
@@ -2243,7 +2243,7 @@
   fields:
     flight_ticket: 111
     customer_name: Kelly Hayden
-    customer_id_card: 41f9d4ff-2067-4ddb-8178-05f31f92bdb3
+    customer_id_card: 41f9d4ff2067
     customer_phone: 303-098-5925
     status: 2
     user: 3
@@ -2253,7 +2253,7 @@
   fields:
     flight_ticket: 126
     customer_name: Pamela Ehmann
-    customer_id_card: f61d1443-17bf-49ad-98fd-fd6017194e0c
+    customer_id_card: f61d144317bf
     customer_phone: 274-669-5510
     status: 2
     user: 2
@@ -2263,7 +2263,7 @@
   fields:
     flight_ticket: 141
     customer_name: Alyssa Croteau
-    customer_id_card: 6fc50279-9f83-4b6b-ae48-0fe206a4a607
+    customer_id_card: 6fc502799f83
     customer_phone: 726-256-6236
     status: 3
     user: 4
@@ -2273,7 +2273,7 @@
   fields:
     flight_ticket: 129
     customer_name: William Hoskins
-    customer_id_card: 8067042f-b39a-468d-b54a-9fe2cb117e34
+    customer_id_card: 8067042fb39a
     customer_phone: 895-250-3901
     status: 3
     user: 2
@@ -2283,7 +2283,7 @@
   fields:
     flight_ticket: 198
     customer_name: Thelma Woods
-    customer_id_card: e8121ef3-88e9-4766-910a-590a8f4ce716
+    customer_id_card: e8121ef388e9
     customer_phone: 969-750-4933
     status: 3
     user: 1
@@ -2293,7 +2293,7 @@
   fields:
     flight_ticket: 143
     customer_name: Debbie Worrell
-    customer_id_card: 8234b1e4-e72b-44d3-8ebb-fd347be71a46
+    customer_id_card: 8234b1e4e72b
     customer_phone: 719-818-7846
     status: 2
     user: 1
@@ -2303,7 +2303,7 @@
   fields:
     flight_ticket: 16
     customer_name: Frank Forrest
-    customer_id_card: 8b08b536-56c8-4951-a3e3-7abd87fe3333
+    customer_id_card: 8b08b53656c8
     customer_phone: 117-215-0768
     status: 2
     user: 3
@@ -2313,7 +2313,7 @@
   fields:
     flight_ticket: 168
     customer_name: Marisa Wiseman
-    customer_id_card: 0a1c3044-0911-42a6-94cc-0b3f3b5682fc
+    customer_id_card: 0a1c30440911
     customer_phone: 736-752-9188
     status: 3
     user: 4
@@ -2323,7 +2323,7 @@
   fields:
     flight_ticket: 188
     customer_name: Bethany Brass
-    customer_id_card: 1b57cd50-0ef4-4974-a02d-848818f07ca7
+    customer_id_card: 1b57cd500ef4
     customer_phone: 940-004-3062
     status: 1
     user: 2
@@ -2333,7 +2333,7 @@
   fields:
     flight_ticket: 186
     customer_name: Maire Carter
-    customer_id_card: 127e9b59-940d-49e3-9ae1-8a0e406a5ec0
+    customer_id_card: 127e9b59940d
     customer_phone: 637-463-3270
     status: 1
     user: 2
@@ -2343,7 +2343,7 @@
   fields:
     flight_ticket: 170
     customer_name: James Billman
-    customer_id_card: a55fe02c-602a-4a58-b583-4379670fe659
+    customer_id_card: a55fe02c602a
     customer_phone: 772-846-3389
     status: 2
     user: 4
@@ -2353,7 +2353,7 @@
   fields:
     flight_ticket: 160
     customer_name: Grace Evans
-    customer_id_card: 1acc81b9-3106-4b3c-939c-201b99d8a0cb
+    customer_id_card: 1acc81b93106
     customer_phone: 502-048-2033
     status: 2
     user: 3
@@ -2363,7 +2363,7 @@
   fields:
     flight_ticket: 98
     customer_name: Tammy Johnson
-    customer_id_card: 8a54aedb-e3d6-4b39-8f21-cf06f2a0b906
+    customer_id_card: 8a54aedbe3d6
     customer_phone: 255-445-4728
     status: 3
     user: 3
@@ -2373,7 +2373,7 @@
   fields:
     flight_ticket: 11
     customer_name: Phillip White
-    customer_id_card: 1752d7f1-35ad-4a87-b3e7-4f6ad9b723e0
+    customer_id_card: 1752d7f135ad
     customer_phone: 402-772-1589
     status: 1
     user: 3
@@ -2383,7 +2383,7 @@
   fields:
     flight_ticket: 81
     customer_name: Nancy Martinez
-    customer_id_card: 52988a01-7566-408f-99c2-9b3d481c2275
+    customer_id_card: 52988a017566
     customer_phone: 612-213-4548
     status: 1
     user: 1
@@ -2393,7 +2393,7 @@
   fields:
     flight_ticket: 187
     customer_name: Bruce Ward
-    customer_id_card: a09c1e23-6db6-423f-9495-c378093fb77c
+    customer_id_card: a09c1e236db6
     customer_phone: 164-063-7800
     status: 3
     user: 4
@@ -2403,7 +2403,7 @@
   fields:
     flight_ticket: 16
     customer_name: Sharon Malcom
-    customer_id_card: 295b62ee-1873-4b3e-8428-9ce11a4ba73c
+    customer_id_card: 295b62ee1873
     customer_phone: 977-837-5722
     status: 3
     user: 3
@@ -2413,7 +2413,7 @@
   fields:
     flight_ticket: 156
     customer_name: William Saddler
-    customer_id_card: 6cb0031f-9d4e-4210-b7ba-d978bd604597
+    customer_id_card: 6cb0031f9d4e
     customer_phone: 574-360-8962
     status: 3
     user: 2
@@ -2423,7 +2423,7 @@
   fields:
     flight_ticket: 139
     customer_name: Mildred Egleston
-    customer_id_card: 1829d228-4e08-4512-add6-e8a8c6a098e4
+    customer_id_card: 1829d2284e08
     customer_phone: 872-241-6077
     status: 2
     user: 3
@@ -2433,7 +2433,7 @@
   fields:
     flight_ticket: 43
     customer_name: Mary Hampton
-    customer_id_card: 716a4b15-423f-4ef0-8344-633e86493e80
+    customer_id_card: 716a4b15423f
     customer_phone: 215-313-3937
     status: 3
     user: 4
@@ -2443,7 +2443,7 @@
   fields:
     flight_ticket: 161
     customer_name: Edwin Cuccia
-    customer_id_card: 9be647f6-4f9b-468a-9168-403543618bc3
+    customer_id_card: 9be647f64f9b
     customer_phone: 835-083-4256
     status: 1
     user: 1
@@ -2453,7 +2453,7 @@
   fields:
     flight_ticket: 91
     customer_name: Edmond Lapointe
-    customer_id_card: 5a6c03a5-29c9-42f4-9e06-69cfadf55198
+    customer_id_card: 5a6c03a529c9
     customer_phone: 807-405-8006
     status: 3
     user: 4
@@ -2463,7 +2463,7 @@
   fields:
     flight_ticket: 41
     customer_name: Miguel Briscoe
-    customer_id_card: 21f8141a-83d0-4bd2-ab52-6c3e23396ac3
+    customer_id_card: 21f8141a83d0
     customer_phone: 783-483-8081
     status: 2
     user: 3
@@ -2473,7 +2473,7 @@
   fields:
     flight_ticket: 58
     customer_name: Anthony Sivak
-    customer_id_card: 6a9eadce-dfbe-4dc4-bacf-f734ffe8217d
+    customer_id_card: 6a9eadcedfbe
     customer_phone: 880-343-1390
     status: 1
     user: 1
@@ -2483,7 +2483,7 @@
   fields:
     flight_ticket: 48
     customer_name: William Sanford
-    customer_id_card: 5aefb1b8-456f-4ff9-99d2-1dc794ac320a
+    customer_id_card: 5aefb1b8456f
     customer_phone: 276-702-3077
     status: 3
     user: 3
@@ -2493,7 +2493,7 @@
   fields:
     flight_ticket: 190
     customer_name: Mary Barlow
-    customer_id_card: 449150f1-753c-4a16-bfde-d4f670739915
+    customer_id_card: 449150f1753c
     customer_phone: 891-147-3588
     status: 3
     user: 3
@@ -2503,7 +2503,7 @@
   fields:
     flight_ticket: 157
     customer_name: Linda Smith
-    customer_id_card: c07e6432-3fae-4f51-83ad-ff2573ed232d
+    customer_id_card: c07e64323fae
     customer_phone: 105-465-5410
     status: 2
     user: 3
@@ -2513,7 +2513,7 @@
   fields:
     flight_ticket: 115
     customer_name: Roosevelt Sekel
-    customer_id_card: 8b9797d6-e76e-4fa5-89e2-d0cadf0072b2
+    customer_id_card: 8b9797d6e76e
     customer_phone: 269-606-5646
     status: 2
     user: 2
@@ -2523,7 +2523,7 @@
   fields:
     flight_ticket: 83
     customer_name: Dana Hummer
-    customer_id_card: 1fd46b0a-7e8f-411b-84ff-139f847bfbe7
+    customer_id_card: 1fd46b0a7e8f
     customer_phone: 557-122-0183
     status: 3
     user: 2
@@ -2533,7 +2533,7 @@
   fields:
     flight_ticket: 115
     customer_name: Carol Nash
-    customer_id_card: e37ca916-c902-4535-b7d3-80d332494e2e
+    customer_id_card: e37ca916c902
     customer_phone: 350-179-4743
     status: 1
     user: 3
@@ -2543,7 +2543,7 @@
   fields:
     flight_ticket: 179
     customer_name: Joseph Janelle
-    customer_id_card: 4284646b-b8c5-40ea-919f-661722f2edf7
+    customer_id_card: 4284646bb8c5
     customer_phone: 343-269-9819
     status: 1
     user: 4
@@ -2553,7 +2553,7 @@
   fields:
     flight_ticket: 64
     customer_name: Rosa Reilly
-    customer_id_card: c5a122ec-c4fd-46d0-8d3e-b28662500c10
+    customer_id_card: c5a122ecc4fd
     customer_phone: 433-575-6650
     status: 3
     user: 1
@@ -2563,7 +2563,7 @@
   fields:
     flight_ticket: 166
     customer_name: Kristen Double
-    customer_id_card: 7c552891-83fc-49ac-8784-3ca89540b3ba
+    customer_id_card: 7c55289183fc
     customer_phone: 642-082-1229
     status: 3
     user: 1
@@ -2573,7 +2573,7 @@
   fields:
     flight_ticket: 101
     customer_name: Mark Lewis
-    customer_id_card: 5d9e620b-6dd8-48e1-959d-1a5e7bfc56dc
+    customer_id_card: 5d9e620b6dd8
     customer_phone: 700-106-5701
     status: 2
     user: 4
@@ -2583,7 +2583,7 @@
   fields:
     flight_ticket: 51
     customer_name: Michael Dobbins
-    customer_id_card: 7583ce3a-4170-4e68-a1a8-247b328578ae
+    customer_id_card: 7583ce3a4170
     customer_phone: 695-559-6015
     status: 1
     user: 4
@@ -2593,7 +2593,7 @@
   fields:
     flight_ticket: 107
     customer_name: Madeline Rodgers
-    customer_id_card: ec2ebccb-23a7-487b-be06-10636035ea00
+    customer_id_card: ec2ebccb23a7
     customer_phone: 424-627-4742
     status: 3
     user: 3
@@ -2603,7 +2603,7 @@
   fields:
     flight_ticket: 191
     customer_name: Eugene Mohamed
-    customer_id_card: b543f71b-30fb-4dfb-9c40-74b84d8d6c26
+    customer_id_card: b543f71b30fb
     customer_phone: 469-009-5478
     status: 1
     user: 1
@@ -2613,7 +2613,7 @@
   fields:
     flight_ticket: 92
     customer_name: Ethel Flowers
-    customer_id_card: 42f8e6fd-626b-4efa-abd0-8d69341df517
+    customer_id_card: 42f8e6fd626b
     customer_phone: 797-752-5144
     status: 3
     user: 3
@@ -2623,7 +2623,7 @@
   fields:
     flight_ticket: 176
     customer_name: Erika Cogan
-    customer_id_card: 564569ff-1c83-4d83-ac99-1c56dda7ca67
+    customer_id_card: 564569ff1c83
     customer_phone: 406-156-2076
     status: 3
     user: 3
@@ -2633,7 +2633,7 @@
   fields:
     flight_ticket: 125
     customer_name: Clay Holloway
-    customer_id_card: 2d496d47-3949-4a19-b85d-0a096a7e370e
+    customer_id_card: 2d496d473949
     customer_phone: 884-553-9650
     status: 3
     user: 3
@@ -2643,7 +2643,7 @@
   fields:
     flight_ticket: 193
     customer_name: Paul Caldwell
-    customer_id_card: 5ebc3f32-61e8-4ecc-9f67-a0ccb55029d6
+    customer_id_card: 5ebc3f3261e8
     customer_phone: 186-228-8511
     status: 1
     user: 3
@@ -2653,7 +2653,7 @@
   fields:
     flight_ticket: 13
     customer_name: George Mccord
-    customer_id_card: 44a8b818-ec8f-4f46-956b-050eb41eb731
+    customer_id_card: 44a8b818ec8f
     customer_phone: 859-823-3850
     status: 1
     user: 3
@@ -2663,7 +2663,7 @@
   fields:
     flight_ticket: 56
     customer_name: Cecile Ginn
-    customer_id_card: b428bc24-fa6e-4980-af72-4122876b1339
+    customer_id_card: b428bc24fa6e
     customer_phone: 769-200-2924
     status: 3
     user: 1
@@ -2673,7 +2673,7 @@
   fields:
     flight_ticket: 29
     customer_name: Carole Perez
-    customer_id_card: 04988943-2819-4032-9f9a-5c0b30d331a9
+    customer_id_card: 049889432819
     customer_phone: 795-126-4782
     status: 3
     user: 4
@@ -2683,7 +2683,7 @@
   fields:
     flight_ticket: 77
     customer_name: Richard Parrish
-    customer_id_card: 0f10edec-a229-4e31-a98a-fdab1e172413
+    customer_id_card: 0f10edeca229
     customer_phone: 840-175-4065
     status: 3
     user: 4
@@ -2693,7 +2693,7 @@
   fields:
     flight_ticket: 56
     customer_name: David Ali
-    customer_id_card: 1b0bed18-62d0-40b3-a69b-aa88b2931ace
+    customer_id_card: 1b0bed1862d0
     customer_phone: 775-309-6252
     status: 3
     user: 3
@@ -2703,7 +2703,7 @@
   fields:
     flight_ticket: 69
     customer_name: Jose Norwood
-    customer_id_card: e8aacbc4-871d-472a-b53b-19157bd1d79e
+    customer_id_card: e8aacbc4871d
     customer_phone: 427-122-5905
     status: 2
     user: 2
@@ -2713,7 +2713,7 @@
   fields:
     flight_ticket: 39
     customer_name: Julianne Mclaughlin
-    customer_id_card: b4e20894-5257-4e2a-8fe5-b924432f80f3
+    customer_id_card: b4e208945257
     customer_phone: 616-205-3790
     status: 1
     user: 2
@@ -2723,7 +2723,7 @@
   fields:
     flight_ticket: 138
     customer_name: Jeffrey Granfield
-    customer_id_card: ccf77cc2-2154-41d8-aae8-b9d5384455de
+    customer_id_card: ccf77cc22154
     customer_phone: 732-468-5107
     status: 3
     user: 2
@@ -2733,7 +2733,7 @@
   fields:
     flight_ticket: 45
     customer_name: Stephanie Wilson
-    customer_id_card: a191690c-8bd7-446f-9f58-aea5998642a8
+    customer_id_card: a191690c8bd7
     customer_phone: 318-794-2346
     status: 2
     user: 3
@@ -2743,7 +2743,7 @@
   fields:
     flight_ticket: 6
     customer_name: Jonathan Loving
-    customer_id_card: bb2cb9ea-846a-4fd9-a5d9-c7bf66fdce6e
+    customer_id_card: bb2cb9ea846a
     customer_phone: 772-573-8425
     status: 1
     user: 4
@@ -2753,7 +2753,7 @@
   fields:
     flight_ticket: 13
     customer_name: Robert Lalk
-    customer_id_card: 28d98056-e887-41cf-b819-79912ae23091
+    customer_id_card: 28d98056e887
     customer_phone: 765-332-0763
     status: 1
     user: 1
@@ -2763,7 +2763,7 @@
   fields:
     flight_ticket: 119
     customer_name: Ramon Larson
-    customer_id_card: 5151d638-7e7e-42fc-92b3-08b6f04d182b
+    customer_id_card: 5151d6387e7e
     customer_phone: 501-200-8936
     status: 2
     user: 3
@@ -2773,7 +2773,7 @@
   fields:
     flight_ticket: 4
     customer_name: Brady Wood
-    customer_id_card: ef07bf8d-4d37-4ddb-ab16-e3f1d10a6317
+    customer_id_card: ef07bf8d4d37
     customer_phone: 202-664-2649
     status: 2
     user: 4
@@ -2783,7 +2783,7 @@
   fields:
     flight_ticket: 10
     customer_name: Judith Ogaldez
-    customer_id_card: 487aeccc-5bcd-4f6d-a596-0cefe65a4622
+    customer_id_card: 487aeccc5bcd
     customer_phone: 892-882-6212
     status: 3
     user: 1
@@ -2793,7 +2793,7 @@
   fields:
     flight_ticket: 87
     customer_name: Joe Deshong
-    customer_id_card: 4d8bd6bb-5179-43b8-b5d4-a04574c79eed
+    customer_id_card: 4d8bd6bb5179
     customer_phone: 214-768-1603
     status: 3
     user: 1
@@ -2803,7 +2803,7 @@
   fields:
     flight_ticket: 139
     customer_name: Eric Morrison
-    customer_id_card: f737153f-ba5e-4d87-80f2-a6d582b44a19
+    customer_id_card: f737153fba5e
     customer_phone: 723-243-5201
     status: 1
     user: 4
@@ -2813,7 +2813,7 @@
   fields:
     flight_ticket: 104
     customer_name: William Herman
-    customer_id_card: 18dfa8d4-9ba9-4792-93ef-cea15b9cc704
+    customer_id_card: 18dfa8d49ba9
     customer_phone: 889-220-7877
     status: 2
     user: 4
@@ -2823,7 +2823,7 @@
   fields:
     flight_ticket: 151
     customer_name: Deborah Cummings
-    customer_id_card: 1cf473f4-d208-4912-9603-68b07993ac4d
+    customer_id_card: 1cf473f4d208
     customer_phone: 579-653-0682
     status: 2
     user: 2
@@ -2833,7 +2833,7 @@
   fields:
     flight_ticket: 143
     customer_name: Mary Eddy
-    customer_id_card: 3292e948-7597-4ad1-a627-4cca9736ea06
+    customer_id_card: 3292e9487597
     customer_phone: 151-632-4716
     status: 1
     user: 3
@@ -2843,7 +2843,7 @@
   fields:
     flight_ticket: 84
     customer_name: Diane Nguyen
-    customer_id_card: d0f452fb-34d4-408e-8cc9-3e8df17adf3a
+    customer_id_card: d0f452fb34d4
     customer_phone: 714-266-5089
     status: 3
     user: 4
@@ -2853,7 +2853,7 @@
   fields:
     flight_ticket: 146
     customer_name: Harold Busby
-    customer_id_card: d90edc0a-c934-4133-913e-619a0bed51b5
+    customer_id_card: d90edc0ac934
     customer_phone: 876-607-7009
     status: 1
     user: 3
@@ -2863,7 +2863,7 @@
   fields:
     flight_ticket: 104
     customer_name: Hilary Williams
-    customer_id_card: 046b1608-dc04-4b28-9d8e-f839a69ae144
+    customer_id_card: 046b1608dc04
     customer_phone: 222-657-5428
     status: 1
     user: 1
@@ -2873,7 +2873,7 @@
   fields:
     flight_ticket: 100
     customer_name: Julie Norris
-    customer_id_card: 5944f1a2-aa76-43ba-8905-f08f21c86c67
+    customer_id_card: 5944f1a2aa76
     customer_phone: 558-742-2247
     status: 2
     user: 4
@@ -2883,7 +2883,7 @@
   fields:
     flight_ticket: 127
     customer_name: Christopher Odell
-    customer_id_card: 6008460a-6cfe-4dc9-9046-16168bc23a7c
+    customer_id_card: 6008460a6cfe
     customer_phone: 266-391-6019
     status: 1
     user: 4
@@ -2893,7 +2893,7 @@
   fields:
     flight_ticket: 64
     customer_name: Marcene Ellison
-    customer_id_card: 578e817e-9dee-45d9-a4d9-11f06ebb9e63
+    customer_id_card: 578e817e9dee
     customer_phone: 197-172-4654
     status: 3
     user: 3
@@ -2903,7 +2903,7 @@
   fields:
     flight_ticket: 81
     customer_name: Wilda Benward
-    customer_id_card: 3dce38db-8c46-4912-b6e2-934092c3a0a3
+    customer_id_card: 3dce38db8c46
     customer_phone: 913-052-3762
     status: 1
     user: 1
@@ -2913,7 +2913,7 @@
   fields:
     flight_ticket: 157
     customer_name: Henry Lehman
-    customer_id_card: 53b6fdc3-8de2-4d56-8f60-052fd3185df8
+    customer_id_card: 53b6fdc38de2
     customer_phone: 149-835-4533
     status: 3
     user: 4
@@ -2923,7 +2923,7 @@
   fields:
     flight_ticket: 110
     customer_name: Karla Mcardle
-    customer_id_card: 2300fb56-6209-4b31-8b0f-fc28fd8e93d3
+    customer_id_card: 2300fb566209
     customer_phone: 122-228-5155
     status: 3
     user: 3
@@ -2933,7 +2933,7 @@
   fields:
     flight_ticket: 171
     customer_name: Michelle Joy
-    customer_id_card: 62dd907b-5233-4ba9-bb6a-a500b8c59e5b
+    customer_id_card: 62dd907b5233
     customer_phone: 338-675-7941
     status: 2
     user: 3
@@ -2943,7 +2943,7 @@
   fields:
     flight_ticket: 145
     customer_name: Anna Gonzalez
-    customer_id_card: c2db2add-aa5c-4e28-ad2b-7a39fc1ff290
+    customer_id_card: c2db2addaa5c
     customer_phone: 649-385-2549
     status: 1
     user: 1
@@ -2953,7 +2953,7 @@
   fields:
     flight_ticket: 8
     customer_name: Kimberly Andrews
-    customer_id_card: b0c09c9a-4470-48e3-9d4c-eaa11d27e5ef
+    customer_id_card: b0c09c9a4470
     customer_phone: 846-667-2243
     status: 1
     user: 3
@@ -2963,7 +2963,7 @@
   fields:
     flight_ticket: 179
     customer_name: Ervin Sales
-    customer_id_card: add78158-6fee-4fc6-a248-41bc4d3d5604
+    customer_id_card: add781586fee
     customer_phone: 237-795-2103
     status: 3
     user: 1
@@ -2973,7 +2973,7 @@
   fields:
     flight_ticket: 182
     customer_name: Jacquelyn Littrell
-    customer_id_card: fbd9a702-984a-46b0-8e08-140ca978d1c8
+    customer_id_card: fbd9a702984a
     customer_phone: 987-474-3294
     status: 3
     user: 1
@@ -2983,7 +2983,7 @@
   fields:
     flight_ticket: 200
     customer_name: Juana Carodine
-    customer_id_card: 24875099-58cf-4ea7-8540-cc4bfcbce4b5
+    customer_id_card: 2487509958cf
     customer_phone: 810-578-9335
     status: 2
     user: 3
@@ -2993,7 +2993,7 @@
   fields:
     flight_ticket: 90
     customer_name: Alan Raheja
-    customer_id_card: 6aac9bbb-5c4d-4c1b-96c9-448fc8f2e083
+    customer_id_card: 6aac9bbb5c4d
     customer_phone: 305-008-9219
     status: 3
     user: 2

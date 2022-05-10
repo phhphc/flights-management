@@ -60,12 +60,10 @@
             <th>{{t.ticket_class}}</th>
             <th>{{t.quantity}}</th>
             <th>{{t.cost}}</th>
-            <th><a href={% url 'edit_flight_ticket_class' t.id %}>Edit</a></th>
-            <th><a href={% url 'delete_flight_ticket_class' t.id %}>Delete</a></th>
         </tr>
         {% endfor %}
     </table>
-    <a href={% url 'add_flight_ticket_class' flight.id %}>Add ticket Class</a>
+    <a href={% url 'update_flight_ticket_class' flight.id %}>Update ticket Class</a>
 </div>
 
 <br>

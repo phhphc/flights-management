@@ -13,6 +13,7 @@
     {% endfor %}
 </div>
 
+
 <form action="" method="post">
     {% csrf_token %}
     {{ form }}
@@ -20,6 +21,15 @@
     {{ user_form }}
     <input type="submit" value="Update">
 </form>
+
+<br>
+
+<div>
+    <form method="get" action="">
+        {{ticket_filter.form}}
+        <button type="submit">Search</button>
+    </form>
+</div>
 
 <br>
 
