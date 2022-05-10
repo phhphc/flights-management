@@ -14,10 +14,20 @@
 </div>
 
 <div>
+    <form method="get" action="">
+        {{ticket_filter.form}}
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+<div>
     <table>
         <tr>
             <th>Mã Vé</th>
             <th>Mã Chuyến bay</th>
+            <th>Sân Bay Đi</th>
+            <th>Sân Bay Đến</th>
+            <th>Khởi Hành</th>
             <th>Loại vé</th>
             <th>Tên hành khách</th>
             <th>Số Điện Thoại</th>
@@ -30,6 +40,9 @@
         <tr>
             <th>{{t.id }}</th>
             <th>{{t.flight_ticket.flight }}</th>
+            <th>{{t.flight_ticket.flight.departure_airport }}</th>
+            <th>{{t.flight_ticket.flight.arrival_airport }}</th>
+            <th>{{t.flight_ticket.flight.departure_time }}</th>
             <th>{{t.flight_ticket.ticket_class }}</th>
             <th>{{t.customer_name }}</th>
             <th>{{t.customer_phone }}</th>

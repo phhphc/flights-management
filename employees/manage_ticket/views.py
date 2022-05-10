@@ -4,12 +4,16 @@ from django.contrib.auth.decorators import login_required
 
 from base_app.models import Ticket
 from base_app.forms import TicketForm
+from base_app.filters import TicketFilter
 
 
 def home_page(request):
     tickets = Ticket.objects.all()
+    ticket_filter = TicketFilter(request.GET, queryset=tickets)
+    tickets = ticket_filter.qs
 
     return render(request, 'employees/manage_ticket/index.html', {
+        'ticket_filter': ticket_filter,
         'tickets': tickets,
     })
 
