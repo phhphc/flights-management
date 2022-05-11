@@ -8,6 +8,13 @@
 <h1>----------- This is Home Page --------------</h1>
 
 <div>
+    {% for m in messages %}
+    <p id="messages">{{m}}</p>
+    {% endfor %}
+</div>
+
+
+<div>
     <form method="get" action="">
         {{flight_filter.form}}
         <button type="submit">Search</button>
