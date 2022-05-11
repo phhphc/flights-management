@@ -34,10 +34,16 @@ def add_ticket(request):
 
 def edit_ticket(request, ticket_id):
     ticket = Ticket.objects.get(id=ticket_id)
-    # TODO: check if ticket.status != 3 (exported)
-    form = TicketForm(data=request.POST or None, 
+
+    # prevent exported tickets from being edited if they have been exported
+    if ticket.status >= 3:
+        messages.error(request, 'Cannot edit ticket after export')
+        return redirect('manage_ticket_home')
+
+    form = TicketForm(data=request.POST or None,
                       instance=ticket,
                       employee=request.user)
+    
     if request.method == 'POST':
         if form.is_valid():
             form.save()
@@ -51,8 +57,13 @@ def edit_ticket(request, ticket_id):
 
 def delete_ticket(request, ticket_id):
     ticket = Ticket.objects.get(id=ticket_id)
-    # TODO: check if ticket.status != 3 (exported)
-    ticket.delete()
+
+    # prevent exported tickets from being deleted if they have been exported
+    if ticket.status < 3:
+        ticket.delete()
+        messages.success(request, 'Ticket deleted')
+    else:
+        messages.error(request, 'Cannot delete ticket after export')
 
     return redirect('manage_ticket_home')
 
@@ -60,18 +71,28 @@ def delete_ticket(request, ticket_id):
 @login_required
 def pay_ticket(request, ticket_id):
     ticket = Ticket.objects.get(id=ticket_id)
-    # TODO: check if ticket.status == 1 (booked)
-    ticket.status = 2
-    ticket.employee_paid = request.user
-    ticket.save()
+
+    # check if ticket is not already paid
+    if ticket.status == 1:
+        ticket.status = 2
+        ticket.employee_paid = request.user
+        ticket.save()
+        messages.success(request, 'Ticket paid')
+    else:
+        messages.error(request, 'Ticket already paid')
 
     return redirect('manage_ticket_home')
 
 
 def export_ticket(request, ticket_id):
     ticket = Ticket.objects.get(id=ticket_id)
-    # TODO: check if ticket.status == 2 (paid)
-    ticket.status = 3
-    ticket.save()
+
+    # ticket must be paid before export
+    if ticket.status < 2:
+        messages.error(request, 'Ticket has not been paid')
+    else:
+        ticket.status = 3
+        ticket.save()
+        messages.success(request, 'Ticket exported')
 
     return redirect('manage_ticket_home')

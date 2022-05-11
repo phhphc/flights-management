@@ -63,7 +63,11 @@ class TicketForm(ModelForm):
         self.user = user
         self.employee = employee
         self.edit = edit
+
         super(TicketForm, self).__init__(*args, **kwargs)
+        if self.instance.pk:
+            self.fields['flight'].initial = self.instance.flight_ticket.flight.pk
+            self.fields['ticket_class'].initial = self.instance.flight_ticket.ticket_class.pk
 
     def save(self, commit=True):
         instant = super(TicketForm, self).save(commit=False)
@@ -77,8 +81,9 @@ class TicketForm(ModelForm):
                 instant.employee_paid = self.employee
                 instant.status = 2
             # set flight_ticket
-            instant.flight_ticket = FlightTicket.objects.get(
-                flight__pk=self.data['flight'], ticket_class__pk=self.data['ticket_class'])
+
+        instant.flight_ticket = FlightTicket.objects.get(
+            flight__pk=self.data['flight'], ticket_class__pk=self.data['ticket_class'])
 
         if commit:
             instant.save()
