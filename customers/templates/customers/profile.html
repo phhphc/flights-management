@@ -42,6 +42,7 @@
             <th>Khởi Hành</th>
             <th>Thời Gian Bay</th>
             <th>Loại vé</th>
+            <th>Vị trí ghế</th>
             <th>Tên khách hàng</th>
             <th>CMND/CCCD</th>
             <th>Điện Thoại</th>
@@ -57,11 +58,14 @@
             <th>{{ t.flight_ticket.flight.departure_time }}</th>
             <th>{{ t.flight_ticket.flight.duration }}</th>
             <th>{{ t.flight_ticket.ticket_class }}</th>
+            <th>{{t.seat_position }}</th>
             <th>{{t.customer_name}}</th>
             <th>{{t.customer_id_card}}</th>
             <th>{{t.customer_phone}}</th>
             <th>{{t.flight_ticket.cost}}</th>
             <th>{{t.str_status}}</th>
+            <th><a href="{% url 'book_flight_confirm' t.id %}">Pay</a></th>
+            <th><a href="{% url 'edit_ticket_customer' t.id %}">Edit</a></th>
             <th><a href="{% url 'delete_book_flight' t.id %}">Cancel</a></th>
         </tr>
         {% endfor %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}}
+
+{% block head %}
+<title>Update Ticket</title>
+{% endblock %}
+
+
+{% block content %}
+<h1>----------- This is Update Ticket page --------------</h1>
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{form}}
+
+    <input type="submit" value="Update">
+
+    {{form.errors}}
+</form>
+
+
+<h1>----------- This is Update Ticket page --------------</h1>
+{% endblock content %}

@@ -93,8 +93,9 @@ class TicketForm(ModelForm):
 
         # check if ticket_type is avalable
         try:
-            total_ticket = FlightTicket.objects.get(
-                flight__pk=self.data['flight'], ticket_class=self.data['ticket_class']).quantity
+            flight_ticket = FlightTicket.objects.get(
+                flight__pk=self.data['flight'], ticket_class=self.data['ticket_class'])
+            total_ticket =flight_ticket.quantity
         except FlightTicket.DoesNotExist:
             raise ValidationError({
                 'ticket_class': [f'Ticket class is not available for this flight'],
@@ -105,6 +106,18 @@ class TicketForm(ModelForm):
             raise ValidationError({
                 'ticket_class': [f'No tickets of this ticket class on this flight left !'],
             })
+            
+        # check if ticket seat position is avalable
+        seat_position = self.cleaned_data.get('seat_position')
+        if seat_position is not None:
+            if seat_position > total_ticket:
+                raise ValidationError({
+                    'seat_position': [f'Seat position is not exists for this flight'],
+                })
+            if flight_ticket.ticket_set.filter(seat_position=seat_position).exists():
+                raise ValidationError({
+                    'seat_position': [f'Seat position is unavailable'],
+                })
 
         # if new ticket is created not by employee (customer book)
         # check if time before the departure time - book_ticket_before_min

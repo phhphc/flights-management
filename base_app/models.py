@@ -1,3 +1,4 @@
+from pyexpat import model
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -8,7 +9,7 @@ class CustomUser(models.Model):
     phone = models.CharField(max_length=20, blank=True)
     email = models.EmailField(max_length=254, blank=True)
     id_card = models.CharField(max_length=20, blank=True)
-    
+
     def __str__(self):
         return self.user.__str__() + ' - ' + self.name
 
@@ -94,9 +95,10 @@ class IntermediateAirport(models.Model):
 
 
 class Ticket(models.Model):
-    STATUS_LIST = models.IntegerChoices('Status', 'BOOK PAID DONE')
+    STATUS_LIST = models.IntegerChoices('Status', 'UNCONFIRM PAID CONFIRM')
 
     flight_ticket = models.ForeignKey(FlightTicket, on_delete=models.RESTRICT)
+    seat_position = models.PositiveSmallIntegerField(null=True, blank=True)
     customer_name = models.CharField(max_length=100)
     customer_id_card = models.CharField(max_length=20)
     customer_phone = models.CharField(max_length=20)
@@ -107,6 +109,7 @@ class Ticket(models.Model):
 
     class Meta:
         ordering = ['-id']
+        unique_together = (('flight_ticket', 'seat_position'),)
 
     @property
     def str_status(self):

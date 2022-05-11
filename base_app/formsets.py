@@ -1,4 +1,5 @@
 from django.forms import BaseInlineFormSet, ValidationError
+from django.db.models import Max
 
 from .models import *
 
@@ -78,12 +79,23 @@ class BaseFlightTicketsFormSet(BaseInlineFormSet):
                             f'There are no price for this ticket class form {self.instance.departure_airport} to {self.instance.arrival_airport}'])
 
                 # check if quantity of ticket is bigger than customer's tickets
-                customer_tickets_count = self.instance.flightticket_set.get(
-                    ticket_class=ticket_class).ticket_set.count()
-                if int(form.cleaned_data['quantity']) < customer_tickets_count:
+                tickets = self.instance.flightticket_set.get(
+                    ticket_class=ticket_class).ticket_set
+                customer_tickets_count = tickets.count()
+                if form.cleaned_data.get('quantity') < customer_tickets_count:
                     form.add_error(
                         'quantity', [
                             f'There are {customer_tickets_count} customer\'s tickets of this ticket class'])
+                    
+                # check if quantity of ticket is bigger or equal to max seat_position
+                max_seat_position = tickets.aggregate(Max('seat_position'))['seat_position__max']
+                if max_seat_position is not None:
+                    print(max_seat_position)
+                    if form.cleaned_data.get('quantity') < max_seat_position:
+                        form.add_error(
+                            'quantity', [
+                                f'There are seat_position {max_seat_position} of this ticket class on this flight'])
+                
             except FlightTicket.DoesNotExist:
                 pass
 

@@ -50,6 +50,8 @@ INSTALLED_APPS = [
 
     'django_filters',
 
+    'payments',
+
     'base_app',
     'accounts',
     'customers',

@@ -6,6 +6,9 @@ from django.utils import timezone
 from base_app.models import Flight, FlightTicket, IntermediateAirport, Ticket, Regulations
 from base_app.forms import TicketForm, CustomUserForm
 from base_app.filters import FlightFilter, TicketFilter
+from payments.forms import PaymentForm
+
+from .forms import *
 
 
 def home_page(request):
@@ -84,11 +87,48 @@ def book_flight(request):
 
     if request.method == 'POST':
         if form.is_valid():
-            form.save()
+            obj = form.save()
             messages.success(request, "Ticket was booked!")
-            return redirect('profile')
+            return redirect('book_flight_confirm', ticket_id=obj.pk)
 
     return render(request, 'customers/book_flight.html', {
+        'form': form,
+    })
+
+
+def book_flight_confirm(request, ticket_id):
+
+    payment = PaymentForm(request.POST or None)
+    form = SeatForm(data=request.POST or None,
+                    instance=Ticket.objects.get(pk=ticket_id))
+
+    if request.method == 'POST':
+        if payment.is_valid() and form.is_valid():
+            try:
+                payment.save()
+                form.save()
+                messages.success(request, "Payment was successful!")
+                return redirect('profile')
+            except:
+                messages.error(request, "Error while processing payment!")
+
+    return render(request, 'customers/book_flight_confirm.html', {
+        'form': form,
+        'payment': payment,
+    })
+
+
+def edit_ticket_customer(request, ticket_id):
+    form = CustomerTicketForm(data=request.POST or None,
+                      instance=Ticket.objects.get(pk=ticket_id))
+
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Ticket was updated!")
+            return redirect('profile')
+
+    return render(request, 'customers/edit_ticket_customer.html', {
         'form': form,
     })
 
