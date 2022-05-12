@@ -3,48 +3,58 @@
   fields:
     code: VVCT
     name: Can Tho International Airport
+    city: 1
 - model: base_app.airport
   pk: 2
   fields:
     code: VVDN
     name: Da Nang International Airport
+    city: 2
 - model: base_app.airport
   pk: 3
   fields:
     code: VVCI
     name: Cat Bi International Airport
+    city: 3
 - model: base_app.airport
   pk: 4
   fields:
     code: VVNB
     name: Noi Bai International Airport
+    city: 4
 - model: base_app.airport
   pk: 5
   fields:
     code: VVTS
     name: Tan Son Nhat International Airport
+    city: 5
 - model: base_app.airport
   pk: 6
   fields:
     code: VVPB
     name: Phu Bai International Airport
+    city: 6
 - model: base_app.airport
   pk: 7
   fields:
     code: VVCR
     name: Cam Ranh International Airport
+    city: 7
 - model: base_app.airport
   pk: 8
   fields:
     code: VVPQ
     name: Phu Quoc International Airport
+    city: 8
 - model: base_app.airport
   pk: 9
   fields:
     code: VVVD
     name: Van Don International Airport
+    city: 9
 - model: base_app.airport
   pk: 10
   fields:
     code: VVTX
     name: Tho Xuan Airport
+    city: 10

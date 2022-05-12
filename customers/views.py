@@ -14,7 +14,7 @@ from .forms import *
 def home_page(request):
     flights: list[Flight] = Flight.objects.all()
 
-    flight_filter = FlightFilter(request.GET, queryset=flights)
+    flight_filter: FlightFilter = FlightFilter(request.GET, queryset=flights)
     flights = flight_filter.qs
 
     for i in range(len(flights)):

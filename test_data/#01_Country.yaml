@@ -1,0 +1,4 @@
+- model: base_app.country
+  pk: 1
+  fields:
+    name: Viet Nam

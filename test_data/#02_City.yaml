@@ -1,0 +1,50 @@
+- model: base_app.city
+  pk: 1
+  fields:
+    name: Can Tho
+    country: 1
+- model: base_app.city
+  pk: 2
+  fields:
+    name: Da Nang
+    country: 1
+- model: base_app.city
+  pk: 3
+  fields:
+    name: Hai Phong
+    country: 1
+- model: base_app.city
+  pk: 4
+  fields:
+    name: Ha Noi
+    country: 1
+- model: base_app.city
+  pk: 5
+  fields:
+    name: TP HCM
+    country: 1
+- model: base_app.city
+  pk: 6
+  fields:
+    name: Hue
+    country: 1
+- model: base_app.city
+  pk: 7
+  fields:
+    name: Khanh Hoa
+    country: 1
+- model: base_app.city
+  pk: 8
+  fields:
+    name: Phu Quoc
+    country: 1
+- model: base_app.city
+  pk: 9
+  fields:
+    name: Quang Ninh
+    country: 1
+- model: base_app.city
+  pk: 10
+  fields:
+    name: Thanh Hoa
+    country: 1

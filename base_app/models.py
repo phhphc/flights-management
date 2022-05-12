@@ -12,11 +12,24 @@ class CustomUser(models.Model):
 
     def __str__(self):
         return self.user.__str__() + ' - ' + self.name
+    
+class Country(models.Model):
+    name = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.name
+
+class City(models.Model):
+    name = models.CharField(max_length=100)
+    country = models.ForeignKey(Country, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
 
 class Airport(models.Model):
     code = models.CharField(max_length=10, unique=False)
     name = models.CharField(max_length=100)
+    city = models.ForeignKey(City, on_delete=models.RESTRICT)
 
     def __str__(self):
         return self.name
