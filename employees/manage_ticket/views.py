@@ -4,8 +4,7 @@ from django.contrib.auth.decorators import login_required
 
 from base_app.models import Ticket
 from base_app.filters import TicketFilter
-
-from .forms import EmployeeTicketsForm
+from base_app.forms import TicketForm
 
 
 def home_page(request):
@@ -20,7 +19,7 @@ def home_page(request):
 
 
 def add_ticket(request):
-    form = EmployeeTicketsForm(data=request.POST or None,
+    form = TicketForm(data=request.POST or None,
                       employee=request.user)
     if request.method == 'POST':
         if form.is_valid():
@@ -41,7 +40,7 @@ def edit_ticket(request, ticket_id):
         messages.error(request, 'Cannot edit ticket after export')
         return redirect('manage_ticket_home')
 
-    form = EmployeeTicketsForm(data=request.POST or None,
+    form = TicketForm(data=request.POST or None,
                       instance=ticket,
                       employee=request.user)
     

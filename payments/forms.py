@@ -23,4 +23,6 @@ class PaymentForm(forms.Form):
         """
         pass
 
+    def is_empty(self):
+        return all(not self.data.get(field) for field in self.fields)
         

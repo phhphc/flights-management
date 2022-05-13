@@ -72,27 +72,48 @@ def profile_page(request):
     })
 
 
-@login_required(login_url='login')
 def book_flight(request):
-    customer = request.user.customuser
+    if request.user.is_authenticated:
+        customer = request.user.customuser
+        initial = {
+            'flight': request.GET.get('flight'),
+            'ticket_class': request.GET.get('ticket_class'),
+            'customer_name': customer.name,
+            'customer_phone': customer.phone,
+            'customer_id_card': customer.id_card,
+        }
+    else:
+        initial = {
+            'flight': request.GET.get('flight'),
+            'ticket_class': request.GET.get('ticket_class'),
+        }
+        
     form = TicketForm(data=request.POST or None,
                       user=request.user,
-                      initial={
-                          'flight': request.GET.get('flight'),
-                          'ticket_class': request.GET.get('ticket_class'),
-                          'customer_name': customer.name,
-                          'customer_phone': customer.phone,
-                          'customer_id_card': customer.id_card,
-                      })
+                      initial=initial)
+
+    payment = PaymentForm(request.POST or None)
 
     if request.method == 'POST':
         if form.is_valid():
-            obj = form.save()
-            messages.success(request, "Ticket was booked!")
-            return redirect('book_flight_confirm', ticket_id=obj.pk)
+            
+            if payment.is_empty():
+                obj = form.save()
+                obj.seat_position = None
+                obj.save()
+                messages.success(request, "Ticket was booked!")
+                return redirect('home')
+            
+            elif payment.is_valid():
+                payment.save()
+                form.save()
+                messages.success(request, "Ticket was paid!")
+                return redirect('home')
+                
 
     return render(request, 'customers/book_flight.html', {
         'form': form,
+        'payment': payment,
     })
 
 
@@ -120,7 +141,7 @@ def book_flight_confirm(request, ticket_id):
 
 def edit_ticket_customer(request, ticket_id):
     form = CustomerTicketForm(data=request.POST or None,
-                      instance=Ticket.objects.get(pk=ticket_id))
+                              instance=Ticket.objects.get(pk=ticket_id))
 
     if request.method == 'POST':
         if form.is_valid():

@@ -54,6 +54,7 @@ INSTALLED_APPS = [
 
     'base_app',
     'accounts',
+    'api',
     'customers',
     'employees',
 ]

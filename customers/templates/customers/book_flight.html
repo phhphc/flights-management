@@ -2,21 +2,159 @@
 
 {% block head %}
 <title>Book Flight</title>
+
+<style>
+    #pay-now,
+    #pay-later,
+    #id_seat_position {
+        display: none;
+    }
+
+    .seat-position-item {
+        display: inline-block;
+        margin: 5px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
 {% endblock %}
 
 
 {% block content %}
 <h1>----------- This is book flight page --------------</h1>
 
-<form action="" method="post">
+<form action="" method="post" onsubmit="handleSubmit()">
     {% csrf_token %}
-    {{form}}
+    {{ form }}
+
+    <div>
+        <h3>
+            Choose seat position
+        </h3>
+
+        <div id="seat-list"> </div>
+
+        <script>
+            // get the seat position list from the server and handle user's choice
+            const chooseSeatEle = document.getElementById('id_seat_position');
+            const seatListEle = document.getElementById('seat-list');
+            function chooseSeat(value) {
+                if (chooseSeatEle.value) {
+                    seatListEle.children[chooseSeatEle.value - 1].style.backgroundColor = '#fff';
+                }
+                chooseSeatEle.value = value;
+                seatListEle.children[chooseSeatEle.value - 1].style.backgroundColor = '#ccc';
+
+            }
+
+            // get the seat position list from the server
+            function renderSeatList() {
+                flight_id = document.getElementById('id_flight').value
+                ticket_class_id = document.getElementById('id_ticket_class').value
+
+                if (!flight_id || !ticket_class_id) {
+                    seatListEle.innerHTML = '';
+                    return;
+                }
+
+                fetch(`/api/flight-seats/${flight_id}/${ticket_class_id}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        // parse the data
+                        const bookedSeat = data.bookedSeats;
+                        const total = data.total;
+
+                        // render the seat list
+                        seatListEle.replaceChildren(...[...Array(total).keys()].map((i) => {
+                            let div = document.createElement('div');
+                            div.innerText = i + 1;
+                            div.setAttribute('class', 'seat-position-item');
+                            div.onclick = function () {
+                                chooseSeat(i + 1);
+                            }
+                            return div;
+                        }));
+
+                        // disable the booked seat
+                        for (let i of bookedSeat) {
+                            const item = seatListEle.children[i - 1];
+                            item.style.backgroundColor = '#ea3';
+                            item.onclick = null;
+                        }
+                    })
+            }
+
+            renderSeatList();
+            document.getElementById('id_flight').onclick = () => renderSeatList();
+            document.getElementById('id_ticket_class').onclick = () => renderSeatList();
+        </script>
+
+    </div>
+
+    <div>
+        <h3>Choose payment method</h3>
+        <input type="button" value="Pay now" onclick="togglePayMethod(0)">
+        <input type="button" value="Pay later" onclick="togglePayMethod(1)">
+    </div>
+
+
+    <div id="pay-now">
+        <h3>Pay now</h3>
+        {{ payment }}
+    </div>
+
+    <div id="pay-later">
+        <h3>Pay later</h3>
+        pay later only apply for the login customer
+        cannot choose seat position
+    </div>
 
     <input type="submit" value="Book ticket">
 
-    {{form.errors}}
 </form>
 
 
 <h1>----------- This is book flight page --------------</h1>
+
+
+<script>
+    // Show pay now and pay later when click on button
+    // handle submit form
+    var payMethod = -1
+    const payNowEle = document.getElementById('pay-now')
+    const payLaterEle = document.getElementById('pay-later')
+    function togglePayMethod(value) {
+        payMethod = value
+        console.debug(payMethod)
+
+        if (payMethod == 0) { // pay now
+
+            for (let i of payNowEle.getElementsByTagName('input')) {
+                i.setAttribute('required', '') // must fill in payment form
+            }
+
+            payNowEle.style.display = 'block'
+            payLaterEle.style.display = 'none'
+        } else if (payMethod == 1) { // pay later
+
+            for (let i of payNowEle.getElementsByTagName('input')) {
+                i.removeAttribute('required') // no need to fill in payment form
+            }
+
+            payNowEle.style.display = 'none'
+            payLaterEle.style.display = 'block'
+        }
+    }
+
+    function handleSubmit() {
+        if (payMethod == 1) { // pay later
+            for (let i of payNowEle.getElementsByTagName('input')) {
+                i.value = '' // blank the payment form
+            }
+        }
+    }
+</script>
+
 {% endblock content %}

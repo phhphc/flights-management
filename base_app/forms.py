@@ -57,7 +57,7 @@ class TicketForm(ModelForm):
     class Meta:
         model = Ticket
         fields = ['customer_name',
-                  'customer_id_card', 'customer_phone']
+                  'customer_id_card', 'customer_phone', 'seat_position']
 
     def __init__(self, user=None, employee=None, edit=False, *args, **kwargs):
         self.user = user
@@ -74,7 +74,7 @@ class TicketForm(ModelForm):
 
         if not self.instance.pk:  # if create new ticket
             # if user is not None, set the user
-            if self.user:
+            if self.user.is_authenticated:
                 instant.user = self.user
             # if employee is not None, set the employee_paid and status to paid (2)
             if not self.edit and self.employee:
@@ -95,7 +95,7 @@ class TicketForm(ModelForm):
         try:
             flight_ticket = FlightTicket.objects.get(
                 flight__pk=self.data['flight'], ticket_class=self.data['ticket_class'])
-            total_ticket =flight_ticket.quantity
+            total_ticket = flight_ticket.quantity
         except FlightTicket.DoesNotExist:
             raise ValidationError({
                 'ticket_class': [f'Ticket class is not available for this flight'],
@@ -106,7 +106,7 @@ class TicketForm(ModelForm):
             raise ValidationError({
                 'ticket_class': [f'No tickets of this ticket class on this flight left !'],
             })
-            
+
         # check if ticket seat position is avalable
         seat_position = self.cleaned_data.get('seat_position')
         if seat_position is not None:
