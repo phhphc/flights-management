@@ -122,7 +122,7 @@
 <script>
     // Show pay now and pay later when click on button
     // handle submit form
-    var payMethod = -1
+    var payMethod = 0
     const payNowEle = document.getElementById('pay-now')
     const payLaterEle = document.getElementById('pay-later')
     function togglePayMethod(value) {
@@ -147,6 +147,7 @@
             payLaterEle.style.display = 'block'
         }
     }
+    togglePayMethod(0)
 
     function handleSubmit() {
         if (payMethod == 1) { // pay later
