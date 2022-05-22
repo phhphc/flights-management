@@ -1,17 +1,22 @@
-<div>
-    <p> ----------- navbar -----------</p>
-    
-    {% if user.is_authenticated %}
-    <p>Welcome {{ user }} !!!</p>       
-    {% endif %}
-    
-    <a href="{% url 'home' %}">Dashboard</a>
-    <a href="{% url 'profile' %}">Profile</a>
-    <a href="{% url 'employee_home' %}">Employee</a>
-    <a href="{% url 'admin:index' %}">Admin</a>
-    <a href="{% url 'login' %}">Login</a>
-    <a href="{% url 'register' %}">Register</a>
-    <a href="{% url 'logout' %}">Logout</a>
-    
-    <p> ----------- navbar -----------</p>
+<div class="navbar">
+    <div style="float: left;">
+        <!-- <span style="padding-left: 52px;">&nbsp;</span> -->
+        <a href="{% url 'home' %}">Dashboard</a>
+        <a href="{% url 'profile' %}">Profile</a>
+        <a href="{% url 'employee_home' %}">Employee</a>
+        <a href="{% url 'admin:index' %}">Admin</a>
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'register' %}">Register</a>
+        <a href="{% url 'logout' %}">Logout</a>
+    </div>
+    <div style="float: right;">
+        {% if user.is_authenticated %}
+        <p>Welcome {{ user }}</p>
+        {% endif %}
+    </div>
+    &nbsp;
 </div>
+
+<!-- <div style="z-index: 101; position: fixed; top: 0; left: 0; background: rgb(255, 255, 255); padding: 10px 6px 4px 6px;">
+    <img src="https://i.ibb.co/TL6jhn1/logo.png" style="height: 36px;">
+</div> -->

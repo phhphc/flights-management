@@ -5,35 +5,221 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/ssxwktG/logo.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <!--  -->
-    <!--  -->
     <style>
         a+a {
             margin-left: 20px;
         }
 
-        table,
-        th,
-        td {
-            border: 1px solid;
+        /* RWD */
+        .row,
+        .row-t {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
         }
 
-        table {
-            border-collapse: collapse;
+        @media screen and (min-width: 1000px) {
+
+            .row,
+            .row-t {
+                flex-wrap: nowrap;
+            }
         }
 
-        th {
-            padding: 5px;
+        .row [class^='col'] {
+            width: 100%;
         }
 
-        input, select {
-            display: block;
-            margin-bottom: 10px;
+        @media screen and (min-width: 1000px) {
+            .row .col {
+                width: 100%;
+            }
+
+            .row .col-1 {
+                width: 8.33%;
+            }
+
+            .row .col-2 {
+                width: 16.66%;
+            }
+
+            .row .col-3 {
+                width: 25%;
+            }
+
+            .row .col-4 {
+                width: 33.33%;
+            }
+
+            .row .col-5 {
+                width: 41.66%;
+            }
+
+            .row .col-6 {
+                width: 50%;
+            }
+
+            .row .col-7 {
+                width: 58.33%;
+            }
+
+            .row .col-8 {
+                width: 66.66%;
+            }
+
+            .row .col-9 {
+                width: 75%;
+            }
+
+            .row .col-10 {
+                width: 83.33%;
+            }
+
+            .row .col-11 {
+                width: 91.66%;
+            }
+
+            .row .col-12 {
+                width: 100%;
+            }
         }
     </style>
-    <!--  -->
-    <!--  -->
+
+    <style>
+        /* =================================== Root =================================== */
+        :root {
+            --pd-h-1: 24px;
+            --border-radius: 8px;
+            --theme-color: #4A6BDF;
+            --theme-color-hover: #3952aa;
+            --row-bg: #eeeeff;
+            --row-bg-first-row: #eeeeff30;
+            --row-bg-hover: #c3c3ea;
+        }
+
+        * {
+            font-size: 16px;
+            padding: 0;
+            margin: 0;
+            transition: all ease 0.3s;
+            font-family: 'Roboto', sans-serif;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            line-height: 1.5;
+        }
+
+        /* ================== Heading =================== */
+        h1 {
+            font-size: 5rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+        }
+
+        /* ================== Table =================== */
+        table {
+            /* border-collapse: collapse; */
+            border-spacing: 0 24px;
+            width: 100%;
+        }
+
+        tr {
+            background-color: var(--row-bg);
+        }
+
+        tr.clickable-row:hover {
+            /* transition: background-color ease 0.1s, color ease 0.0s; */
+            /* color: white; */
+            background-color: var(--row-bg-hover);
+        }
+
+        tr:first-child {
+            background: var(--row-bg-first-row);
+        }
+
+        th,
+        td {
+            padding: 24px 8px;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        tr:first-child th {
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 0px 8px;
+        }
+
+        td:first-child,
+        th:first-child {
+            padding-left: 32px;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+
+        td:last-child,
+        th:last-child {
+            padding-right: 32px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        /* ================== Form =================== */
+        input,
+        select,
+        button[type="submit"] {
+            width: 100%;
+            height: 48px;
+            border-radius: var(--border-radius);
+        }
+
+        input,
+        select {
+            padding: 0 12px;
+            border: #3952aa solid 2px;
+        }
+
+        button[type="submit"] {
+            cursor: pointer;
+            background: var(--theme-color);
+            color: white;
+            border: 0;
+        }
+
+        button[type="submit"]:hover {
+            background: var(--theme-color-hover);
+        }
+
+        /* ================== NavBar =================== */
+        .navbar {
+            z-index: 100;
+            position: sticky;
+            top: 0;
+            background: var(--theme-color);
+            padding: 16px var(--pd-h-1);
+        }
+
+        .navbar * {
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline 2px white;
+        }
+
+        /* ================== Custom =================== */
+        .header-image {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 60px;
+        }
+    </style>
 
     {% block head %}
 
@@ -44,10 +230,25 @@
 
     {% include 'navbar.html' %}
 
-    {% block content %}
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            {% block content %}
+        </div>
+        <div class="col-2"></div>
+    </div>
 
     {% endblock %}
 
+    <div style="height: 80px;"></div>
+
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".clickable-row").click(function () {
+                window.location = $(this).data("href");
+            });
+        });
+    </script>
 </body>
 
 </html>
