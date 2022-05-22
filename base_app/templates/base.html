@@ -116,7 +116,7 @@
 
         /* ================== Heading =================== */
         h1 {
-            font-size: 5rem;
+            font-size: 2rem;
         }
 
         h2 {
@@ -170,6 +170,11 @@
         }
 
         /* ================== Form =================== */
+        form label {
+            display: inline-block;
+            margin: 20px 0 6px 0;
+        }
+
         input,
         select,
         button[type="submit"] {
@@ -178,21 +183,45 @@
             border-radius: var(--border-radius);
         }
 
+        input[type="radio"] {
+            width: initial;
+            height: initial;
+        }
+
         input,
         select {
             padding: 0 12px;
             border: #3952aa solid 2px;
         }
 
-        button[type="submit"] {
+        button[type="submit"],
+        input[type="submit"] {
             cursor: pointer;
             background: var(--theme-color);
             color: white;
             border: 0;
         }
 
-        button[type="submit"]:hover {
+        button[type="submit"]:hover,
+        input[type="submit"]:hover {
             background: var(--theme-color-hover);
+        }
+
+        .radio-input {
+            cursor: pointer;
+            margin: 8px 0;
+            padding: 0 12px;
+            background: white;
+            border-radius: var(--border-radius);
+            border: #3952aa solid 2px;
+        }
+
+        .radio-label {
+            cursor: pointer;
+            margin: 0;
+            padding: 10px 4px;
+            width: 90%;
+            /* background: rebeccapurple; */
         }
 
         /* ================== NavBar =================== */

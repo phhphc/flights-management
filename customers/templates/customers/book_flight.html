@@ -1,7 +1,7 @@
 {% extends 'base.html' %}}
 
 {% block head %}
-<title>Book Flight</title>
+<title>Book Ticket</title>
 
 <style>
     #pay-now,
@@ -13,7 +13,7 @@
     .seat-position-item {
         display: inline-block;
         margin: 5px;
-        padding: 5px;
+        padding: 12px 24px;
         border: 1px solid #ccc;
         border-radius: 5px;
         cursor: pointer;
@@ -23,101 +23,134 @@
 
 
 {% block content %}
-<h1>----------- This is book flight page --------------</h1>
+
+<!-- Header Image -->
+<img src="https://i.ibb.co/7z6LQKv/header.png" class="header-image">
+
+<h1 style="text-align: center; margin: 40px 0;">
+    Book Ticket
+</h1>
 
 <form action="" method="post" onsubmit="handleSubmit()">
     {% csrf_token %}
-    {{ form }}
 
-    <div>
-        <h3>
-            Choose seat position
-        </h3>
+    <div class="row">
+        <div class="col" style="margin-right: 48px;">
 
-        <div id="seat-list"> </div>
+            <h2>
+                Customer Information
+            </h2>
 
-        <script>
-            // get the seat position list from the server and handle user's choice
-            const chooseSeatEle = document.getElementById('id_seat_position');
-            const seatListEle = document.getElementById('seat-list');
-            function chooseSeat(value) {
-                if (chooseSeatEle.value) {
-                    seatListEle.children[chooseSeatEle.value - 1].style.backgroundColor = '#fff';
-                }
-                chooseSeatEle.value = value;
-                seatListEle.children[chooseSeatEle.value - 1].style.backgroundColor = '#ccc';
+            {{ form }}
 
-            }
+            <div>
+                <p style="margin-top: 20px;">
+                    Choose seat position:
+                </p>
 
-            // get the seat position list from the server
-            function renderSeatList() {
-                flight_id = document.getElementById('id_flight').value
-                ticket_class_id = document.getElementById('id_ticket_class').value
+                <div id="seat-list"> </div>
 
-                if (!flight_id || !ticket_class_id) {
-                    seatListEle.innerHTML = '';
-                    return;
-                }
-
-                fetch(`/api/flight-seats/${flight_id}/${ticket_class_id}`)
-                    .then(res => res.json())
-                    .then(data => {
-                        // parse the data
-                        const bookedSeat = data.bookedSeats;
-                        const total = data.total;
-
-                        // render the seat list
-                        seatListEle.replaceChildren(...[...Array(total).keys()].map((i) => {
-                            let div = document.createElement('div');
-                            div.innerText = i + 1;
-                            div.setAttribute('class', 'seat-position-item');
-                            div.onclick = function () {
-                                chooseSeat(i + 1);
-                            }
-                            return div;
-                        }));
-
-                        // disable the booked seat
-                        for (let i of bookedSeat) {
-                            const item = seatListEle.children[i - 1];
-                            item.style.backgroundColor = '#ea3';
-                            item.onclick = null;
+                <script>
+                    // get the seat position list from the server and handle user's choice
+                    const chooseSeatEle = document.getElementById('id_seat_position');
+                    const seatListEle = document.getElementById('seat-list');
+                    function chooseSeat(value) {
+                        if (chooseSeatEle.value) {
+                            seatListEle.children[chooseSeatEle.value - 1].style.backgroundColor = '#fff';
                         }
-                    })
-            }
+                        chooseSeatEle.value = value;
+                        seatListEle.children[chooseSeatEle.value - 1].style.backgroundColor = '#ccc';
 
-            renderSeatList();
-            document.getElementById('id_flight').onclick = () => renderSeatList();
-            document.getElementById('id_ticket_class').onclick = () => renderSeatList();
-        </script>
+                    }
 
+                    // get the seat position list from the server
+                    function renderSeatList() {
+                        flight_id = document.getElementById('id_flight').value
+                        ticket_class_id = document.getElementById('id_ticket_class').value
+
+                        if (!flight_id || !ticket_class_id) {
+                            seatListEle.innerHTML = '';
+                            return;
+                        }
+
+                        fetch(`/api/flight-seats/${flight_id}/${ticket_class_id}`)
+                            .then(res => res.json())
+                            .then(data => {
+                                // parse the data
+                                const bookedSeat = data.bookedSeats;
+                                const total = data.total;
+
+                                // render the seat list
+                                seatListEle.replaceChildren(...[...Array(total).keys()].map((i) => {
+                                    let div = document.createElement('div');
+                                    if (i + 1 >= 10) {
+                                        div.innerText = i + 1;
+                                    } else {
+                                        div.innerText = '0' + (i + 1).toString();
+                                    }
+                                    div.setAttribute('class', 'seat-position-item');
+                                    div.onclick = function () {
+                                        chooseSeat(i + 1);
+                                    }
+                                    return div;
+                                }));
+
+                                // disable the booked seat
+                                for (let i of bookedSeat) {
+                                    const item = seatListEle.children[i - 1];
+                                    item.style.backgroundColor = '#ea3';
+                                    item.onclick = null;
+                                }
+                            })
+                    }
+
+                    renderSeatList();
+                    document.getElementById('id_flight').onclick = () => renderSeatList();
+                    document.getElementById('id_ticket_class').onclick = () => renderSeatList();
+                </script>
+
+            </div>
+        </div>
+        <div class="col">
+            <div>
+                <h2>Payment</h2>
+                <p style="margin: 16px 0 0 0;">
+                    Payment method:
+                </p>
+                <div class="radio-input">
+                    <input type="radio" name="payment_method_radio" id="pm1" value="Pay now"
+                        onclick="togglePayMethod(0)" checked>
+                    <label for="pm1" class="radio-label">
+                        Pay now with Credit Card
+                    </label>
+                </div>
+                <div class="radio-input">
+                    <input type="radio" name="payment_method_radio" id="pm2" value="Pay later"
+                        onclick="togglePayMethod(1)">
+                    <label for="pm2" class="radio-label">
+                        Pay later
+                    </label>
+                </div>
+            </div>
+            <div id="pay-now">
+                <p style="margin: 24px 0 0 0;">
+                    Pay now with Credit Card:
+                </p>
+                {{ payment }}
+            </div>
+            <div id="pay-later">
+                <p style="margin: 24px 0 0 0;">
+                    Pay later when check-in:
+                </p>
+                <p style="margin: 12px 0 0 0;">
+                    Note: Pay later only apply for the login customer cannot choose seat position.
+                </p>
+            </div>
+            <input type="submit" value="Book ticket" style="margin: 36px 0 0 0;">
+        </div>
     </div>
-
-    <div>
-        <h3>Choose payment method</h3>
-        <input type="button" value="Pay now" onclick="togglePayMethod(0)">
-        <input type="button" value="Pay later" onclick="togglePayMethod(1)">
-    </div>
-
-
-    <div id="pay-now">
-        <h3>Pay now</h3>
-        {{ payment }}
-    </div>
-
-    <div id="pay-later">
-        <h3>Pay later</h3>
-        pay later only apply for the login customer
-        cannot choose seat position
-    </div>
-
-    <input type="submit" value="Book ticket">
 
 </form>
-
-
-<h1>----------- This is book flight page --------------</h1>
-
 
 <script>
     // Show pay now and pay later when click on button
