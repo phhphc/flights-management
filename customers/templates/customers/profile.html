@@ -5,7 +5,6 @@
 {% endblock %}
 
 {% block content %}
-<h1>----------- This is Profile Page --------------</h1>
 
 <div>
     {% for m in messages %}
@@ -13,40 +12,49 @@
     {% endfor %}
 </div>
 
+<div class="row" style="margin-top: 70px;">
+    <div class="col" style="margin-right: 48px;">
+        <h2>
+            User Profile
+        </h2>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form }}
 
-<form action="" method="post">
-    {% csrf_token %}
-    {{ form }}
-
-    {{ user_form }}
-    <input type="submit" value="Update">
-</form>
-
-<br>
-
-<div>
-    <form method="get" action="">
-        {{ticket_filter.form}}
-        <button type="submit">Search</button>
-    </form>
+            {{ user_form }}
+            <input type="submit" value="Update">
+        </form>
+    </div>
+    <div class="col">
+        <h2>
+            Search for booked tickets
+        </h2>
+        <form method="get" action="">
+            {{ticket_filter.form}}
+            <button type="submit">Search</button>
+        </form>
+    </div>
 </div>
 
-<br>
+
 
 <div>
+    <h2 style="text-align: center; margin: 80px 0 24px 0;">
+        Flights History
+    </h2>
     <table>
         <tr>
             <th>MCB</th>
             <th>Sân Bay Đi</th>
             <th>Sân Bay Đến</th>
             <th>Khởi Hành</th>
-            <th>Thời Gian Bay</th>
+            <!-- <th>Thời Gian Bay</th> -->
             <th>Loại vé</th>
             <th>Vị trí ghế</th>
             <th>Tên khách hàng</th>
-            <th>CMND/CCCD</th>
-            <th>Điện Thoại</th>
-            <th>Giá vé</th>
+            <!-- <th>CMND/CCCD</th> -->
+            <!-- <th>Điện Thoại</th> -->
+            <!-- <th>Giá vé</th> -->
             <th>Trạng thái</th>
         </tr>
 
@@ -56,13 +64,13 @@
             <th>{{ t.flight_ticket.flight.departure_airport }}</th>
             <th>{{ t.flight_ticket.flight.arrival_airport }}</th>
             <th>{{ t.flight_ticket.flight.departure_time }}</th>
-            <th>{{ t.flight_ticket.flight.duration }}</th>
+            <!-- <th>{{ t.flight_ticket.flight.duration }}</th> -->
             <th>{{ t.flight_ticket.ticket_class }}</th>
             <th>{{t.seat_position }}</th>
             <th>{{t.customer_name}}</th>
-            <th>{{t.customer_id_card}}</th>
-            <th>{{t.customer_phone}}</th>
-            <th>{{t.flight_ticket.cost}}</th>
+            <!-- <th>{{t.customer_id_card}}</th> -->
+            <!-- <th>{{t.customer_phone}}</th> -->
+            <!-- <th>{{t.flight_ticket.cost}}</th> -->
             <th>{{t.str_status}}</th>
             <th><a href="{% url 'book_flight_confirm' t.id %}">Pay</a></th>
             <th><a href="{% url 'edit_ticket_customer' t.id %}">Edit</a></th>
@@ -72,5 +80,4 @@
     </table>
 </div>
 
-<h1>----------- This is Profile Page --------------</h1>
 {% endblock content %}
