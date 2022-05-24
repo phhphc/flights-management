@@ -39,12 +39,7 @@ python ./manage.py migrate
 python ./manage.py loaddata fixtures/*
 
 # load test data
-# python ./manage.py loaddata ./test_data/*
-for data in $(ls ./test_data)
-do
-  echo "loading $data"
-  python ./manage.py loaddata ./test_data/$data & # faster
-done
+python ./manage.py loaddata ./test_data/*
 
 # run server
 python ./manage.py runserver
@@ -67,17 +62,17 @@ heroku create -a flights-management-hcmus2022
 
 # config App Envioment variable 
 heroku config:set DEBUG=False -a flights-management-hcmus2022
-heroku config:set SECRET_KEY='eqe2qe@#!{@}!@|dq2eq2e./,' -a flights-management-hcmus2022
+heroku config:set SECRET_KEY='eqe@#$@#%$%^fwe2eq2e./,' -a flights-management-hcmus2022
 
 # install heroku postgres addon (free)
 heroku addons:create heroku-postgresql:hobby-dev -a flights-management-hcmus2022
-## we may need to manually add data to database
+## we may need to manually add data to database (use heroku console for faster speed)
 
 # add remote to local repository
 heroku git:remote -a flights-management-hcmus2022
 
 # deploy to heroku
-git push heroku master
+git push heroku
 ```
 
 ## Live Demo
