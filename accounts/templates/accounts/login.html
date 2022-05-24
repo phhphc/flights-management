@@ -1,34 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
+{% block head %}
+<title>Login</title>
+{% endblock %}
 
-<body>
-    <h1>Login pages</h1>
+{% block content %}
 
-    <form action="" method="post">
-        {% csrf_token %}
-        <input type="text" name="username" placeholder="Username..." class="form-control">
-        <input type="password" name="password" placeholder="Password..." class="form-control">
-        <input class="btn login_btn" type="submit" value="Login">
+<img style="position: fixed; top: 56px; left: 0; height: calc(100vh - 56px);"
+    src="https://i.ibb.co/gMwyzCc/side-header.png" alt="">
 
-    </form>
-
-    <div>
-        {% for m in messages %}
-        <p id="messages">{{m}}</p>
-        {% endfor %}
+<div class="row">
+    <div class="col-7">
     </div>
+    <div class="col-5">
+        <h1 style="text-align: center; margin: 64px 0 48px 0;">
+            Login
+        </h1>
 
-    <div>
-        <a href="{% url 'home' %}">Home</a>
+        <form action="" method="post">
+            {% csrf_token %}
+            <div style="margin-top: 24px;">
+                Username
+                <div style="height: 12px;"></div>
+                <input type="text" name="username" placeholder="Username..." class="form-control">
+                <p class="helptext">
+                    {{ form.username.help_text }}
+                </p>
+            </div>
+            <div style="margin-top: 24px;">
+                Password
+                <div style="height: 12px;"></div>
+                <input type="password" name="password" placeholder="Password..." class="form-control">
+                <p class="helptext">
+                    {{ form.password.help_text }}
+                </p>
+            </div>
+            <input class="btn login_btn" type="submit" value="Login">
+        </form>
+
+        <div>
+            {% for m in messages %}
+            <p id="messages">{{m}}</p>
+            {% endfor %}
+        </div>
     </div>
+</div>
 
-</body>
 
-</html>
+
+
+
+<!-- <div>
+    <a href="{% url 'home' %}">Home</a>
+</div> -->
+{% endblock content %}
