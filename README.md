@@ -19,7 +19,7 @@ This project allows businesses to manage flights and customer to book online tic
 ## Execute Environment
 - **OS**: Windows, linux
 - **SDK**: Python, Django
-- **Database**: PostgreSQL
+- **Database**: PostgreSQL, SQLite
 - **Dev Tool**: Visual studio code, Firefox DevTools, Chrome DevTools 
 
 ## Local Setup
