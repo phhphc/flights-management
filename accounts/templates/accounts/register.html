@@ -1,31 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-</head>
+{% block head %}
+<title>Register</title>
+{% endblock %}
 
-<body>
+{% block content %}
 
-    <h1>Register page</h1>
+<img style="position: fixed; top: 56px; left: 0; height: calc(100vh - 56px);"
+    src="https://i.ibb.co/gMwyzCc/side-header.png" alt="">
 
-    <form action="" method="post">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="Register">
-    </form>
-
-    <div>
-        {{form.errors}}
+<div class="row">
+    <div class="col-7">
     </div>
+    <div class="col-5">
+        <h1 style="text-align: center; margin: 64px 0 48px 0;">
+            Register new account
+        </h1>
 
-    <div>
-        <a href="{% url 'home' %}">Home</a>
+        <form action="" method="post">
+            {% csrf_token %}
+            <!-- {{ form }} -->
+            <div style="margin-top: 24px;">
+                Username
+                <div style="height: 12px;"></div>
+                {{ form.username }}
+                <p class="helptext">
+                    {{ form.username.help_text }}
+                </p>
+            </div>
+            <div style="margin-top: 24px;">
+                Email
+                <div style="height: 12px;"></div>
+                {{ form.email }}
+                <p class="helptext">
+                    {{ form.email.help_text }}
+                </p>
+            </div>
+            <div style="margin-top: 24px;">
+                Password
+                <div style="height: 12px;"></div>
+                {{ form.password1 }}
+                <div class="helptext">
+                    {{ form.password1.help_text }}
+                </div>
+            </div>
+            <div style="margin-top: 24px;">
+                Confirm Password
+                <div style="height: 12px;"></div>
+                {{ form.password2 }}
+                <p class="helptext">
+                    {{ form.password2.help_text }}
+                </p>
+            </div>
+            <input type="submit" value="Register">
+        </form>
+
+        <div>
+            {{form.errors}}
+        </div>
     </div>
+</div>
 
-</body>
 
-</html>
+{% endblock content %}

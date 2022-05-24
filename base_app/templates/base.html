@@ -123,6 +123,11 @@
             font-size: 1.5rem;
         }
 
+        /* ================== List =================== */
+        ul {
+            list-style-position: inside;
+        }
+
         /* ================== Table =================== */
         table {
             /* border-collapse: collapse; */
@@ -175,6 +180,12 @@
             margin: 20px 0 6px 0;
         }
 
+        form .helptext,
+        form .helptext * {
+            color: gray;
+            font-size: 0.8rem;
+        }
+
         input,
         select,
         button[type="submit"] {
@@ -196,6 +207,7 @@
 
         button[type="submit"],
         input[type="submit"] {
+            margin: 36px 0 0 0;
             cursor: pointer;
             background: var(--theme-color);
             color: white;

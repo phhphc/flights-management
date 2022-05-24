@@ -41,7 +41,7 @@
             <div class="col">
                 &nbsp;
                 <div style="height: 12px;"></div>
-                <button type="submit">Search for flights</button>
+                <button type="submit" style="margin: 0;">Search for flights</button>
             </div>
         </div>
     </form>
@@ -62,7 +62,6 @@
         <th>Booked Seats</th>
         <th>&nbsp;</th>
     </tr>
-
     {% for f in flights %}
     <tr class='clickable-row' data-href="{% url 'flight_detail' f.id %}" style="cursor: pointer;">
         <td>{{f}}</td>
@@ -79,7 +78,6 @@
         </td>
     </tr>
     {% endfor %}
-
 </table>
 
 {% endblock content %}
