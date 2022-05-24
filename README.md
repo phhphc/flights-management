@@ -54,7 +54,7 @@ About test data:
 
 ## Heroku deploy
 ```bash
-# login to hero ku cli
+# login to heroku cli
 heroku login
 
 # create heroku app
