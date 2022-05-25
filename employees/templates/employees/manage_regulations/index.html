@@ -4,37 +4,55 @@
 <title>Manage Regulation </title>
 {% endblock %}
 
-{% block content %}
-<h1>----------- This is Manage Regulation Pages --------------</h1>
+{% block content %} <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <div class="global-manage">
 
-<div>
-    <table>
-        <tr>
-            <th>Thời gian bay tối thiểu</th>
-            <th>Số sân bay trung gian tối đa</th>
-            <th>Thời gian dừng tối thiểu tại san bay trung gian</th>
-            <th>Thời gian dừng tối đa tại san bay trung gian</th>
-            <th>Thời gian chậm nhất khi đặt vé</th>
-            <th>Thời gian chậm nhất khi hủy đặt vé</th>
-        </tr>
+            <div>
+                <h1>
+                    Manage Regulations
+                </h1>
+                <a class="add-btn-wrap" href="{% url 'edit_regulations' %}">
+                    <div class="add-btn">
+                        Edit Regulations
+                    </div>
+                </a>
+            </div>
 
-
-        <tr>
-            <th>{{regulations.flight_duration_min }}</th>
-            <th>{{regulations.intermediate_airport_max }}</th>
-            <th>{{regulations.intermediate_airport_time_min }}</th>
-            <th>{{regulations.intermediate_airport_time_max }}</th>
-            <th>{{regulations.book_ticket_before_min }}</th>
-            <th>{{regulations.cancel_ticket_before_min }}</th>
-        </tr>
-        
-        
-    </table>
-</div>
-
-<div>
-    <a href="{% url 'edit_regulations' %}">Edit</a>
-</div>
-
-<h1>----------- This is Manage Regulation Pages --------------</h1>
-{% endblock content %}
+            <div>
+                <table>
+                    <tr>
+                        <th>Regulation</th>
+                        <th>Value</th>
+                    </tr>
+                    <tr>
+                        <td>Thời gian bay tối thiểu</td>
+                        <td>{{regulations.flight_duration_min }}</td>
+                    </tr>
+                    <tr>
+                        <td>Số sân bay trung gian tối đa</td>
+                        <td>{{regulations.intermediate_airport_max }}</td>
+                    </tr>
+                    <tr>
+                        <td>Thời gian dừng tối thiểu tại san bay trung gian</td>
+                        <td>{{regulations.intermediate_airport_time_min }}</td>
+                    </tr>
+                    <tr>
+                        <td>Thời gian dừng tối đa tại san bay trung gian</td>
+                        <td>{{regulations.intermediate_airport_time_max }}</td>
+                    </tr>
+                    <tr>
+                        <td>Thời gian chậm nhất khi đặt vé</td>
+                        <td>{{regulations.book_ticket_before_min }}</td>
+                    </tr>
+                    <tr>
+                        <td>Thời gian chậm nhất khi hủy đặt vé</td>
+                        <td>{{regulations.cancel_ticket_before_min }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-2"></div>
+</div>{% endblock content %}

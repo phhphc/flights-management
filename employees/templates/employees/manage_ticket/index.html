@@ -4,23 +4,52 @@
 <title>Manage Ticket Dashboard </title>
 {% endblock %}
 
-{% block content %}
-<h1>----------- This is Manage Ticket Dashboard --------------</h1>
+{% block content %} <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <div class="global-manage">
 
-<div>
-    {% for m in messages %}
-    <p id="messages">{{m}}</p>
-    {% endfor %}
+            <div>
+                <h1>
+                    Manage Tickets
+                </h1>
+                <a class="add-btn-wrap" href="{% url 'add_ticket' %}">
+                    <div class="add-btn">
+                        Add Ticket
+                    </div>
+                </a>
+            </div>
+
+            <br><br><br><br><br><br><br><br>
+
+            <div>
+                {% for m in messages %}
+                <p id="messages">{{m}}</p>
+                {% endfor %}
+            </div>
+
+            <h2>
+                Search for tickets
+            </h2>
+
+            <div>
+                <form method="get" action="">
+                    {{ticket_filter.form}}
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+
+
+
+        </div>
+    </div>
+    <div class="col-2"></div>
 </div>
 
-<div>
-    <form method="get" action="">
-        {{ticket_filter.form}}
-        <button type="submit">Search</button>
-    </form>
-</div>
-
-<div>
+<h2 style="margin: 70px 0 28px 16px;">
+    Flights list
+</h2>
+<div style="margin: 0 16px;">
     <table>
         <tr>
             <th>Mã Vé</th>
@@ -60,11 +89,4 @@
 
     </table>
 </div>
-
-
-<div>
-    <a href="{% url 'add_ticket' %}">Add Ticket</a>
-</div>
-
-<h1>----------- This is Manage Ticket Dashboard --------------</h1>
 {% endblock content %}

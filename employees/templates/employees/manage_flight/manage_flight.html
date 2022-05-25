@@ -4,70 +4,74 @@
 <title>Manage Flight {{flight}}</title>
 {% endblock %}
 
-{% block content %}
-<h1>----------- This is Add Ticket Page --------------</h1>
+{% block content %} <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <h1>----------- This is Add Ticket Page --------------</h1>
 
-<div>
-    <h2>Flight Name: {{flight}}</h2>
-    <div>src airport: {{flight.departure_airport}}</div>
-    <div>dst airport: {{flight.arrival_airport}}</div>
-    <div>time: {{flight.departure_time}}</div>
-    <div>duration: {{flight.duration}}</div>
-    <a href={% url 'edit_flight' flight.id %}>Edit</a>
-</div>
+        <div>
+            <h2>Flight Name: {{flight}}</h2>
+            <div>src airport: {{flight.departure_airport}}</div>
+            <div>dst airport: {{flight.arrival_airport}}</div>
+            <div>time: {{flight.departure_time}}</div>
+            <div>duration: {{flight.duration}}</div>
+            <a href={% url 'edit_flight' flight.id %}>Edit</a>
+        </div>
 
-<br>
+        <br>
 
-<div>
-    {% for m in messages %}
-        <div>{{m}}</div>
-    {% endfor %}
-</div>
+        <div>
+            {% for m in messages %}
+            <div>{{m}}</div>
+            {% endfor %}
+        </div>
 
-<br>
+        <br>
 
-<div>
-    <table>
-        <tr>
-            <th>Số thứ tự</th>
-            <th>Sân bay trung gian</th>
-            <th>Thời gian dừng</th>
-            <th>Ghi chú</th>
-        </tr>
-        {% for a in intermediate_airports %}
-        <tr>
-            <th>Use CSS</th>
-            <th>{{a.airport.name}}</th>
-            <th>{{a.stop_time}}</th>
-            <th>{{a.notes}}</th>
-        </tr>
-        {% endfor %}
-    </table>
-    <a href={% url 'update_intermediate_airport' flight.id %}>Update Intermadiate Airport</a>
-</div>
+        <div>
+            <table>
+                <tr>
+                    <th>Số thứ tự</th>
+                    <th>Sân bay trung gian</th>
+                    <th>Thời gian dừng</th>
+                    <th>Ghi chú</th>
+                </tr>
+                {% for a in intermediate_airports %}
+                <tr>
+                    <th>Use CSS</th>
+                    <th>{{a.airport.name}}</th>
+                    <th>{{a.stop_time}}</th>
+                    <th>{{a.notes}}</th>
+                </tr>
+                {% endfor %}
+            </table>
+            <a href={% url 'update_intermediate_airport' flight.id %}>Update Intermadiate Airport</a>
+        </div>
 
-<br>
+        <br>
 
-<div>
-    <table>
-        <tr>
-            <th>Hang Ve</th>
-            <th>So luong</th>
-            <th>Gia Ve</th>
-        </tr>
-        {% for t in flight_tickets %}
-        <tr>
-            <th>{{t.ticket_class}}</th>
-            <th>{{t.quantity}}</th>
-            <th>{{t.cost}}</th>
-        </tr>
-        {% endfor %}
-    </table>
-    <a href={% url 'update_flight_ticket_class' flight.id %}>Update ticket Class</a>
-</div>
+        <div>
+            <table>
+                <tr>
+                    <th>Hang Ve</th>
+                    <th>So luong</th>
+                    <th>Gia Ve</th>
+                </tr>
+                {% for t in flight_tickets %}
+                <tr>
+                    <th>{{t.ticket_class}}</th>
+                    <th>{{t.quantity}}</th>
+                    <th>{{t.cost}}</th>
+                </tr>
+                {% endfor %}
+            </table>
+            <a href={% url 'update_flight_ticket_class' flight.id %}>Update ticket Class</a>
+        </div>
 
-<br>
+        <br>
 
-<a href={% url 'delete_flight' flight.id %}>Delete Flight</a>
-<h1>----------- This is Add Ticket Page --------------</h1>
-{% endblock content %}
+        <a href={% url 'delete_flight' flight.id %}>Delete Flight</a>
+        <h1>----------- This is Add Ticket Page --------------</h1>
+    </div>
+    <div class="col-2"></div>
+</div>{% endblock content %}
