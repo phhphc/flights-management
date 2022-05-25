@@ -5,33 +5,37 @@
 {% endblock %}
 
 
-{% block content %}
-<h1>----------- This is confirm book flight page --------------</h1>
+{% block content %} <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <h1>----------- This is confirm book flight page --------------</h1>
 
-0. book_flight details
+        0. book_flight details
 
-1. choose seat position
+        1. choose seat position
 
-2. payment method
+        2. payment method
 
-<div>
-    {% for m in messages %}
-    <p id="messages">{{m}}</p>
-    {% endfor %}
-</div>
+        <div>
+            {% for m in messages %}
+            <p id="messages">{{m}}</p>
+            {% endfor %}
+        </div>
 
-<form action="" method="post">
-    {% csrf_token %}
+        <form action="" method="post">
+            {% csrf_token %}
 
-    <h3>Choose Seat</h3>
-    {{form}}
+            <h3>Choose Seat</h3>
+            {{form}}
 
-    <h3>Payment</h3>
-    {{ payment }}
+            <h3>Payment</h3>
+            {{ payment }}
 
-    <input type="submit" value="Pay">
-</form>
+            <input type="submit" value="Pay">
+        </form>
 
 
-<h1>----------- This is confirm book flight page --------------</h1>
-{% endblock content %}
+        <h1>----------- This is confirm book flight page --------------</h1>
+    </div>
+    <div class="col-2"></div>
+</div>{% endblock content %}

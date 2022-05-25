@@ -4,102 +4,107 @@
 <title>Flight {{flight}}</title>
 {% endblock %}
 
-{% block content %}
+{% block content %} <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
 
-<!-- Header Image -->
-<img src="https://i.ibb.co/7z6LQKv/header.png" class="header-image">
+        <!-- Header Image -->
+        <img src="https://i.ibb.co/7z6LQKv/header.png" class="header-image">
 
-<div class="row" style="margin-top: 70px;">
-    <div class="col" style="margin-right: 48px;">
-        <h2>Flight Details</h2>
-        <div class="flight-info"
-            style="background: var(--row-bg); border-radius: var(--border-radius); padding: 24px 36px; margin-top: 24px;">
-            <style>
-                .flight-info p {
-                    line-height: 2.7;
-                }
-            </style>
-            <p>
-                Flight:
-                <span style="margin-left: 7rem;"></span>
-                {{flight}}
-            </p>
-            <p>
-                From airport:
-                <span style="margin-left: 4rem;"></span>
-                {{flight.departure_airport}}
-            </p>
-            <p>
-                To airport:
-                <span style="margin-left: 5.2rem;"></span>
-                {{flight.arrival_airport}}
-            </p>
-            <p>
-                Departure time:
-                <span style="margin-left: 2.9rem;"></span>
-                {{flight.departure_time}}
-            </p>
-            <p>
-                Estimated Duration:
-                <span style="margin-left: 1rem;"></span>
-                {{flight.duration}}
-            </p>
+        <div class="row" style="margin-top: 70px;">
+            <div class="col" style="margin-right: 48px;">
+                <h2>Flight Details</h2>
+                <div class="flight-info"
+                    style="background: var(--row-bg); border-radius: var(--border-radius); padding: 24px 36px; margin-top: 24px;">
+                    <style>
+                        .flight-info p {
+                            line-height: 2.7;
+                        }
+                    </style>
+                    <p>
+                        Flight:
+                        <span style="margin-left: 7rem;"></span>
+                        {{flight}}
+                    </p>
+                    <p>
+                        From airport:
+                        <span style="margin-left: 4rem;"></span>
+                        {{flight.departure_airport}}
+                    </p>
+                    <p>
+                        To airport:
+                        <span style="margin-left: 5.2rem;"></span>
+                        {{flight.arrival_airport}}
+                    </p>
+                    <p>
+                        Departure time:
+                        <span style="margin-left: 2.9rem;"></span>
+                        {{flight.departure_time}}
+                    </p>
+                    <p>
+                        Estimated Duration:
+                        <span style="margin-left: 1rem;"></span>
+                        {{flight.duration}}
+                    </p>
+                </div>
+            </div>
+            <div class="col">
+                <h2>Intermediate Airport</h2>
+                <table>
+                    <tr>
+                        <!-- <th>Số thứ tự</th> -->
+                        <th>Airport</th>
+                        <th>Stoptime</th>
+                        <th>Notes</th>
+                    </tr>
+                    {% for a in intermediate_airports %}
+                    <tr>
+                        <!-- <th>{{a.id}}</th> -->
+                        <td>{{a.airport.name}}</td>
+                        <td>{{a.stop_time}}</td>
+                        <td
+                            style="text-overflow: ellipsis; display: block; overflow: hidden; height: 70px; width: 200px;">
+                            {{a.notes}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
         </div>
-    </div>
-    <div class="col">
-        <h2>Intermediate Airport</h2>
+
+
+        <h2 style="margin: 40px 0 12px 0;">Book Ticket</h2>
         <table>
             <tr>
-                <!-- <th>Số thứ tự</th> -->
-                <th>Airport</th>
-                <th>Stoptime</th>
-                <th>Notes</th>
+                <th>Ticket Class</th>
+                <th>Total Seats</th>
+                <th>Empty Seats</th>
+                <th>Booked Seats</th>
+                <th>Price</th>
             </tr>
-            {% for a in intermediate_airports %}
-            <tr>
-                <!-- <th>{{a.id}}</th> -->
-                <td>{{a.airport.name}}</td>
-                <td>{{a.stop_time}}</td>
-                <td style="text-overflow: ellipsis; display: block; overflow: hidden; height: 70px; width: 200px;">
-                    {{a.notes}}</td>
+
+            {% for c in flight_tickets %}
+            <tr class='clickable-row'
+                data-href="{% url 'book_flight' %}?flight={{flight.id}}&ticket_class={{c.ticket_class.id}}"
+                style="cursor: pointer;">
+                <td>{{c.ticket_class}}</td>
+                <td>{{c.quantity}}</td>
+                <td>{{c.available_seats}}</td>
+                <td>{{c.booked_count}}</td>
+                <td>{{c.cost}} VND</td>
+                <!-- <th><a href={% url 'book_flight' %}?flight={{flight.id}}&ticket_class={{c.ticket_class.id}}>Đặt vé</a></th> -->
+                <td>
+                    <span style="position: relative; top: -5px;">
+                        Book Ticket
+                    </span>
+                    <span style="font-size: 30px; color: rgb(68, 68, 68); position: relative; top: -2px;">
+                        &rsaquo;
+                    </span>
+                </td>
             </tr>
             {% endfor %}
+
         </table>
+
     </div>
-</div>
-
-
-<h2 style="margin: 40px 0 12px 0;">Book Ticket</h2>
-<table>
-    <tr>
-        <th>Ticket Class</th>
-        <th>Total Seats</th>
-        <th>Empty Seats</th>
-        <th>Booked Seats</th>
-        <th>Price</th>
-    </tr>
-
-    {% for c in flight_tickets %}
-    <tr class='clickable-row'
-        data-href="{% url 'book_flight' %}?flight={{flight.id}}&ticket_class={{c.ticket_class.id}}"
-        style="cursor: pointer;">
-        <td>{{c.ticket_class}}</td>
-        <td>{{c.quantity}}</td>
-        <td>{{c.available_seats}}</td>
-        <td>{{c.booked_count}}</td>
-        <td>{{c.cost}} VND</td>
-        <!-- <th><a href={% url 'book_flight' %}?flight={{flight.id}}&ticket_class={{c.ticket_class.id}}>Đặt vé</a></th> -->
-        <td>
-            <span style="position: relative; top: -5px;">
-                Book Ticket
-            </span>
-            <span style="font-size: 30px; color: rgb(68, 68, 68); position: relative; top: -2px;">
-                &rsaquo;
-            </span>
-        </td>
-    </tr>
-    {% endfor %}
-
-</table>
-
-{% endblock content %}
+    <div class="col-2"></div>
+</div>{% endblock content %}

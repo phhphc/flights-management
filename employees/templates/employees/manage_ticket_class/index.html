@@ -4,30 +4,42 @@
 <title>Manage Ticket Airport </title>
 {% endblock %}
 
-{% block content %}
-<h1>----------- This is Manage Ticket Airport --------------</h1>
+{% block content %} <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
 
-<div>
-    <table>
-        <tr>
-            <th>Tên hạng vé</th>
-        </tr>
+        <div class="global-manage">
 
-        {% for c in ticket_classes %}
-        <tr>
-            <th>{{c }}</th>
-            <th><a href="{% url 'edit_ticket_class' c.id %}">Edit</a></th>
-            <th><a href="{% url 'delete_ticket_class' c.id %}">Delete</a></th>
-        </tr>
-        {% endfor %}
+            <div>
+                <h1>
+                    Manage Ticket Classes
+                </h1>
+                <a class="add-btn-wrap" href="{% url 'add_ticket_class' %}">
+                    <div class="add-btn">
+                        Add New Class
+                    </div>
+                </a>
+            </div>
 
-    </table>
-</div>
+            <div>
+                <table>
+                    <tr>
+                        <th>Tên hạng vé</th>
+                    </tr>
 
+                    {% for c in ticket_classes %}
+                    <tr>
+                        <th>{{c }}</th>
+                        <th><a href="{% url 'edit_ticket_class' c.id %}">Edit</a></th>
+                        <th><a href="{% url 'delete_ticket_class' c.id %}">Delete</a></th>
+                    </tr>
+                    {% endfor %}
 
-<div>
-    <a href="{% url 'add_ticket_class' %}">Add Ticket class</a>
-</div>
+                </table>
+            </div>
 
-<h1>----------- This is Manage Ticket Airport --------------</h1>
-{% endblock content %}
+        </div>
+
+    </div>
+    <div class="col-2"></div>
+</div>{% endblock content %}

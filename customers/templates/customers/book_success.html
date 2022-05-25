@@ -4,10 +4,14 @@
 <title>Book success</title>
 {% endblock %}
 
-{% block content %}
-<h1>----------- This is book success page --------------</h1>
+{% block content %} <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <h1>----------- This is book success page --------------</h1>
 
-{% lorem 1 b random %}
+        {% lorem 1 b random %}
 
-<h1>----------- This is book success page --------------</h1>
-{% endblock content %}
+        <h1>----------- This is book success page --------------</h1>
+    </div>
+    <div class="col-2"></div>
+</div>{% endblock content %}

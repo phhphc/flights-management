@@ -4,32 +4,43 @@
 <title>Manage Airport </title>
 {% endblock %}
 
-{% block content %}
-<h1>----------- This is Manage Airport --------------</h1>
+{% block content %} <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
 
-<div>
-    <table>
-        <tr>
-            <th>Mã Sân Bay</th>
-            <th>Tên Sân Bay</th>
-        </tr>
+        <div class="global-manage">
 
-        {% for a in airports %}
-        <tr>
-            <th>{{a.code }}</th>
-            <th>{{a.name }}</th>
-            <th><a href="{% url 'edit_airport' a.id %}">Edit</a></th>
-            <th><a href="{% url 'delete_airport' a.id %}">Delete</a></th>
-        </tr>
-        {% endfor %}
+            <div>
+                <h1>
+                    Manage Airports
+                </h1>
+                <a class="add-btn-wrap" href="{% url 'add_airport' %}">
+                    <div class="add-btn">
+                        Add New Airport
+                    </div>
+                </a>
+            </div>
 
-    </table>
-</div>
+            <div>
+                <table>
+                    <tr>
+                        <th>Mã Sân Bay</th>
+                        <th>Tên Sân Bay</th>
+                    </tr>
 
+                    {% for a in airports %}
+                    <tr>
+                        <th>{{a.code }}</th>
+                        <th>{{a.name }}</th>
+                        <th><a href="{% url 'edit_airport' a.id %}">Edit</a></th>
+                        <th><a href="{% url 'delete_airport' a.id %}">Delete</a></th>
+                    </tr>
+                    {% endfor %}
 
-<div>
-    <a href="{% url 'add_airport' %}">Add Airport</a>
-</div>
+                </table>
+            </div>
+        </div>
 
-<h1>----------- This is Manage Airport --------------</h1>
-{% endblock content %}
+    </div>
+    <div class="col-2"></div>
+</div>{% endblock content %}

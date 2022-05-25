@@ -22,174 +22,178 @@
 {% endblock %}
 
 
-{% block content %}
+{% block content %} <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
 
-<!-- Header Image -->
-<img src="https://i.ibb.co/7z6LQKv/header.png" class="header-image">
+        <!-- Header Image -->
+        <img src="https://i.ibb.co/7z6LQKv/header.png" class="header-image">
 
-<h1 style="text-align: center; margin: 40px 0;">
-    Book Ticket
-</h1>
+        <h1 style="text-align: center; margin: 40px 0;">
+            Book Ticket
+        </h1>
 
-<form action="" method="post" onsubmit="handleSubmit()">
-    {% csrf_token %}
+        <form action="" method="post" onsubmit="handleSubmit()">
+            {% csrf_token %}
 
-    <div class="row">
-        <div class="col" style="margin-right: 48px;">
+            <div class="row">
+                <div class="col" style="margin-right: 48px;">
 
-            <h2>
-                Customer Information
-            </h2>
+                    <h2>
+                        Customer Information
+                    </h2>
 
-            {{ form }}
+                    {{ form }}
 
-            <div>
-                <p style="margin-top: 20px;">
-                    Choose seat position:
-                </p>
+                    <div>
+                        <p style="margin-top: 20px;">
+                            Choose seat position:
+                        </p>
 
-                <div id="seat-list"> </div>
+                        <div id="seat-list"> </div>
 
-                <script>
-                    // get the seat position list from the server and handle user's choice
-                    const chooseSeatEle = document.getElementById('id_seat_position');
-                    const seatListEle = document.getElementById('seat-list');
-                    function chooseSeat(value) {
-                        if (chooseSeatEle.value) {
-                            seatListEle.children[chooseSeatEle.value - 1].style.backgroundColor = '#fff';
-                        }
-                        chooseSeatEle.value = value;
-                        seatListEle.children[chooseSeatEle.value - 1].style.backgroundColor = '#ccc';
-
-                    }
-
-                    // get the seat position list from the server
-                    function renderSeatList() {
-                        flight_id = document.getElementById('id_flight').value
-                        ticket_class_id = document.getElementById('id_ticket_class').value
-
-                        if (!flight_id || !ticket_class_id) {
-                            seatListEle.innerHTML = '';
-                            return;
-                        }
-
-                        fetch(`/api/flight-seats/${flight_id}/${ticket_class_id}`)
-                            .then(res => res.json())
-                            .then(data => {
-                                // parse the data
-                                const bookedSeat = data.bookedSeats;
-                                const total = data.total;
-
-                                // render the seat list
-                                seatListEle.replaceChildren(...[...Array(total).keys()].map((i) => {
-                                    let div = document.createElement('div');
-                                    if (i + 1 >= 10) {
-                                        div.innerText = i + 1;
-                                    } else {
-                                        div.innerText = '0' + (i + 1).toString();
-                                    }
-                                    div.setAttribute('class', 'seat-position-item');
-                                    div.onclick = function () {
-                                        chooseSeat(i + 1);
-                                    }
-                                    return div;
-                                }));
-
-                                
-                                // disable the booked seat
-                                for (let i of bookedSeat) {
-                                    const item = seatListEle.children[i - 1];
-                                    item.style.backgroundColor = '#ea3';
-                                    item.onclick = null;
+                        <script>
+                            // get the seat position list from the server and handle user's choice
+                            const chooseSeatEle = document.getElementById('id_seat_position');
+                            const seatListEle = document.getElementById('seat-list');
+                            function chooseSeat(value) {
+                                if (chooseSeatEle.value) {
+                                    seatListEle.children[chooseSeatEle.value - 1].style.backgroundColor = '#fff';
                                 }
-                            })
+                                chooseSeatEle.value = value;
+                                seatListEle.children[chooseSeatEle.value - 1].style.backgroundColor = '#ccc';
+
+                            }
+
+                            // get the seat position list from the server
+                            function renderSeatList() {
+                                flight_id = document.getElementById('id_flight').value
+                                ticket_class_id = document.getElementById('id_ticket_class').value
+
+                                if (!flight_id || !ticket_class_id) {
+                                    seatListEle.innerHTML = '';
+                                    return;
+                                }
+
+                                fetch(`/api/flight-seats/${flight_id}/${ticket_class_id}`)
+                                    .then(res => res.json())
+                                    .then(data => {
+                                        // parse the data
+                                        const bookedSeat = data.bookedSeats;
+                                        const total = data.total;
+
+                                        // render the seat list
+                                        seatListEle.replaceChildren(...[...Array(total).keys()].map((i) => {
+                                            let div = document.createElement('div');
+                                            if (i + 1 >= 10) {
+                                                div.innerText = i + 1;
+                                            } else {
+                                                div.innerText = '0' + (i + 1).toString();
+                                            }
+                                            div.setAttribute('class', 'seat-position-item');
+                                            div.onclick = function () {
+                                                chooseSeat(i + 1);
+                                            }
+                                            return div;
+                                        }));
+
+
+                                        // disable the booked seat
+                                        for (let i of bookedSeat) {
+                                            const item = seatListEle.children[i - 1];
+                                            item.style.backgroundColor = '#ea3';
+                                            item.onclick = null;
+                                        }
+                                    })
+                            }
+
+                            renderSeatList();
+                            document.getElementById('id_flight').onclick = () => renderSeatList();
+                            document.getElementById('id_ticket_class').onclick = () => renderSeatList();
+                        </script>
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div>
+                        <h2>Payment</h2>
+                        <p style="margin: 16px 0 0 0;">
+                            Payment method:
+                        </p>
+                        <div class="radio-input">
+                            <input type="radio" name="payment_method_radio" id="pm1" value="Pay now"
+                                onclick="togglePayMethod(0)" checked>
+                            <label for="pm1" class="radio-label">
+                                Pay now with Credit Card
+                            </label>
+                        </div>
+                        <div class="radio-input">
+                            <input type="radio" name="payment_method_radio" id="pm2" value="Pay later"
+                                onclick="togglePayMethod(1)">
+                            <label for="pm2" class="radio-label">
+                                Pay later
+                            </label>
+                        </div>
+                    </div>
+                    <div id="pay-now">
+                        <p style="margin: 24px 0 0 0;">
+                            Pay now with Credit Card:
+                        </p>
+                        {{ payment }}
+                    </div>
+                    <div id="pay-later">
+                        <p style="margin: 24px 0 0 0;">
+                            Pay later when check-in:
+                        </p>
+                        <p style="margin: 12px 0 0 0;">
+                            Note: Pay later only apply for the login customer cannot choose seat position.
+                        </p>
+                    </div>
+                    <input type="submit" value="Book ticket">
+                </div>
+            </div>
+
+        </form>
+
+        <script>
+            // Show pay now and pay later when click on button
+            // handle submit form
+            var payMethod = 0
+            const payNowEle = document.getElementById('pay-now')
+            const payLaterEle = document.getElementById('pay-later')
+            function togglePayMethod(value) {
+                payMethod = value
+                console.debug(payMethod)
+
+                if (payMethod == 0) { // pay now
+
+                    for (let i of payNowEle.getElementsByTagName('input')) {
+                        i.setAttribute('required', '') // must fill in payment form
                     }
 
-                    renderSeatList();
-                    document.getElementById('id_flight').onclick = () => renderSeatList();
-                    document.getElementById('id_ticket_class').onclick = () => renderSeatList();
-                </script>
+                    payNowEle.style.display = 'block'
+                    payLaterEle.style.display = 'none'
+                } else if (payMethod == 1) { // pay later
 
-            </div>
-        </div>
-        <div class="col">
-            <div>
-                <h2>Payment</h2>
-                <p style="margin: 16px 0 0 0;">
-                    Payment method:
-                </p>
-                <div class="radio-input">
-                    <input type="radio" name="payment_method_radio" id="pm1" value="Pay now"
-                        onclick="togglePayMethod(0)" checked>
-                    <label for="pm1" class="radio-label">
-                        Pay now with Credit Card
-                    </label>
-                </div>
-                <div class="radio-input">
-                    <input type="radio" name="payment_method_radio" id="pm2" value="Pay later"
-                        onclick="togglePayMethod(1)">
-                    <label for="pm2" class="radio-label">
-                        Pay later
-                    </label>
-                </div>
-            </div>
-            <div id="pay-now">
-                <p style="margin: 24px 0 0 0;">
-                    Pay now with Credit Card:
-                </p>
-                {{ payment }}
-            </div>
-            <div id="pay-later">
-                <p style="margin: 24px 0 0 0;">
-                    Pay later when check-in:
-                </p>
-                <p style="margin: 12px 0 0 0;">
-                    Note: Pay later only apply for the login customer cannot choose seat position.
-                </p>
-            </div>
-            <input type="submit" value="Book ticket">
-        </div>
+                    for (let i of payNowEle.getElementsByTagName('input')) {
+                        i.removeAttribute('required') // no need to fill in payment form
+                    }
+
+                    payNowEle.style.display = 'none'
+                    payLaterEle.style.display = 'block'
+                }
+            }
+            togglePayMethod(0)
+
+            function handleSubmit() {
+                if (payMethod == 1) { // pay later
+                    for (let i of payNowEle.getElementsByTagName('input')) {
+                        i.value = '' // blank the payment form
+                    }
+                }
+            }
+        </script>
+
     </div>
-
-</form>
-
-<script>
-    // Show pay now and pay later when click on button
-    // handle submit form
-    var payMethod = 0
-    const payNowEle = document.getElementById('pay-now')
-    const payLaterEle = document.getElementById('pay-later')
-    function togglePayMethod(value) {
-        payMethod = value
-        console.debug(payMethod)
-
-        if (payMethod == 0) { // pay now
-
-            for (let i of payNowEle.getElementsByTagName('input')) {
-                i.setAttribute('required', '') // must fill in payment form
-            }
-
-            payNowEle.style.display = 'block'
-            payLaterEle.style.display = 'none'
-        } else if (payMethod == 1) { // pay later
-
-            for (let i of payNowEle.getElementsByTagName('input')) {
-                i.removeAttribute('required') // no need to fill in payment form
-            }
-
-            payNowEle.style.display = 'none'
-            payLaterEle.style.display = 'block'
-        }
-    }
-    togglePayMethod(0)
-
-    function handleSubmit() {
-        if (payMethod == 1) { // pay later
-            for (let i of payNowEle.getElementsByTagName('input')) {
-                i.value = '' // blank the payment form
-            }
-        }
-    }
-</script>
-
-{% endblock content %}
+    <div class="col-2"></div>
+</div>{% endblock content %}

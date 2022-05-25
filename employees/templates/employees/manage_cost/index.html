@@ -4,45 +4,65 @@
 <title>Manage Ticket Cost </title>
 {% endblock %}
 
-{% block content %}
-<h1>----------- This is Manage Ticket Cost --------------</h1>
+{% block content %} <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
 
-<div>
-    <form method="get" action="">
-        {{ticket_cost_filter.form}}
-        <button type="submit">Search</button>
-    </form>
-</div>
+        <div class="global-manage">
 
-<br>
+            <div>
+                <h1>
+                    Manage Ticket Costs
+                </h1>
+                <a class="add-btn-wrap" href="{% url 'add_ticket_cost' %}">
+                    <div class="add-btn">
+                        Add New Cost
+                    </div>
+                </a>
+            </div>
 
-<div>
-    <table>
-        <tr>
-            <th>Sân bay đi</th>
-            <th>Sân bay đến</th>
-            <th>Loại vé</th>
-            <th>Giá vé</th>
-        </tr>
+            <br><br><br><br><br><br><br><br>
 
-        {% for c in ticket_costs %}
-        <tr>
-            <th>{{c.departure_airport }}</th>
-            <th>{{c.arrival_airport }}</th>
-            <th>{{c.ticket_class }}</th>
-            <th>{{c.cost }}</th>
-            <th><a href="{% url 'edit_ticket_cost' c.id %}">Edit</a></th>
-            <th><a href="{% url 'delete_ticket_cost' c.id %}">Delete</a></th>
-        </tr>
-        {% endfor %}
+            <h2>
+                Search for ticket costs
+            </h2>
 
-    </table>
-</div>
+            <div>
+                <form method="get" action="">
+                    {{ticket_cost_filter.form}}
+                    <button type="submit">Search</button>
+                </form>
+            </div>
 
+            <h2 style="margin: 70px 0 28px 0;">
+                Ticket costs list
+            </h2>
 
-<div>
-    <a href="{% url 'add_ticket_cost' %}">Add Ticket Cost</a>
-</div>
+            <div>
+                <table>
+                    <tr>
+                        <th>Sân bay đi</th>
+                        <th>Sân bay đến</th>
+                        <th>Loại vé</th>
+                        <th>Giá vé</th>
+                    </tr>
 
-<h1>----------- This is Manage Ticket Cost --------------</h1>
-{% endblock content %}
+                    {% for c in ticket_costs %}
+                    <tr>
+                        <th>{{c.departure_airport }}</th>
+                        <th>{{c.arrival_airport }}</th>
+                        <th>{{c.ticket_class }}</th>
+                        <th>{{c.cost }}</th>
+                        <th><a href="{% url 'edit_ticket_cost' c.id %}">Edit</a></th>
+                        <th><a href="{% url 'delete_ticket_cost' c.id %}">Delete</a></th>
+                    </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="col-2"></div>
+</div>{% endblock content %}

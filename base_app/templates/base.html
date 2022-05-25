@@ -71,6 +71,7 @@
 
             .row .col-8 {
                 width: 66.66%;
+                overflow-x: auto;
             }
 
             .row .col-9 {
@@ -284,6 +285,28 @@
         .emp-dsb-btn:hover {
             background: var(--theme-color-hover);
         }
+
+        .global-manage h1 {
+            margin: 70px 0 48px 0;
+            float: left;
+        }
+
+        .global-manage .add-btn-wrap {
+            margin: 78px 0 0 0;
+            color: white;
+            text-decoration: none;
+            float: right;
+        }
+
+        .global-manage .add-btn {
+            padding: 8px 20px;
+            border-radius: var(--border-radius);
+            background: var(--theme-color);
+        }
+
+        .global-manage .add-btn:hover {
+            background: var(--theme-color-hover);
+        }
     </style>
 
     {% block head %}
@@ -295,14 +318,8 @@
 
     {% include 'navbar.html' %}
 
-    <div class="row">
-        <div class="col-2"></div>
-        <div class="col-8">
-            {% block content %}
-        </div>
-        <div class="col-2"></div>
-    </div>
 
+    {% block content %}
     {% endblock %}
 
     <div style="height: 80px;"></div>
