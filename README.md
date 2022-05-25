@@ -24,9 +24,9 @@ This project allows businesses to manage flights and customer to book online tic
 
 ## Local Setup
 ```bash
-# create environment variable
+# config env variable
 cp ./.env.example ./.env
-# then manually edit enviroment variable from .env file
+# manually config variable in .env file
 
 # install requirements
 pip install -r requirements.txt
@@ -62,17 +62,24 @@ heroku create -a flights-management-hcmus2022
 
 # config App Envioment variable 
 heroku config:set DEBUG=False -a flights-management-hcmus2022
-heroku config:set SECRET_KEY='eqe@#$@#%$%^fwe2eq2e./,' -a flights-management-hcmus2022
+heroku config:set SECRET_KEY='some_secret' -a flights-management-hcmus2022
 
 # install heroku postgres addon (free)
 heroku addons:create heroku-postgresql:hobby-dev -a flights-management-hcmus2022
-## we may need to manually add data to database (use heroku console for faster speed)
 
 # add remote to local repository
 heroku git:remote -a flights-management-hcmus2022
 
 # deploy to heroku
 git push heroku
+
+# Migrate heroku database and load test data
+heroku run '
+python manage.py makemigrations
+python manage.py migrate
+python manage.py loaddata fixtures/* 
+python manage.py loaddata test_data/*
+' -a flights-management-hcmus2022
 ```
 
 ## Live Demo
