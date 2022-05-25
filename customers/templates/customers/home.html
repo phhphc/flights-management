@@ -4,80 +4,84 @@
 <title>VieAirlines</title>
 {% endblock %}
 
-{% block content %}
+{% block content %} <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
 
-<div>
-    {% for m in messages %}
-    <p id="messages">{{m}}</p>
-    {% endfor %}
-</div>
-
-<!-- Header Image -->
-<img src="https://i.ibb.co/7z6LQKv/header.png" class="header-image">
-
-<!-- Search -->
-<h2 style="text-align: center; margin: 70px 0 20px 0;">
-    Search for flights
-</h2>
-<div>
-    <form method="get" action="">
-        <!-- {{flight_filter.form}} -->
-        <div class="row">
-            <div class="col" style="margin-right: 12px;">
-                From location
-                <div style="height: 12px;"></div>
-                {{flight_filter.form.departure_airport__city}}
-            </div>
-            <div class="col" style="margin-right: 12px;">
-                To location
-                <div style="height: 12px;"></div>
-                {{flight_filter.form.arrival_airport__city}}
-            </div>
-            <div class="col" style="margin-right: 12px;">
-                Departure time
-                <div style="height: 12px;"></div>
-                {{flight_filter.form.departure_time__date__gte}}
-            </div>
-            <div class="col">
-                &nbsp;
-                <div style="height: 12px;"></div>
-                <button type="submit" style="margin: 0;">Search for flights</button>
-            </div>
+        <div>
+            {% for m in messages %}
+            <p id="messages">{{m}}</p>
+            {% endfor %}
         </div>
-    </form>
-</div>
 
-<!-- Flights List -->
-<h2 style="text-align: center; margin: 80px 0 10px 0;">
-    Flights List
-</h2>
-<table>
-    <tr>
-        <th>Flight</th>
-        <th>From Airport</th>
-        <th>To Airport</th>
-        <th>Departure Time</th>
-        <th>Duration</th>
-        <th>Empty Seats</th>
-        <th>Booked Seats</th>
-        <th>&nbsp;</th>
-    </tr>
-    {% for f in flights %}
-    <tr class='clickable-row' data-href="{% url 'flight_detail' f.id %}" style="cursor: pointer;">
-        <td>{{f}}</td>
-        <td>{{f.departure_airport}}</td>
-        <td>{{f.arrival_airport}}</td>
-        <td>{{f.departure_time}}</td>
-        <td>{{f.duration}}</td>
-        <td>{{f.available_seats}}</td>
-        <td>{{f.booked_seats}}</td>
-        <td>
-            <div style="font-size: 30px; color: rgb(68, 68, 68); position: relative; top: -2px;">
-                &rsaquo;
-            </div>
-        </td>
-    </tr>
-    {% endfor %}
-</table>
+        <!-- Header Image -->
+        <img src="https://i.ibb.co/7z6LQKv/header.png" class="header-image">
 
-{% endblock content %}
+        <!-- Search -->
+        <h2 style="text-align: center; margin: 70px 0 20px 0;">
+            Search for flights
+        </h2>
+        <div>
+            <form method="get" action="">
+                <!-- {{flight_filter.form}} -->
+                <div class="row">
+                    <div class="col" style="margin-right: 12px;">
+                        From location
+                        <div style="height: 12px;"></div>
+                        {{flight_filter.form.departure_airport__city}}
+                    </div>
+                    <div class="col" style="margin-right: 12px;">
+                        To location
+                        <div style="height: 12px;"></div>
+                        {{flight_filter.form.arrival_airport__city}}
+                    </div>
+                    <div class="col" style="margin-right: 12px;">
+                        Departure time
+                        <div style="height: 12px;"></div>
+                        {{flight_filter.form.departure_time__date__gte}}
+                    </div>
+                    <div class="col">
+                        &nbsp;
+                        <div style="height: 12px;"></div>
+                        <button type="submit" style="margin: 0;">Search for flights</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Flights List -->
+        <h2 style="text-align: center; margin: 80px 0 10px 0;">
+            Flights List
+        </h2>
+        <table>
+            <tr>
+                <th>Flight</th>
+                <th>From Airport</th>
+                <th>To Airport</th>
+                <th>Departure Time</th>
+                <th>Duration</th>
+                <th>Empty Seats</th>
+                <th>Booked Seats</th>
+                <th>&nbsp;</th>
+            </tr>
+            {% for f in flights %}
+            <tr class='clickable-row' data-href="{% url 'flight_detail' f.id %}" style="cursor: pointer;">
+                <td>{{f}}</td>
+                <td>{{f.departure_airport}}</td>
+                <td>{{f.arrival_airport}}</td>
+                <td>{{f.departure_time}}</td>
+                <td>{{f.duration}}</td>
+                <td>{{f.available_seats}}</td>
+                <td>{{f.booked_seats}}</td>
+                <td>
+                    <div style="font-size: 30px; color: rgb(68, 68, 68); position: relative; top: -2px;">
+                        &rsaquo;
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+    <div class="col-2"></div>
+</div>{% endblock content %}
