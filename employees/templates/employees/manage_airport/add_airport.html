@@ -5,19 +5,22 @@
 {% endblock %}
 
 {% block content %} <div class="row">
-    <div class="col-2"></div>
-    <div class="col-8">
-        <h1>----------- This is Add Airport page--------------</h1>
+    <div class="col-4"></div>
+    <div class="col-4">
 
-        <form action="" method="post">
-            {% csrf_token %}
-            {{ form }}
+        <div class="global-add">
+            <h1>
+                Add New Airport
+            </h1>
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form }}
 
-            {{ form.errors }}
-            <input type="submit" value="Add Airport">
-        </form>
+                {{ form.errors }}
+                <input type="submit" value="Add Airport">
+            </form>
+        </div>
 
-        <h1>----------- This is Add Airport page--------------</h1>
     </div>
-    <div class="col-2"></div>
+    <div class="col-4"></div>
 </div>{% endblock content %}

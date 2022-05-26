@@ -99,6 +99,8 @@
             --border-radius: 8px;
             --theme-color: #4A6BDF;
             --theme-color-hover: #3952aa;
+            --red-color: #de3636;
+            --red-color-hover: #ae2e2e;
             --row-bg: #eeeeff;
             --row-bg-first-row: #eeeeff30;
             --row-bg-hover: #c3c3ea;
@@ -263,7 +265,7 @@
         }
 
         .emp-dsb-wrap {
-            margin: 50px 0 0 0;
+            margin: 70px 0 0 0;
         }
 
         .emp-dsb-wrap .col {
@@ -307,6 +309,49 @@
         .global-manage .add-btn:hover {
             background: var(--theme-color-hover);
         }
+
+        .global-add h1 {
+            margin: 70px 0 32px 0;
+        }
+
+        .global-edit h1 {
+            margin: 70px 0 32px 0;
+        }
+
+        .mng-idv-flight h1 {
+            margin: 70px 0 32px 0;
+        }
+
+        .mng-idv-flight h2 {
+            float: left;
+        }
+
+        .mng-idv-flight .btn-wrap {
+            color: white;
+            text-decoration: none;
+            float: right;
+        }
+
+        .mng-idv-flight .btn {
+            padding: 6px 16px;
+            border-radius: var(--border-radius);
+            background: var(--theme-color);
+        }
+
+        .mng-idv-flight .btn:hover {
+            background: var(--theme-color-hover);
+        }
+
+        .mng-idv-flight .btn-delete {
+            margin-top: 76px;
+            padding: 6px 16px;
+            border-radius: var(--border-radius);
+            background: var(--red-color);
+        }
+
+        .mng-idv-flight .btn-delete:hover {
+            background: var(--red-color-hover);
+        }
     </style>
 
     {% block head %}
@@ -316,13 +361,32 @@
 
 <body>
 
+    <div id="top-of-page"></div>
+    <a href="#top-of-page">
+        <div
+            style="position: fixed; bottom: 1.1rem; right: 1rem; background: var(--theme-color); color: white; height: 2rem; width: 2rem; text-align: center; border-radius: 100px; font-size: 1.2rem;">
+            ↑
+        </div>
+    </a>
+
     {% include 'navbar.html' %}
 
 
     {% block content %}
     {% endblock %}
 
-    <div style="height: 80px;"></div>
+    <div style="height: 150px;"></div>
+
+    <footer>
+        <div
+            style="padding: 2rem 2rem; background: rgb(0, 0, 0, 0.01); text-align: center; font-size: 0.8rem; color: gray;">
+            VieAirlines
+            <br>
+            Flights Management Project by Group04
+            <br>
+            FIT HCMUS - Introduction to Software Engineer
+        </div>
+    </footer>
 
     <script>
         jQuery(document).ready(function ($) {
