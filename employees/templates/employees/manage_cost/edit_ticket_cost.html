@@ -5,19 +5,23 @@
 {% endblock %}
 
 {% block content %} <div class="row">
-    <div class="col-2"></div>
-    <div class="col-8">
-        <h1>----------- This is Edit ticket cost page--------------</h1>
+    <div class="col-4"></div>
+    <div class="col-4">
 
-        <form action="" method="post">
-            {% csrf_token %}
-            {{ form }}
+        <div class="global-edit">
+            <h1>
+                Edit Cost
+            </h1>
 
-            {{ form.errors }}
-            <input type="submit" value="Edit Ticket cost">
-        </form>
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form }}
 
-        <h1>----------- This is Edit ticket cost page--------------</h1>
+                {{ form.errors }}
+                <input type="submit" value="Edit Ticket cost">
+            </form>
+
+        </div>
     </div>
-    <div class="col-2"></div>
+    <div class="col-4"></div>
 </div>{% endblock content %}
