@@ -110,7 +110,7 @@ python manage.py loaddata test_data/*
 - [x] report revenue monthly/annual
 - [x] update airports 
 - [x] update ticket classes
-- [ ] implement web UI
+- [x] implement web UI
 - [ ] user testing
 - [ ] perfoment testing
 
