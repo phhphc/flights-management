@@ -1,12 +1,16 @@
 {% extends 'base.html' %}}
 
 {% block head %}
-<title>Profile</title>
+<title>Profile {{user}}</title>
 {% endblock %}
 
 {% block content %} <div class="row">
     <div class="col-2"></div>
     <div class="col-8">
+
+        <h1 style="text-align: center; margin-top: 70px;">
+            User Profile
+        </h1>
 
         <div>
             {% for m in messages %}
@@ -14,10 +18,10 @@
             {% endfor %}
         </div>
 
-        <div class="row" style="margin-top: 70px;">
+        <div class="row" style="margin-top: 60px;">
             <div class="col" style="margin-right: 48px;">
                 <h2>
-                    User Profile
+                    Information
                 </h2>
                 <form action="" method="post">
                     {% csrf_token %}
