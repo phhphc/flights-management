@@ -7,71 +7,137 @@
 {% block content %} <div class="row">
     <div class="col-2"></div>
     <div class="col-8">
-        <h1>----------- This is Add Ticket Page --------------</h1>
 
-        <div>
-            <h2>Flight Name: {{flight}}</h2>
-            <div>src airport: {{flight.departure_airport}}</div>
-            <div>dst airport: {{flight.arrival_airport}}</div>
-            <div>time: {{flight.departure_time}}</div>
-            <div>duration: {{flight.duration}}</div>
-            <a href={% url 'edit_flight' flight.id %}>Edit</a>
-        </div>
+        <div class="mng-idv-flight">
 
-        <br>
+            <div style="height: 200px;">
+                <h1 style="float: left;">Manage Flight</h1>
+                <a class="btn-wrap" href={% url 'delete_flight' flight.id %}>
+                    <div class="btn-delete">
+                        Delete Flight
+                    </div>
+                </a>
+            </div>
 
-        <div>
-            {% for m in messages %}
-            <div>{{m}}</div>
-            {% endfor %}
-        </div>
-
-        <br>
-
-        <div>
-            <table>
-                <tr>
-                    <th>Số thứ tự</th>
-                    <th>Sân bay trung gian</th>
-                    <th>Thời gian dừng</th>
-                    <th>Ghi chú</th>
-                </tr>
-                {% for a in intermediate_airports %}
-                <tr>
-                    <th>Use CSS</th>
-                    <th>{{a.airport.name}}</th>
-                    <th>{{a.stop_time}}</th>
-                    <th>{{a.notes}}</th>
-                </tr>
+            <div>
+                {% for m in messages %}
+                <div>{{m}}</div>
                 {% endfor %}
-            </table>
-            <a href={% url 'update_intermediate_airport' flight.id %}>Update Intermadiate Airport</a>
+            </div>
+
+            <div class="row">
+                <div class="col" style="margin-right: 48px;">
+                    <div style="height: 34px;">
+                        <h2>Flight Details</h2>
+                        <a class="btn-wrap" href={% url 'edit_flight' flight.id %}>
+                            <div class="btn">
+                                Edit Flight
+                            </div>
+                        </a>
+                    </div>
+                    <div class="flight-info"
+                        style="background: var(--row-bg); border-radius: var(--border-radius); padding: 24px 36px; margin-top: 24px;">
+                        <style>
+                            .flight-info p {
+                                line-height: 2.7;
+                            }
+                        </style>
+                        <p>
+                            Flight:
+                            <span style="margin-left: 7rem;"></span>
+                            {{flight}}
+                        </p>
+                        <p>
+                            From airport:
+                            <span style="margin-left: 4rem;"></span>
+                            {{flight.departure_airport}}
+                        </p>
+                        <p>
+                            To airport:
+                            <span style="margin-left: 5.2rem;"></span>
+                            {{flight.arrival_airport}}
+                        </p>
+                        <p>
+                            Departure time:
+                            <span style="margin-left: 2.9rem;"></span>
+                            {{flight.departure_time}}
+                        </p>
+                        <p>
+                            Estimated Duration:
+                            <span style="margin-left: 1rem;"></span>
+                            {{flight.duration}}
+                        </p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div style="height: 34px;">
+                        <h2>Intermediate Airports</h2>
+                        <a class="btn-wrap" href={% url 'update_intermediate_airport' flight.id %}>
+                            <div class="btn">
+                                Edit Airports
+                            </div>
+                        </a>
+                    </div>
+                    <table>
+                        <tr>
+                            <!-- <th>Số thứ tự</th> -->
+                            <th>Airport</th>
+                            <th>Stoptime</th>
+                            <th>Notes</th>
+                        </tr>
+                        {% for a in intermediate_airports %}
+                        <tr>
+                            <!-- <th>{{a.id}}</th> -->
+                            <td>{{a.airport.name}}</td>
+                            <td>{{a.stop_time}}</td>
+                            <td
+                                style="text-overflow: ellipsis; display: block; overflow: hidden; height: 70px; width: 200px;">
+                                {{a.notes}}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+
+            <div style="margin: 40px 0 12px 0;">
+                <h2>Ticket Classes</h2>
+                <a class="btn-wrap" href={% url 'update_flight_ticket_class' flight.id %}>
+                    <div class="btn">
+                        Edit Flight's Ticket Classes
+                    </div>
+                </a>
+            </div>
+
+            <div>
+                <table>
+                    <tr>
+                        <!-- <th>Hang Ve</th>
+                        <th>So luong</th>
+                        <th>Gia Ve</th> -->
+                        <th>Ticket Class</th>
+                        <th>Total Seats</th>
+                        <!-- <th>Empty Seats</th> -->
+                        <!-- <th>Booked Seats</th> -->
+                        <th>Price</th>
+                    </tr>
+                    {% for t in flight_tickets %}
+                    <tr>
+                        <!-- <th>{{t.ticket_class}}</th>
+                        <th>{{t.quantity}}</th>
+                        <th>{{t.cost}}</th> -->
+                        <td>{{t.ticket_class}}</td>
+                        <td>{{t.quantity}}</td>
+                        <!-- <td>{{t.available_seats}}</td> -->
+                        <!-- <td>{{t.booked_count}}</td> -->
+                        <td>{{t.cost}} VND</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+
+            </div>
+
         </div>
 
-        <br>
-
-        <div>
-            <table>
-                <tr>
-                    <th>Hang Ve</th>
-                    <th>So luong</th>
-                    <th>Gia Ve</th>
-                </tr>
-                {% for t in flight_tickets %}
-                <tr>
-                    <th>{{t.ticket_class}}</th>
-                    <th>{{t.quantity}}</th>
-                    <th>{{t.cost}}</th>
-                </tr>
-                {% endfor %}
-            </table>
-            <a href={% url 'update_flight_ticket_class' flight.id %}>Update ticket Class</a>
-        </div>
-
-        <br>
-
-        <a href={% url 'delete_flight' flight.id %}>Delete Flight</a>
-        <h1>----------- This is Add Ticket Page --------------</h1>
     </div>
     <div class="col-2"></div>
 </div>{% endblock content %}
