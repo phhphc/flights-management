@@ -28,7 +28,7 @@ def report_dashboard(request):
             'month': m,
             'flight_count': month_flight.count(),
             'revenue': sum([f.revenue for f in month_flight]),
-            'ticket_ratio':  ticket_ratio,
+            'ticket_ratio':  "%.2f%%" % (ticket_ratio*100),
         })
 
     form = MonthYearForm(initial={
@@ -36,10 +36,14 @@ def report_dashboard(request):
         'month': month,
     })
 
+    month_flights_report = year_flights.filter(departure_time__month=month)
+    for f in month_flights_report:
+        f.ticket_ratio_str = "%.2f%%" % (f.ticket_ratio*100)
+
     return render(request, 'employees/view_report/index.html', {
         'form': form,
         'year': year,
         'month': month,
-        'month_flights': year_flights.filter(departure_time__month=month),
+        'month_flights': month_flights_report,
         'year_month_report': year_month_report,
     })
