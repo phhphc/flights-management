@@ -14,8 +14,12 @@ from .forms import *
 def home_page(request):
     flights: list[Flight] = Flight.objects.all()
 
-    flight_filter: FlightFilter = FlightFilter(request.GET, queryset=flights)
-    flights = flight_filter.qs
+    query = request.GET.copy()
+    if 'departure_time__date__gte' not in query or not query['departure_time__date__gte']:
+        query['departure_time__date__gte'] = timezone.now().date()
+
+    flight_filter: FlightFilter = FlightFilter(query, queryset=flights)
+    flights = flight_filter.qs[:20]
 
     for i in range(len(flights)):
         total_seats = sum(
@@ -87,7 +91,7 @@ def book_flight(request):
             'flight': request.GET.get('flight'),
             'ticket_class': request.GET.get('ticket_class'),
         }
-        
+
     form = TicketForm(data=request.POST or None,
                       user=request.user,
                       initial=initial)
@@ -96,14 +100,14 @@ def book_flight(request):
 
     if request.method == 'POST':
         if form.is_valid():
-            
+
             if payment.is_empty():
                 obj = form.save(commit=False)
                 obj.seat_position = None
                 obj.save()
                 messages.success(request, "Ticket was booked!")
                 return redirect('home')
-            
+
             elif payment.is_valid():
                 payment.save()
                 obj = form.save(commit=False)
@@ -111,7 +115,6 @@ def book_flight(request):
                 obj.save()
                 messages.success(request, "Ticket was paid!")
                 return redirect('home')
-                
 
     return render(request, 'customers/book_flight.html', {
         'form': form,
