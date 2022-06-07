@@ -47,7 +47,7 @@ python ./manage.py runserver
 
 About test data:
 - admin user: `root:0000`
-- user1 : `user1:0000`
+- employee user : `user1:0000`
 - user2 : `user2:0000`
 - user3 : `user3:0000`
 - user4 : `user4:0000`

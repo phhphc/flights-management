@@ -26,7 +26,8 @@
     is_staff: false
     is_active: true
     date_joined: 2022-04-19 00:00:01+00:00
-    groups: []
+    groups:
+    - 1
     user_permissions: []
 - model: auth.user
   pk: 3
