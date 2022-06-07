@@ -18,6 +18,15 @@
         border-radius: 5px;
         cursor: pointer;
     }
+
+    .seat-position-item:hover {
+        background-color: #ccc;
+    }
+
+    .seat-position-item--disabled {
+        background-color: #ea3 !important;
+        cursor: not-allowed;
+    }
 </style>
 {% endblock %}
 
@@ -101,7 +110,7 @@
                                         // disable the booked seat
                                         for (let i of bookedSeat) {
                                             const item = seatListEle.children[i - 1];
-                                            item.style.backgroundColor = '#ea3';
+                                            item.classList.add('seat-position-item--disabled');
                                             item.onclick = null;
                                         }
                                     })

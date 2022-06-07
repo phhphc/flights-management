@@ -3,7 +3,7 @@ from django import forms
 class PaymentForm(forms.Form):
     card_id = forms.CharField(max_length=20)
     ccv = forms.CharField(max_length=3)
-    expiration_date = forms.DateField()
+    expiration_date = forms.CharField(max_length=7)
     card_holder = forms.CharField(max_length=50)
     
     def clean(self):

@@ -1,18 +1,23 @@
+{% load auth_extras %}
+
 <div class="navbar">
     <div style="float: left;">
         <!-- <span style="padding-left: 52px;">&nbsp;</span> -->
         <a href="{% url 'home' %}">Home Page</a>
         <!-- <a href="{% url 'profile' %}">Profile</a> -->
+        {% if request.user|has_group:"Employee" or user.is_superuser %}
         <a href="{% url 'employee_home' %}">Employee Dashboard</a>
-        <!-- <a href="{% url 'admin:index' %}">Admin</a> -->
-
-        {% if not user.is_authenticated %}
-        <a href="{% url 'login' %}">Login</a>
-        <a href="{% url 'register' %}">Register</a>
         {% endif %}
+
+        {% if user.is_superuser %}
+        <a href="{% url 'admin:index' %}">Admin Site</a>
+        {% endif %}
+
+
 
     </div>
     <div style="float: right;">
+
         {% if user.is_authenticated %}
         <p>
             <span style="margin-right: 1.5rem;">
@@ -20,6 +25,11 @@
             </span>
             <a href="{% url 'profile' %}">View Profile</a>
             <a href="{% url 'logout' %}">Logout</a>
+        </p>
+        {% else %}
+        <p>
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'register' %}">Register</a>
         </p>
         {% endif %}
     </div>
