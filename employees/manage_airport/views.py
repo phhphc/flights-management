@@ -17,7 +17,7 @@ def add_airport(request):
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-            
+
             return redirect('manage_airport_home')
 
     return render(request, 'employees/manage_airport/add_airport.html', {
