@@ -83,9 +83,13 @@
             </tr>
 
             {% for c in flight_tickets %}
+            {% if c.available_seats > 0 %}
             <tr class='clickable-row'
                 data-href="{% url 'book_flight' %}?flight={{flight.id}}&ticket_class={{c.ticket_class.id}}"
                 style="cursor: pointer;">
+                {% else %}
+            <tr>
+                {% endif %}
                 <td>{{c.ticket_class}}</td>
                 <td>{{c.quantity}}</td>
                 <td>{{c.available_seats}}</td>
@@ -93,12 +97,14 @@
                 <td>{{c.cost}} VND</td>
                 <!-- <th><a href={% url 'book_flight' %}?flight={{flight.id}}&ticket_class={{c.ticket_class.id}}>Đặt vé</a></th> -->
                 <td>
+                    {% if c.available_seats > 0 %}
                     <span style="position: relative; top: -5px;">
                         Book Ticket
                     </span>
                     <span style="font-size: 30px; color: rgb(68, 68, 68); position: relative; top: -2px;">
                         &rsaquo;
                     </span>
+                    {% endif %}
                 </td>
             </tr>
             {% endfor %}
