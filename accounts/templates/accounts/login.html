@@ -1,20 +1,27 @@
 {% extends 'base.html' %}}
 
 {% block head %}
+<style>
+    #login-poster {
+        background-image: url("https://i.ibb.co/gMwyzCc/side-header.png");
+        background-size: cover;
+        background-position: bottom right;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
 <title>Login</title>
 {% endblock %}
 
-{% block content %} <div class="row">
-    <div class="col-2"></div>
-    <div class="col-8">
+{% block content %}
 
-        <img style="position: fixed; top: 56px; left: 0; height: calc(100vh - 56px);"
-            src="https://i.ibb.co/gMwyzCc/side-header.png" alt="">
-
+<div class="row row-md-reverse">
+    <div class="col-6 full-height">
         <div class="row">
-            <div class="col-7">
-            </div>
-            <div class="col-5">
+            <div class="col-2"></div>
+            <div class="col-8">
                 <h1 style="text-align: center; margin: 64px 0 48px 0;">
                     Login
                 </h1>
@@ -25,36 +32,21 @@
                         Username
                         <div style="height: 12px;"></div>
                         <input type="text" name="username" placeholder="Username..." class="form-control">
-                        <p class="helptext">
-                            {{ form.username.help_text }}
-                        </p>
                     </div>
                     <div style="margin-top: 24px;">
                         Password
                         <div style="height: 12px;"></div>
                         <input type="password" name="password" placeholder="Password..." class="form-control">
-                        <p class="helptext">
-                            {{ form.password.help_text }}
-                        </p>
                     </div>
                     <input class="btn login_btn" type="submit" value="Login">
                 </form>
-
-                <div>
-                    {% for m in messages %}
-                    <p id="messages">{{m}}</p>
-                    {% endfor %}
-                </div>
             </div>
+            <div class="col-2"></div>
         </div>
-
-
-
-
-
-        <!-- <div>
-    <a href="{% url 'home' %}">Home</a>
-</div> -->
     </div>
-    <div class="col-2"></div>
-</div>{% endblock content %}
+    <div class="col-6 full-height">
+        <div id="login-poster"></div>
+    </div>
+</div>
+
+{% endblock content %}

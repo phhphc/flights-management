@@ -30,6 +30,10 @@
             .row-t {
                 flex-wrap: nowrap;
             }
+
+            .row-md-reverse {
+                flex-direction: row-reverse;
+            }
         }
 
         .row [class^='col'] {
@@ -355,16 +359,27 @@
     </style>
 
     <style>
-        .messages .error {
-            background-color: #dc3545;
-            color: white;
+        .full-height {
+            min-height: calc(100vh - 56px);
+        }
+
+        .messages * {
             text-align: center;
         }
 
-        .success-message {
+        .messages .error {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .messages .success {
             background-color: #28a745;
             color: white;
-            text-align: center;
+        }
+
+        .messages .info {
+            background-color: #17a2b8;
+            color: white;
         }
 
         .errorlist li {
@@ -383,6 +398,7 @@
 <body>
 
     <div id="top-of-page"></div>
+
     <a href="#top-of-page">
         <div
             style="position: fixed; bottom: 1.1rem; right: 1rem; background: var(--theme-color); color: white; height: 2rem; width: 2rem; text-align: center; border-radius: 100px; font-size: 1.2rem;">

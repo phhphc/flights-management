@@ -36,6 +36,13 @@
     &nbsp;
 </div>
 
+<!-- Message area -->
+<div class="messages">
+    {% for m in messages %}
+    <p class="{{ m.tags }}">{{m}}</p>
+    {% endfor %}
+</div>
+
 <!-- <div style="z-index: 101; position: fixed; top: 0; left: 0; background: rgb(255, 255, 255); padding: 10px 6px 4px 6px;">
     <img src="https://i.ibb.co/TL6jhn1/logo.png" style="height: 36px;">
 </div> -->
