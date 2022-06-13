@@ -8,10 +8,19 @@
     <div class="col-2"></div>
     <div class="col-8">
 
-        <div class="global-edit">
-            <h1>
+        <div class="mng-idv-flight">
+            <h1 style="float: left;">
                 Edit Flight's Ticket Classes
             </h1>
+            <a class="btn-wrap" href={% url 'manage_flight' flight_id %}>
+                <div class="btn-delete">
+                    Cancel
+                </div>
+            </a>
+            <div style="clear: both;"></div>
+        </div>
+
+        <div class="global-edit">
 
             <form action="" method="post">
                 {% csrf_token %}
@@ -22,9 +31,9 @@
                 <br>
                 {% endfor %}
 
-                <a href={% url 'manage_flight' flight_id %}>Cancel</a>
                 <input type="submit" value="Update">
             </form>
+
 
         </div>
     </div>
