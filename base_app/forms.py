@@ -34,6 +34,14 @@ class FlightForm(ModelForm):
     class Meta:
         model = Flight
         fields = '__all__'
+        
+        
+    def __init__(self, *args, **kwargs):
+        super(FlightForm, self).__init__(*args, **kwargs)
+
+        print(self.fields)
+        self.fields['departure_time'].widget = forms.widgets.DateInput(
+            attrs={'type': 'date'})
 
     def clean(self):
 
