@@ -20,7 +20,7 @@ def login_page(request):
             login(request, user)
             return redirect(request.GET.get('next') or 'home')
         else:
-            messages.info(request, "Username or Password is incorrect")
+            messages.error(request, "Username or Password is incorrect")
 
     return render(request, 'accounts/login.html')
 
