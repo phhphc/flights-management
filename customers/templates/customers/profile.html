@@ -7,16 +7,17 @@
 {% block content %} <div class="row">
     <div class="col-2"></div>
     <div class="col-8">
-
+        
+        <div>
+            {% for m in messages %}
+            <p id="messages" class="success-message">{{m}}</p>
+            {% endfor %}
+        </div>
+        
         <h1 style="text-align: center; margin-top: 70px;">
             User Profile
         </h1>
 
-        <div>
-            {% for m in messages %}
-            <p id="messages">{{m}}</p>
-            {% endfor %}
-        </div>
 
         <div class="row" style="margin-top: 60px;">
             <div class="col" style="margin-right: 48px;">
