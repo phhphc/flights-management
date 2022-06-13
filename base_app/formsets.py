@@ -90,7 +90,6 @@ class BaseFlightTicketsFormSet(BaseInlineFormSet):
                 # check if quantity of ticket is bigger or equal to max seat_position
                 max_seat_position = tickets.aggregate(Max('seat_position'))['seat_position__max']
                 if max_seat_position is not None:
-                    print(max_seat_position)
                     if form.cleaned_data.get('quantity') < max_seat_position:
                         form.add_error(
                             'quantity', [

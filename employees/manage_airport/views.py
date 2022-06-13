@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+from django.db import IntegrityError
+from django.contrib import messages
 
 from base_app.models import Airport
 from base_app.forms import AirportForm
@@ -41,6 +43,11 @@ def edit_airport(request, airport_id):
 def delete_airport(request, airport_id):
     airport = Airport.objects.get(id=airport_id)
     # TODO: check
-    airport.delete()
+    try:
+        airport.delete()
+    except IntegrityError as e:
+        messages.error(
+            request, 'Cannot delete this airport because it is used by some flights !')
+        return redirect('manage_airport_home')
 
     return redirect('manage_airport_home')
