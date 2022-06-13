@@ -42,12 +42,11 @@ def edit_airport(request, airport_id):
 
 def delete_airport(request, airport_id):
     airport = Airport.objects.get(id=airport_id)
-    # TODO: check
+    
     try:
         airport.delete()
-    except IntegrityError as e:
+    except IntegrityError:
         messages.error(
             request, 'Cannot delete this airport because it is used by some flights !')
-        return redirect('manage_airport_home')
 
     return redirect('manage_airport_home')

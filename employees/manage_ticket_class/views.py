@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+from django.db import IntegrityError
+from django.contrib import messages
 
 from base_app.models import TicketClass
 from base_app.forms import TicketClassForm
@@ -17,7 +19,7 @@ def add_ticket_class(request):
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-            
+
             return redirect('manage_ticket_class_home')
 
     return render(request, 'employees/manage_ticket_class/add_ticket_class.html', {
@@ -40,7 +42,11 @@ def edit_ticket_class(request, ticket_class_id):
 
 def delete_ticket_class(request, ticket_class_id):
     ticket_class = TicketClass.objects.get(id=ticket_class_id)
-    # TODO: check
-    ticket_class.delete()
+
+    try:
+        ticket_class.delete()
+    except IntegrityError:
+        messages.error(
+            request, 'Cannot delete this ticket class because it is used by some flights !')
 
     return redirect('manage_ticket_class_home')
