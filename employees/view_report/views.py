@@ -38,7 +38,7 @@ def report_dashboard(request):
 
     month_flights_report = year_flights.filter(departure_time__month=month)
     for f in month_flights_report:
-        f.ticket_ratio_str = "%.2f%%" % (f.ticket_ratio*100)
+        f.ticket_ratio_str = "%.2f%%" % (f.ticket_ratio*100 if f.ticket_ratio else 0)
 
     return render(request, 'employees/view_report/index.html', {
         'form': form,

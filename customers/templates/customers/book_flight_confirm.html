@@ -1,35 +1,132 @@
 {% extends 'base.html' %}}
 
 {% block head %}
+<style>
+    .wrapper {
+        margin-top: 70px;
+    }
+
+    .wrapper .col+.col {
+        margin-left: 48px;
+    }
+
+    .wrapper h1 {
+        text-align: center;
+    }
+
+    .ticket-info {
+        background: var(--row-bg);
+        border-radius: var(--border-radius);
+        padding: 0 36px;
+        margin-top: 24px;
+    }
+
+    .ticket-info p {
+        line-height: 2.7;
+    }
+
+    .ticket-info table {
+        border-spacing: 0 12px;
+    }
+
+    .ticket-info tr,
+    .ticket-info th {
+        padding: 4px;
+        vertical-align: top;
+        text-align: left;
+    }
+
+    .ticket-info tr:first-child th {
+        font-size: inherit;
+        font-weight: inherit;
+        padding: none;
+    }
+
+    .ticket-info tr:last-child th {
+        font-size: 1.2rem;
+        font-weight: 600;
+        padding: 12px 0;
+    }
+</style>
 <title>Confirm Book Flight</title>
 {% endblock %}
 
 
-{% block content %} <div class="row">
+{% block content %}
+<div class="row">
     <div class="col-2"></div>
     <div class="col-8">
-        <h1>----------- This is confirm book flight page --------------</h1>
 
-        0. book_flight details
+        <div class="row wrapper">
+            <div class="col">
+                <h1>Ticket Detail</h1>
 
-        1. choose seat position
+                <table class="ticket-info">
+                    <tbody>
+                        <tr>
+                            <th>Flight:</th>
+                            <th>{{ ticket.flight_ticket.flight }}</th>
+                        </tr>
+                        <tr>
+                            <th>From airport:</th>
+                            <th>{{ ticket.flight_ticket.flight.departure_airport }}</th>
+                        </tr>
+                        <tr>
+                            <th>To airport:</th>
+                            <th>{{ticket.flight_ticket.flight.arrival_airport}}</th>
+                        </tr>
+                        <tr>
+                            <th>Departure time:</th>
+                            <th>{{ticket.flight_ticket.flight.departure_time}}</th>
+                        </tr>
+                        <tr>
+                            <th>Estimated Duration:</th>
+                            <th>{{ticket.flight_ticket.flight.duration}}</th>
+                        </tr>
+                        <tr>
+                            <th>Ticket Class:</th>
+                            <th>{{ ticket.flight_ticket.ticket_class }}</th>
+                        </tr>
+                        <tr>
+                            <th>Seat Position:</th>
+                            <th>{{ ticket.seat_position }}</th>
+                        </tr>
+                        <tr>
+                            <th>Full Name:</th>
+                            <th>{{ ticket.customer_name}}</th>
+                        </tr>
+                        <tr>
+                            <th>ID Card:</th>
+                            <th>{{ticket.customer_id_card}}</th>
+                        </tr>
+                        <tr>
+                            <th>Phone Number:</th>
+                            <th>{{ticket.customer_phone}}</th>
+                        </tr>
+                        <tr>
+                            <th>Ticket Status:</th>
+                            <th>{{ ticket.str_status}}</th>
+                        </tr>
+                        <tr>
+                            <th>Ticket Cost:</th>
+                            <th>{{ticket.flight_ticket.cost}}</th>
+                        </tr>
+                    </tbody>
+                </table>
 
-        2. payment method
-
-        <form action="" method="post">
-            {% csrf_token %}
-
-            <h3>Choose Seat</h3>
-            {{form}}
-
-            <h3>Payment</h3>
-            {{ payment }}
-
-            <input type="submit" value="Pay">
-        </form>
-
-
-        <h1>----------- This is confirm book flight page --------------</h1>
+            </div>
+            <div class="col">
+                <div>
+                    <h1>Ticket Payment</h1>
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        {{ payment }}
+                        <input type="submit" value="Pay">
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="col-2"></div>
-</div>{% endblock content %}
+</div>
+{% endblock content %}

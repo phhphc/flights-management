@@ -20,10 +20,8 @@ class FlightFilter(django_filters.FilterSet):
         model = Flight
         fields = {
             'departure_airport__city': ['exact'],
-            'departure_airport': ['exact'],
             'arrival_airport__city': ['exact'],
-            'arrival_airport': ['exact'],
-            'departure_time': ['date__exact', 'date__gte', 'date__lte'],
+            'departure_time': ['date__gte', 'date__lte'],
         }
 
     def __init__(self, *args, **kwargs):

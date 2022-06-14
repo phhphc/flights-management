@@ -2,6 +2,7 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
+from matplotlib.axis import Tick
 
 from base_app.models import Flight, FlightTicket, IntermediateAirport, Ticket, Regulations
 from base_app.forms import TicketForm, CustomUserForm
@@ -125,22 +126,20 @@ def book_flight(request):
 def book_flight_confirm(request, ticket_id):
 
     payment = PaymentForm(request.POST or None)
-    form = SeatForm(data=request.POST or None,
-                    instance=Ticket.objects.get(pk=ticket_id))
+    ticket = Ticket.objects.get(pk=ticket_id)
 
     if request.method == 'POST':
-        if payment.is_valid() and form.is_valid():
+        if payment.is_valid():
             try:
                 payment.save()
-                form.save()
                 messages.success(request, "Payment was successful!")
                 return redirect('profile')
             except:
                 messages.error(request, "Error while processing payment!")
 
     return render(request, 'customers/book_flight_confirm.html', {
-        'form': form,
         'payment': payment,
+        'ticket': ticket,
     })
 
 
