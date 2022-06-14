@@ -104,7 +104,7 @@ class IntermediateAirport(models.Model):
     flight = models.ForeignKey(Flight, on_delete=models.CASCADE)
     airport = models.ForeignKey(Airport, on_delete=models.RESTRICT)
     stop_time = models.DurationField()
-    notes = models.TextField(max_length=100)
+    notes = models.CharField(max_length=100)
 
 
 class Ticket(models.Model):

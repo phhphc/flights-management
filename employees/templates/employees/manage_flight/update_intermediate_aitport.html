@@ -1,6 +1,18 @@
 {% extends 'base.html' %}}
 
 {% block head %}
+<style>
+    td {
+        vertical-align: bottom;
+    }
+
+    tr td:first-child {
+        width: 300px;
+    }
+    tr td:nth-child(2) {
+        width: 108px;
+    }
+</style>
 <title>Update Intermediate Airport</title>
 {% endblock %}
 
@@ -23,12 +35,34 @@
 
             <form action="" method="post">
                 {% csrf_token %}
-
                 {{ formset.management_form }}
-                {% for form in formset %}
-                {{form}}
-                <br>
-                {% endfor %}
+                {{formset.non_form_errors}}
+                <table>
+                    <thead>
+                        {% for form in formset %}
+                        {% if forloop.first %}
+                        {% for field in form.visible_fields %}
+                        <th>
+                            {{ field.label_tag }}
+                        </th>
+                        {% endfor %}
+                        {% endif %}
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {% for field in form.visible_fields %}
+                            <td>
+                                <div>{{ field.errors }}</div>
+                                <div>{{ field }}</div>
+                            </td>
+                            {% endfor %}
+                        </tr>
+                        {% for hidden in form.hidden_fields %}
+                        {{ hidden }}
+                        {% endfor %}
+                        {% endfor %}
+                    </tbody>
+                </table>
 
                 <input type="submit" value="Update">
             </form>
