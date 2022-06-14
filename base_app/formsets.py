@@ -50,10 +50,10 @@ class BaseFlightTicketsFormSet(BaseInlineFormSet):
         ticket_class_list = []
         for form in self.forms:
             # ignore empty forms
-            if form.empty_permitted:
+            ticket_class = form.cleaned_data.get('ticket_class')
+            if form.empty_permitted and ticket_class is None:
                 continue
 
-            ticket_class = form.cleaned_data.get('ticket_class')
             try:
                 # if form is delete
                 # If there are any tickets for this class, prevent delete and send error message
@@ -66,7 +66,7 @@ class BaseFlightTicketsFormSet(BaseInlineFormSet):
                 # check that no ticket_class is duplicated
                 if ticket_class.pk in ticket_class_list:
                     form.add_error(
-                        'ticket_class', ['Ticket_class is duplicated'])
+                        'ticket_class', ['Ticket class is duplicated'])
                 ticket_class_list.append(ticket_class.pk)
 
                 # check if ticket cost is available
