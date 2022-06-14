@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 
 from base_app.models import Flight, TicketCost
 from base_app.forms import TicketCostForm
-from base_app.filters import TicketCostFilter, FlightFilter
+from base_app.filters import TicketCostFilter
 
 def index_page(request):
     ticket_costs = TicketCost.objects.all()

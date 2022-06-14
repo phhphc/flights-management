@@ -269,23 +269,28 @@
         }
 
         .emp-dsb-wrap {
-            margin: 70px 0 0 0;
-        }
-
-        .emp-dsb-wrap .col {
-            margin: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
         }
 
         .emp-dsb-wrap a {
             text-decoration: none;
         }
-
+        
+        .emp-dsb-wrap a + a {
+            margin-left: unset;
+        }
+        
         .emp-dsb-btn {
             padding: 48px 0;
             text-align: center;
             background: var(--theme-color);
             border-radius: var(--border-radius);
             color: white;
+            margin: 70px 36px 0;
+            width: 180px;
         }
 
         .emp-dsb-btn:hover {

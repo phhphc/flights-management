@@ -12,59 +12,49 @@
             Employee Dashboard
         </h1>
 
-        <div class="row emp-dsb-wrap">
-            <div class="col">
-                <a href="{% url 'manage_airport_home' %}">
-                    <div class="emp-dsb-btn">
-                        Manage Airport
-                    </div>
-                </a>
-            </div>
-            <div class="col">
-                <a href="{% url 'manage_ticket_class_home' %}">
-                    <div class="emp-dsb-btn">
-                        Manage Ticket Class
-                    </div>
-                </a>
-            </div>
-            <div class="col">
-                <a href="{% url 'manage_cost_home' %}">
-                    <div class="emp-dsb-btn">
-                        Manage Cost
-                    </div>
-                </a>
-            </div>
-            <div class="col">
-                <a href="{% url 'manage_flight_home' %}">
-                    <div class="emp-dsb-btn">
-                        Manage Flights
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="row emp-dsb-wrap">
-            <div class="col">
-                <a href="{% url 'manage_ticket_home' %}">
-                    <div class="emp-dsb-btn">
-                        Manage Ticket
-                    </div>
-                </a>
-            </div>
-            <div class="col">
-                <a href="{% url 'manage_regulations_home' %}">
-                    <div class="emp-dsb-btn">
-                        Manage Regulations
-                    </div>
-                </a>
-            </div>
-            <div class="col">
-                <a href="{% url 'report_dashboard' %}">
-                    <div class="emp-dsb-btn">
-                        View Report
-                    </div>
-                </a>
-            </div>
-            <div class="col"></div>
+        <div class="emp-dsb-wrap">
+            <a href="{% url 'manage_airport_home' %}">
+                <div class="emp-dsb-btn">
+                    Manage Airport
+                </div>
+            </a>
+
+            <a href="{% url 'manage_ticket_class_home' %}">
+                <div class="emp-dsb-btn">
+                    Manage Ticket Class
+                </div>
+            </a>
+
+            <a href="{% url 'manage_cost_home' %}">
+                <div class="emp-dsb-btn">
+                    Manage Cost
+                </div>
+            </a>
+
+            <a href="{% url 'manage_flight_home' %}">
+                <div class="emp-dsb-btn">
+                    Manage Flights
+                </div>
+            </a>
+
+            <a href="{% url 'manage_ticket_home' %}">
+                <div class="emp-dsb-btn">
+                    Manage Ticket
+                </div>
+            </a>
+
+            <a href="{% url 'manage_regulations_home' %}">
+                <div class="emp-dsb-btn">
+                    Manage Regulations
+                </div>
+            </a>
+
+            <a href="{% url 'report_dashboard' %}">
+                <div class="emp-dsb-btn">
+                    View Report
+                </div>
+            </a>
+
         </div>
 
     </div>
