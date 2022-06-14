@@ -2,7 +2,6 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
-from matplotlib.axis import Tick
 
 from base_app.models import Flight, FlightTicket, IntermediateAirport, Ticket, Regulations
 from base_app.forms import TicketForm, CustomUserForm
