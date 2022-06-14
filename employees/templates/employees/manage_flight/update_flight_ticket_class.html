@@ -2,6 +2,11 @@
 
 {% block head %}
 <title>Add ticket</title>
+<style>
+    td {
+        vertical-align: bottom;
+    }
+</style>
 {% endblock %}
 
 {% block content %} <div class="row">
@@ -26,13 +31,37 @@
                 {% csrf_token %}
                 {{ formset.management_form }}
                 {{formset.non_form_errors}}
-                {% for form in formset %}
-                {{form}}
-                <br>
-                {% endfor %}
+                <table>
+                    <thead>
+                        {% for form in formset %}
+                        {% if forloop.first %}
+                        {% for field in form.visible_fields %}
+                        <th>
+                            {{ field.label_tag }}
+                        </th>
+                        {% endfor %}
+                        {% endif %}
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {% for field in form.visible_fields %}
+                            <td>
+                                <div>{{ field.errors }}</div>
+                                <div>{{ field }}</div>
+                            </td>
+                            {% endfor %}
+                        </tr>
+                        {% for hidden in form.hidden_fields %}
+                        {{ hidden }}
+                        {% endfor %}
+                        {% endfor %}
+                    </tbody>
+                </table>
+
 
                 <input type="submit" value="Update">
             </form>
+
 
 
         </div>
