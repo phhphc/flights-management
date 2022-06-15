@@ -74,10 +74,26 @@
             <th>{{t.customer_id_card }}</th>
             <th>{{t.flight_ticket.cost }}</th>
             <th>{{t.str_status }}</th>
-            <th><a href="{% url 'edit_ticket_employee' t.id %}">Edit</a></th>
-            <th><a href="{% url 'delete_ticket_employee' t.id %}">Delete</a></th>
-            <th><a href="{% url 'pay_ticket_employee' t.id %}">Pay</a></th>
-            <th><a href="{% url 'export_ticket_employee' t.id %}">Print</a></th>
+            <th>
+                {% if t.status < 3 %}
+                <a href="{% url 'edit_ticket_employee' t.id %}">Edit</a>
+                {% endif %}
+            </th>
+            <th>
+                {% if t.status < 3 %}
+                <a href="{% url 'delete_ticket_employee' t.id %}">Delete</a>
+                {% endif %}
+            </th>
+            <th>
+                {% if t.status == 1 %}
+                <a href="{% url 'pay_ticket_employee' t.id %}">Pay</a>
+                {% endif %}
+            </th>
+            <th>
+                {% if t.status == 2 %}
+                <a href="{% url 'export_ticket_employee' t.id %}">Print</a>
+                {% endif %}
+            </th>
         </tr>
         {% endfor %}
 
