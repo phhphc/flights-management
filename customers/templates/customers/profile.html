@@ -74,9 +74,21 @@
                     <!-- <th>{{t.customer_phone}}</th> -->
                     <!-- <th>{{t.flight_ticket.cost}}</th> -->
                     <th>{{t.str_status}}</th>
-                    <th><a href="{% url 'book_flight_confirm' t.id %}">Pay</a></th>
-                    <th><a href="{% url 'edit_ticket_customer' t.id %}">Edit</a></th>
-                    <th><a href="{% url 'delete_book_flight' t.id %}">Cancel</a></th>
+                    <th>
+                        {% if t.status == 1 %}
+                        <a href="{% url 'book_flight_confirm' t.id %}">Pay</a>
+                        {% endif %}
+                    </th>
+                    <th>
+                        {% if t.status <= 2 %}
+                        <a href="{% url 'edit_ticket_customer' t.id %}">Edit</a>
+                        {% endif %}
+                    </th>
+                    <th>
+                        {% if t.status < 2 %}
+                        <a href="{% url 'delete_book_flight' t.id %}">Cancel</a>
+                        {% endif %}
+                    </th>
                 </tr>
                 {% endfor %}
             </table>
