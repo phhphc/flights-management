@@ -54,13 +54,12 @@ class CustomerTicketForm(forms.ModelForm):
         fields = ['customer_name', 'customer_id_card',
                   'customer_phone', 'seat_position']
 
-    def __init__(self, *args, **kwargs):
-        super(CustomerTicketForm, self).__init__(*args, **kwargs)
-        if self.instance.status < 2:
-            self.fields['seat_position'].widget.attrs.update({
-                'class': 'hidden',
-                'disabled': True,
-            })
+    # def __init__(self, *args, **kwargs):
+    #     super(CustomerTicketForm, self).__init__(*args, **kwargs)
+    #     if self.instance.status < 2:
+    #         self.fields['seat_position'].widget.attrs.update({
+    #             'class': 'hidden'
+    #         })
 
     def clean(self):
         flight_ticket = self.instance.flight_ticket
@@ -85,8 +84,8 @@ class CustomerTicketForm(forms.ModelForm):
 
     def save(self, commit=True):
         obj = super(CustomerTicketForm, self).save(commit=False)
-        if self.instance.status < 2:
-            obj.seat_position = None
+        # if self.instance.status < 2:
+        #     obj.seat_position = None
         if commit:
             obj.save()
         return obj
