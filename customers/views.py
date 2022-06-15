@@ -103,7 +103,7 @@ def book_flight(request):
 
             if payment.is_empty():
                 obj = form.save(commit=False)
-                obj.seat_position = None
+                # obj.seat_position = None
                 obj.save()
                 messages.success(request, "Ticket was booked!")
                 return redirect('home')
