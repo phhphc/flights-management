@@ -82,7 +82,7 @@ class TicketForm(ModelForm):
 
         if not self.instance.pk:  # if create new ticket
             # if user is not None, set the user
-            if self.user.is_authenticated:
+            if self.user and self.user.is_authenticated:
                 instant.user = self.user
             # if employee is not None, set the employee_paid and status to paid (2)
             if not self.edit and self.employee:
