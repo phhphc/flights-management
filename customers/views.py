@@ -131,6 +131,8 @@ def book_flight_confirm(request, ticket_id):
         if payment.is_valid():
             try:
                 payment.save()
+                ticket.status = 2
+                ticket.save()
                 messages.success(request, "Payment was successful!")
                 return redirect('profile')
             except:
