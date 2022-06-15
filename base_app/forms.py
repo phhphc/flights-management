@@ -45,10 +45,11 @@ class FlightForm(ModelForm):
     def clean(self):
 
         # check if flight time is bigger than minimum flight time
-        flight_duration_min = Regulations.objects.get(pk=1).flight_duration_min
-        if self.cleaned_data.get('duration') < flight_duration_min:
-            raise ValidationError({
-                'duration': 'Flight time is smaller than minimum flight time'})
+        if self.cleaned_data.get('duration') is not None:
+            flight_duration_min = Regulations.objects.get(pk=1).flight_duration_min
+            if self.cleaned_data.get('duration') < flight_duration_min:
+                raise ValidationError({
+                    'duration': 'Flight time is smaller than minimum flight time'})
 
 
 class RegulationsForm(ModelForm):
