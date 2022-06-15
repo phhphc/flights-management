@@ -16,15 +16,16 @@ class BaseIntermediateAirportFormSet(BaseInlineFormSet):
         airports = []
 
         for form in self.forms:
+            airport = form.cleaned_data.get('airport')
+            
             # ignore deleted forms
             if self.can_delete and self._should_delete_form(form):
                 continue
             # ignore empty forms
-            if form.empty_permitted:
+            if form.empty_permitted and airport is None:
                 continue
 
             # check that no intermediate airport is duplicated
-            airport = form.cleaned_data.get('airport')
             if airport in airports:
                 form.add_error(
                     'airport', ['Intermediate airport is duplicated'])
