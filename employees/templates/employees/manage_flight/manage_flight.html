@@ -1,6 +1,15 @@
 {% extends 'base.html' %}}
 
 {% block head %}
+<style>
+    .d-inline-block {
+        display: inline-block;
+    }
+
+    .ml-2 {
+        margin-left: 20px;
+    }
+</style>
 <title>Manage Flight {{flight}}</title>
 {% endblock %}
 
@@ -12,8 +21,11 @@
 
             <div style="height: 200px;">
                 <h1 style="float: left;">Manage Flight</h1>
-                <a class="btn-wrap" href={% url 'delete_flight' flight.id %}>
-                    <div class="btn-delete">
+                <a class="btn-wrap" href={% url 'manage_flight_home' %}>
+                    <div class="btn d-inline-block">
+                        Back
+                    </div>
+                    <div class="btn-delete d-inline-block ml-2">
                         Delete Flight
                     </div>
                 </a>
