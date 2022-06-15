@@ -55,9 +55,19 @@
                             {{flight}}
                         </p>
                         <p>
+                            From city:
+                            <span style="margin-left: 5.4rem;"></span>
+                            {{ flight.departure_airport.city }}
+                        </p>
+                        <p>
                             From airport:
                             <span style="margin-left: 4rem;"></span>
                             {{flight.departure_airport}}
+                        </p>
+                        <p>
+                            To city:
+                            <span style="margin-left: 6.5rem;"></span>
+                            {{flight.arrival_airport.city}}
                         </p>
                         <p>
                             To airport:
