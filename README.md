@@ -86,7 +86,7 @@ python manage.py loaddata test_data/*
 - https://flights-management-hcmus2022.herokuapp.com/
 
 ## Video demo
-- Update later
+- [Link Onedrive](https://studenthcmusedu-my.sharepoint.com/:f:/g/personal/19120454_student_hcmus_edu_vn/Ejnqaulm9OxIhvhl1u9yUuQBhy2CF_ukhxcXmFbyVNxJ-A?e=iWkuUE)
 
 ## Current status
 - [x] implement database
@@ -111,8 +111,11 @@ python manage.py loaddata test_data/*
 - [x] update airports 
 - [x] update ticket classes
 - [x] implement web UI
-- [ ] user testing
-- [ ] perfoment testing
+- [x] user testing
+- [x] perfoment testing
 
 ## Future Work
-- [ ] Update later
+- [ ] implement true payment service
+- [ ] add food, drink service to flight
+- [ ] allow customer to book multiple ticket
+- [ ] limit employee role, employee will have different permission
